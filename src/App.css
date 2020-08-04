@@ -2,8 +2,8 @@
 	height: 100vh;
 }
 
-.content {
-	background-color: bisque;
+.content__wrapper {
+	background-color: whitesmoke;
 }
 
 button {

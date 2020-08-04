@@ -11,7 +11,7 @@ function App(props) {
 	return (
 		<div className="App">
 			<Header/>
-			<div className="content">
+			<div className="content__wrapper">
 				{/*<Welcome/>*/}
 				<Profile/>
 			</div>

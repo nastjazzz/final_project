@@ -1,0 +1,40 @@
+.filter {
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+}
+
+.filter__title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.filter__subtitle {
+    font-size: 13px;
+    color: dimgray;
+    margin-bottom: 10px;
+}
+
+/* тэг details */
+.filter__item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.item__body {
+    display: flex;
+    flex-direction: column;
+}
+/* summary */
+.item__subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    border-bottom: 1px dotted #ddd;
+    padding: 5px;
+    margin-bottom: 10px;
+
+}

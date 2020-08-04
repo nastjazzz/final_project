@@ -7,16 +7,16 @@ const Sidebar = () => {
 		<div className={cl.wrapper}>
 			<ul className={cl.list}>
 				<li className={cl.list__item}>
-					<NavLink to="/profile" activeClassName={cl.active}>Profile</NavLink>
+					<NavLink to="/profile" activeClassName={cl.active}>Профиль</NavLink>
 				</li>
 				<li className={cl.list__item}>
-					<NavLink to="/messages" activeClassName={cl.active}>Messages</NavLink>
+					<NavLink to="/messages" activeClassName={cl.active}>Сообщения</NavLink>
 				</li>
 				<li className={cl.list__item}>
-					<NavLink to="/search" activeClassName={cl.active}>Search</NavLink>
+					<NavLink to="/search" activeClassName={cl.active}>Рекомендации</NavLink>
 				</li>
 				<li className={cl.list__item}>
-					<NavLink to="/settings" activeClassName={cl.active}>Settings</NavLink>
+					<NavLink to="/settings" activeClassName={cl.active}>Настройки</NavLink>
 				</li>
 			</ul>
 		</div>
