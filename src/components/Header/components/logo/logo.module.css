@@ -1,0 +1,13 @@
+#text__logo {
+	font-size: 17px;
+	font-weight: 700;
+
+	color: rgb(37, 57, 175);
+}
+
+/* Reusable styles */
+.flex__row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}

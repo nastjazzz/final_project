@@ -1,0 +1,16 @@
+.link__wrapper {
+	padding: 5px 10px;
+	margin-right: 5px;
+
+	border-radius: 10px;
+
+	transition: .3s;
+}
+
+.link__wrapper:last-child {
+	margin: 0;
+}
+
+.link__wrapper:hover {
+	background-color: rgba(0, 0, 0, .05);
+}
