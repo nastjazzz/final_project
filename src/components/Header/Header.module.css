@@ -1,51 +1,32 @@
-.nav__wrapper {
-	padding: 10px 35px;
+.nav {
+	display: flex;
+	justify-content: center;
 
+	box-shadow: 0 4px 2px 0 rgba(0, 0, 0, .1);
+	background-color: #fafafa;
+
+	width: 100%;
+}
+
+.nav__wrapper {
+	width: 1200px;
+
+	padding: 7px 20px;
+
+	font-size: 12px;
 	font-weight: 500;
 
 	color: #111;
 
-	background-color: rgb(255, 255, 255);
+	background-color: #fafafa;
 }
 
 .left__header {
 	display: flex;
 }
 
-.logo__wrapper {
-	margin-right: 25px;
-}
-
-#text__logo {
-	font-size: 25px;
-	font-weight: 700;
-
-	color: rgb(37, 57, 175);
-}
-
-.link__wrapper {
-	padding: 10px;
-	border-right: 1px solid grey;
-
-	transition: .3s;
-}
-
-.link__wrapper:last-child {
-	margin: 0;
-	border-right: none;
-}
-
-.link__wrapper:hover {
-	background-color: rgba(0, 0, 0, .05);
-}
-
-.avatar__wrapper {
-	padding: 7px;
-	margin-right: 10px;
-
-	border-radius: 50%;
-
-	background-color: lightgrey;
+.menu__wrapper {
+	margin: 0 25px;
 }
 
 /* Reusable styles */
