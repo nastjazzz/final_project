@@ -7,6 +7,28 @@
     --border: 1px solid #474a4d;
     --border-radius: 5px;
     --speed: 500ms; 
+    --translate: -29%;
+  }
+
+  .nickname_wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .indicator {
+    width: 5px;
+    height: 5px;
+
+    margin-left: 3px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .indicator svg {
+    width: 100%;
+    height: 100%;
   }
   
   a {
@@ -57,7 +79,7 @@
     position: absolute;
     top: 43px;
     width: 160px;
-    transform: translateX(-31.5%);
+    transform: translateX(var(--translate));
     background-color: var(--bg);
     border: var(--border);
     border-radius: var(--border-radius);

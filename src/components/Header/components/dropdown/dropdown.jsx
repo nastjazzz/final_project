@@ -7,12 +7,16 @@ import './dropdown.transitions.css';
 import { ReactComponent as CogIcon } from './icons/cog.svg';
 import { ReactComponent as ChevronIcon } from './icons/chevron.svg';
 import { ReactComponent as ArrowIcon } from './icons/arrow.svg';
+import { ReactComponent as Indicator } from './icons/indicator.svg';
 
 console.log(styles);
 
 function Dropdown(props) {
   return (
-        <NavItem content={props.nickname}>
+        <NavItem content={<span className={styles.nickname_wrapper}>
+                            {props.nickname}
+                            <div className={styles.indicator}><Indicator /></div>
+                          </span>}>
             <DropdownMenu />
         </NavItem>
   );
@@ -27,7 +31,9 @@ function NavItem(props) {
                 {props.content}
             </a>
 
-            {open && props.children}
+            <CSSTransition classNames='show-dropdown' in={open === true} unmountOnExit timeout={500}>
+                <DropdownMenu />
+            </CSSTransition>
         </div>
     );
 }
