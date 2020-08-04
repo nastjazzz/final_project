@@ -1,0 +1,15 @@
+.profile__wrapper {
+	margin: 0 auto;
+	max-width: 1200px;
+	height: 100vh;
+
+	display: flex;
+	
+
+	background-color: blanchedalmond;
+}
+
+.profile__component {
+	width: 900px;
+	background-color: khaki;
+}
