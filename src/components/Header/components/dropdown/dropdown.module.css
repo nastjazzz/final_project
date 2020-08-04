@@ -1,0 +1,116 @@
+
+:root {
+    --bg:  #fafafa;
+    --bg-accent: #888;
+    --text-color: #111;
+    --nav-size: 25px;
+    --border: 1px solid #474a4d;
+    --border-radius: 5px;
+    --speed: 500ms; 
+  }
+  
+  a {
+    color: var(--text-color);
+    text-decoration: none;;
+  }
+  
+  /* Top Navigation Bar */
+  
+  /* <li> */
+  .nav__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .dropdown__wrapper {
+    z-index: 1;
+  }
+  
+  /* Icon Button */
+  .icon__button {
+    --button-size: calc(var(--nav-size) * 0.5);
+    width: var(--button-size);
+    height: var(--button-size);
+    border-radius: 50%;
+    padding: 5px;
+    margin-right: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 300ms;
+    background-color: rgb(37, 57, 175);
+  }
+  
+  .main__icon__button:hover, .icon__button:hover {
+    filter: brightness(1.2);
+  }
+  
+  .icon__button svg {
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown {
+    position: absolute;
+    top: 43px;
+    width: 160px;
+    transform: translateX(-31.5%);
+    background-color: var(--bg);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+
+    transition: height var(--speed) ease;
+
+    z-index: 1;
+  }
+  
+  .menu {
+    width: 100%;
+  }
+  
+  .menu__item {
+    height: 20px;
+    margin-bottom: 1px;
+    display: flex;
+    align-items: center;
+    /* border-radius: var(--border-radius); */
+    transition: background var(--speed);
+    padding: 0.5rem;
+  }
+
+  .menu__item:last-child {
+    margin: 0;
+  }
+  
+  .menu__item .icon__button:hover {
+    filter: none;
+  }
+  
+  .menu__item:hover {
+    background-color: #e7e7e7;
+  }
+
+  .menu__item:first-child {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .menu__item__content {
+    max-width: 95px;
+  }
+  
+  .icon__right {
+    margin-left: auto;
+    --button-size: calc(var(--nav-size) * 0.5);
+    width: var(--button-size);
+    height: var(--button-size);
+  }
+
+  .icon__right svg {
+    width: 100%;
+    height: 100%;
+  }
