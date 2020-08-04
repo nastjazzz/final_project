@@ -6,11 +6,17 @@ import { Route } from "react-router-dom";
 
 const Auth = (props) => {
 
-    return (
-        <div className="main__form">
+	//переменная для проверки и отображения верного поля логин или регистрация
+	// const isLogin = props.match.path === "/login" ? true : false;
 
-        </div>
-    )
+
+	return (
+		<div className="main__form">
+			<Buttons />
+			<Route path='/login' component={Login} />
+			<Route path='/registration' component={Login} />
+		</div>
+	)
 }
 
-export default Auth;
+export default Auth
