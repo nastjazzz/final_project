@@ -2,7 +2,6 @@ import React from 'react'
 import './filter.css'
 
 function Filter({getState, onChangeCheckboxes}) {
-
 	return (
 		<div className='filter'>
 			<div className='filter__title'>

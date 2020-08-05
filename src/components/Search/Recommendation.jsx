@@ -1,54 +1,11 @@
 import React from 'react';
 import axios from 'axios';
-import './search.css'
-import dogPhoto from '../dogPhoto.jpg';
+import './recommendation.css'
 import Filter from "./Filter/Filter";
+import SorryFilter from "./SorryFilter";
+import UsersCards from "./UsersCard";
 
-//в пропсах я получаю список пользователей
-//если я хочу, чтобы при клике на чекбокс менялось отображение пользователей
-//тогда я должна поменять как-то users
-
-
-const UsersCards = ({ getState }) => {
-	console.log('props UsersCards', getState.users);
-
-	let usersFromServer = [...getState.users];
-	console.log('usersFromServer', usersFromServer);
-//одна карточка собаки
-	let cardItem = usersFromServer.map(user => {
-		return (
-			<div className='card__wrapper' key={user.id}>
-				 <div className='pets-info'>
-					<div className='pets-info__name'>
-						{user.pets.name}, {user.pets.age}
-					</div>
-					<div className='pets-info__photo'>
-						<img src={dogPhoto} alt="user`s dog" />
-					</div>
-				</div>
-				<div className='user-info'>
-					<div className='user-info__name'>
-						Хозяин: {user.firstName}
-					</div>
-					<div className='user-info__location'>
-						Гуляют в {user.location.district}
-					</div>
-				</div>
-
-			</div>
-		)
-	})
-
-	return (
-		<div className='search__wrapper'>
-			{cardItem}
-		</div>
-	)
-}
-// export const MyContext = React.createContext(null);
-
-
-class Search extends React.Component {
+class Recommendation extends React.Component {
 	state = {
 		user: {},
 		users: [],
@@ -213,6 +170,13 @@ class Search extends React.Component {
 		}
 	}
 
+// !!!нужно доработать ошибки!!!
+// сейчас плохо работает снятие чекбоксов и последующее отображение результатов
+// надо подумать как брать предыдущий результат
+// + скорее всего надо выносить методы, тк слишком много получилось
+// + некорректно отображаются результаты, если одновременно нажаты 2 чекбокса(н, мальчики + девочки)
+// надо дописывать в state польз-лей, а не перезаписывать
+
 	onChangeCheckboxes = (e) => {
 		let name = e.target.name;
 		let arrOfName = name.split(' ');
@@ -229,18 +193,20 @@ class Search extends React.Component {
 		}
 	}
 
-
 	render() {
 		return (
-			<>
+			<div className='recommendation'>
 				<Filter
 					getState={this.state}
-					onChangeCheckboxes={this.onChangeCheckboxes}
-				/>
-				<UsersCards getState={this.state} />
-			</>
+					onChangeCheckboxes={this.onChangeCheckboxes} />
+				{
+					this.state.users.length ?
+						<UsersCards getState={this.state}/> :
+						<SorryFilter/>
+				}
+			</div>
 		)
 	}
 }
 
-export default Search;
+export default Recommendation;

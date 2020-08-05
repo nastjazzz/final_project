@@ -1,4 +1,9 @@
-.search__wrapper {
+.recommendation {
+    display: flex;
+    flex: auto;
+}
+
+.results__wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -7,6 +12,7 @@
 
 .card__wrapper {
     width: 300px;
+    height: 350px;
     padding: 10px;
     margin-bottom: 15px;
     background: white;
@@ -20,4 +26,9 @@
     width: 200px;
     height: auto;
     border-radius: 20px;
+}
+
+.sorry {
+    margin: auto;
+    color: dimgray;
 }
