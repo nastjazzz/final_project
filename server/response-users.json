@@ -14,7 +14,8 @@
 				"type": "dog",
 				"name": "Лаки",
 				"age": 1,
-				"gender": "female"
+				"gender": "female",
+				"breed": "овчарка"
 			}
 		},
 		{
@@ -31,7 +32,8 @@
 				"type": "dog",
 				"name": "Жуля",
 				"age": 10,
-				"gender": "female"
+				"gender": "female",
+				"breed": "такса"
 			}
 		},
 		{
@@ -48,7 +50,8 @@
 				"type": "dog",
 				"name": "Рекс",
 				"age": 3,
-				"gender": "male"
+				"gender": "male",
+				"breed": "ретривер"
 			}
 		},
 		{
@@ -65,7 +68,8 @@
 				"type": "dog",
 				"name": "Джек",
 				"age": 2,
-				"gender": "male"
+				"gender": "male",
+				"breed": "хаски"
 			}
 		},
 		{
@@ -82,7 +86,8 @@
 				"type": "dog",
 				"name": "Фиона",
 				"age": 1,
-				"gender": "female"
+				"gender": "female",
+				"breed": "овчарка"
 			}
 		},
 		{
@@ -99,7 +104,8 @@
 				"type": "dog",
 				"name": "Уна",
 				"age": 2,
-				"gender": "female"
+				"gender": "female",
+				"breed": "лабрадор"
 			}
 		},
 		{
@@ -116,7 +122,8 @@
 				"type": "dog",
 				"name": "Арчи",
 				"age": 8,
-				"gender": "male"
+				"gender": "male",
+				"breed": "хаски"
 			}
 		},
 		{
@@ -133,7 +140,8 @@
 				"type": "dog",
 				"name": "Барон",
 				"age": 4,
-				"gender": "male"
+				"gender": "male",
+				"breed": "овчарка"
 			}
 		},
 		{
@@ -150,7 +158,8 @@
 				"type": "dog",
 				"name": "Пуля",
 				"age": 2,
-				"gender": "female"
+				"gender": "female",
+				"breed": "ретривер"
 			}
 		},
 		{
@@ -167,7 +176,8 @@
 				"type": "dog",
 				"name": "Динка",
 				"age": 3,
-				"gender": "female"
+				"gender": "female",
+				"breed": "ретривер"
 			}
 		},
 		{
@@ -184,7 +194,8 @@
 				"type": "dog",
 				"name": "Каспер",
 				"age": 3,
-				"gender": "male"
+				"gender": "male",
+				"breed": "питбуль"
 			}
 		},
 		{
@@ -200,8 +211,9 @@
 			"pets": {
 				"type": "dog",
 				"name": "Геральт",
-				"age": 1,
-				"gender": "male"
+				"age": 0,
+				"gender": "male",
+				"breed": "питбуль"
 			}
 		},
 		{
@@ -218,7 +230,8 @@
 				"type": "dog",
 				"name": "Сэнди",
 				"age": 5,
-				"gender": "female"
+				"gender": "female",
+				"breed": "такса"
 			}
 		},
 		{
@@ -235,7 +248,8 @@
 				"type": "dog",
 				"name": "Зевс",
 				"age": 6,
-				"gender": "male"
+				"gender": "male",
+				"breed": "лабрадор"
 			}
 		}
 
