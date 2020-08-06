@@ -2,6 +2,16 @@ import React from "react";
 import dogPhoto from "../dogPhoto.jpg";
 import {NavLink} from "react-router-dom";
 
+let dogsAge = (number) => {
+    if (number < 1) {
+        return `${number}м`
+    } else if (number >= 1 && number < 5) {
+        return `${number}г`
+    } else {
+        return `${number}л`
+    }
+}
+
 const UsersCards = ({ getState }) => {
     let usersFromServer = [...getState.users];
     // console.log('usersFromServer', usersFromServer);
@@ -12,7 +22,9 @@ const UsersCards = ({ getState }) => {
             <div className='card__wrapper' key={user.id}>
                 <div className='pets-info'>
                     <div className='pets-info__name'>
-                        <NavLink to={'/profile/' + user.id}>{user.pets.name},</NavLink>{user.pets.age}
+                        <NavLink to={'/profile/' + user.id}>
+                            <span className='link__name'>{user.pets.name}, {dogsAge(user.pets.age)}</span>
+                        </NavLink>
                     </div>
                     <div className='pets-info__photo'>
                         <img src={user.pets.photo || dogPhoto} alt="user`s dog" />
@@ -20,7 +32,7 @@ const UsersCards = ({ getState }) => {
                 </div>
                 <div className='user-info'>
                     <div className='user-info__name'>
-                        Хозяин: {user.firstName}
+                        <NavLink to={'/profile/' + user.id}> Хозяин: {user.firstName}</NavLink>
                     </div>
                     <div className='user-info__location'>
                         Гуляют в {user.location.district}
