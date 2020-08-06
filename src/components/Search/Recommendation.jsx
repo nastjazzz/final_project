@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import './recommendation.css'
 import Filter from "./Filter/Filter";
-import SorryFilter from "./SorryFilter";
-import UsersCards from "./UsersCard";
+import SorryFilter from "./Help/SorryFilter";
+import UsersCards from "./UsersCards/UsersCards";
 
 class Recommendation extends React.Component {
 	state = {

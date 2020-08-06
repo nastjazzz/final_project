@@ -105,9 +105,7 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Уна",
-				"photo": "",
 				"age": 2,
 				"gender": "female",
 				"breed": "лабрадор",
