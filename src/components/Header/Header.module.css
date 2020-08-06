@@ -1,0 +1,37 @@
+.nav {
+	display: flex;
+	justify-content: center;
+
+	box-shadow: 0 4px 2px 0 rgba(0, 0, 0, .1);
+	background-color: #fafafa;
+
+	width: 100%;
+}
+
+.nav__wrapper {
+	width: 1200px;
+
+	padding: 7px 20px;
+
+	font-size: 12px;
+	font-weight: 500;
+
+	color: #111;
+
+	background-color: #fafafa;
+}
+
+.left__header {
+	display: flex;
+}
+
+.menu__wrapper {
+	margin: 0 25px;
+}
+
+/* Reusable styles */
+.flex__row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
