@@ -1,9 +1,12 @@
 .App {
-	height: 100vh;
+	/*height: 100vh;*/
+	background-color: whitesmoke;
 }
 
 .content__wrapper {
-	background-color: whitesmoke;
+	width: 100%;
+	/*margin: 0 auto;*/
+
 }
 
 button {

@@ -1,0 +1,26 @@
+.wrapper {
+    padding: 50px;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    /*height: 100vh;*/
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 50px 0;
+
+}
+
+.title {
+    max-width: 450px;
+    font-size: 50px;
+    font-weight: 300;
+    color: #888888;
+}
+
+@media  {
+    
+}

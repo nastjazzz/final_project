@@ -1,17 +1,19 @@
 .main__form {
 	box-sizing: border-box;
-	width: 400px;
+	min-width: 300px;
+	max-width: 400px;
 	height: 400px;
-	background-color: rgb(220, 247, 247);
+	/*background-color: rgb(220, 247, 247);*/
 	border-radius: 20px;
 	padding: 20px 30px;
-	
-	
 }
 
 .login {
 	margin: 0 auto;
+}
 
+.buttons {
+	margin-bottom: 15px;
 }
 
 .button {
@@ -27,7 +29,6 @@
 	border-radius: 20px;
 	border: none;
 	margin-bottom: 20px;
-	
 }
 
 .btn {
@@ -35,7 +36,7 @@
 	height: 50px;
 	border: none;
 	border-radius: 20px;
-	margin-top: 20px;
+	margin-top: 40px;
 	float: right;
 }
 
