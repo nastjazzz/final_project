@@ -131,7 +131,7 @@ class Recommendation extends React.Component {
 					this.setState({users: filteredDogs});
 					break;
 				case 'SVAO':
-					filteredDogs = this.state.users.filter(user => user.location.district === 'САО')
+					filteredDogs = this.state.users.filter(user => user.location.district === 'СВАО')
 					this.setState({users: filteredDogs});
 					break;
 				case 'VAO':
@@ -140,6 +140,14 @@ class Recommendation extends React.Component {
 					break;
 				case 'YVAO':
 					filteredDogs = this.state.users.filter(user => user.location.district === 'ЮВАО')
+					this.setState({users: filteredDogs});
+					break;
+				case 'YAO':
+					filteredDogs = this.state.users.filter(user => user.location.district === 'ЮАО')
+					this.setState({users: filteredDogs});
+					break;
+				case 'YZAO':
+					filteredDogs = this.state.users.filter(user => user.location.district === 'ЮЗАО')
 					this.setState({users: filteredDogs});
 					break;
 				case 'ZAO':
