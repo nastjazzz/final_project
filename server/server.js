@@ -64,6 +64,13 @@ app.post('/api/registration/', (req, res) => {
     res.json("SERVER.JS - USER ADD!!!");
 })
 
+app.post('/api/login/', (req, res) => {
+    console.log('post /api/login/', req.body);
+
+    // checkLogin()
+
+})
+
 app.listen(port, () => {
     console.log(`Server listening on the port::${port}`);
 });

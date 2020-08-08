@@ -1,9 +1,9 @@
 import React from 'react'
 import Header from './components/Header/Header'
-// import Welcome from './components/Welcome/Welcome'
+import Welcome from './components/Welcome/Welcome'
 import './App.css'
 import Footer from './components/Footer/Footer'
-import Profile from './components/Profile/Profile'
+// import Profile from './components/Profile/Profile'
 
 
 function App(props) {
@@ -12,8 +12,8 @@ function App(props) {
 		<div className="App">
 			<Header/>
 			<div className="content__wrapper">
-				{/*<Welcome/>*/}
-				<Profile/>
+				<Welcome/>
+				{/*<Profile/>*/}
 			</div>
 			<Footer/>
 		</div>
