@@ -1,7 +1,6 @@
 import React from "react";
 
 const RegistrationForm = ({regData, addNewUser}) => {
-    // props.match.path === '/login' ? setIsReg(false) : setIsReg(true);
     return (
         <>
             <input value={regData.firstName} name='firstName' type='text' placeholder='Введите Ваше имя' />

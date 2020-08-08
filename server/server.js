@@ -5,8 +5,9 @@ const port = 3001;
 const fs = require('fs')
 const app = express();
 
+// let DATA_JSON = JSON.parse(fs.readFileSync('./response-users.json', 'utf8'))
+let TEST_DATA_JSON = JSON.parse(fs.readFileSync('./test.json', 'utf8'))
 
-// import {users} from './users-post.js'
 //хранилище данных для всех пользователей
 // пока до конца я еще не знаю что именно мы будем использовать
 //на выбор в get запросе исп либо USERS_DATA, либо response-users.json
@@ -28,30 +29,42 @@ app.get('/api/users/', (req, res) => {
 });
 
 app.post('/api/registration/', (req, res) => {
-    //пр регистрации надо указывать больше данных (те не только имя/фамилия и email)
-    console.log('REQUEST', req.body);
-    const user = req.body;
-    const DATA_JSON = JSON.parse(fs.readFileSync('./test.json', 'utf8'))
-    console.log(DATA_JSON.users)
-    DATA_JSON.users.push(user);
-    DATA_JSON.totalUsers = DATA_JSON.users.length;
-    // DATA_JSON.users = user;
-    // console.log(...DATA_JSON.users, user);
-    // DATA_JSON.users = {[...DATA_JSON.users, user]};
-    // console.log(DATA_JSON.users);
-
-    fs.writeFileSync('./test.json', JSON.stringify(DATA_JSON, null, 2));
-
-    //надо понять каким образом записывать данные в файл.json
-    // USERS_DATA.push(user);
-    // console.log('USERS_DATA',USERS_DATA)
+    let newUser = req.body;
+    newUser.id = TEST_DATA_JSON.users.length + 1;
+    TEST_DATA_JSON.users.push(newUser);
+    TEST_DATA_JSON.totalUsers = TEST_DATA_JSON.users.length;
+    fs.writeFileSync('./test.json', JSON.stringify(TEST_DATA_JSON, null, 2));
     res.json("SERVER.JS - USER ADD!!!");
 })
 
-app.post('/api/login/', (req, res) => {
-    console.log('post /api/login/', req.body);
+let check = (loginData, users) => {
+    let userObject = users.filter(user => {
+        if (loginData.currentLogin === user.login) {
+            if (loginData.currentPassword === user.password) {
+                return true;
+            }
+        } else {
+            return false;
+        }
+    })
+    if (userObject.length === 1) {
+        return true;
+    } else {
+        return false;
+    }
+    // надо придумать что-то, что изменится, если придет 1 элемент
+    // и с помощью этого 1 элемента открыть профиль пользователя
+}
 
-    // checkLogin()
+app.post('/api/login/', (req, res) => {
+    const loginData = req.body;
+    let users = TEST_DATA_JSON.users; //все пользователи
+    let otvet = check(loginData, users); //проверяю есть ли 1 пользователь
+    if (otvet) {
+        res.json("SERVER.JS - LOGIN/PASSWORD EXIST");
+    } else {
+        res.json("ERROR IN LOGIN");
+    }
 
 })
 

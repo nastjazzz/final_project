@@ -1,8 +1,6 @@
 import React from "react";
 
-const LoginForm = ({loginData, checkCurrentLoginData, users})  => {
-    // props.match.path === '/login' ? setIsReg(false) : setIsReg(true);
-    //loginData = {currentLogin: '', currentPassword: ''}
+const LoginForm = ({loginData, checkLoginData})  => {
     return (
         <>
             <input
@@ -20,7 +18,8 @@ const LoginForm = ({loginData, checkCurrentLoginData, users})  => {
                 value={loginData.currentPassword}
             />
             <div>
-                <button onClick={() => checkCurrentLoginData(loginData, users)}>Войти</button>
+                {/*<button onClick={() => checkCurrentLoginData(loginData, users)}>Войти</button>*/}
+                <button onClick={checkLoginData}>Войти</button>
             </div>
         </>
     )

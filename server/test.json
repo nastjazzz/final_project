@@ -256,34 +256,7 @@
         "gender": "male",
         "breed": "лабрадор"
       }
-    },
-    {
-      "firstName": "11",
-      "petsName": "11",
-      "petsAge": "",
-      "login": "11",
-      "password": "11",
-      "password2": "11",
-      "id": 15
-    },
-    {
-      "firstName": "22",
-      "petsName": "22",
-      "petsAge": "",
-      "login": "22",
-      "password": "22",
-      "password2": "22",
-      "id": 16
-    },
-    {
-      "firstName": "Anastasiya",
-      "petsName": "gav",
-      "petsAge": "",
-      "login": "login",
-      "password": "58",
-      "password2": "58",
-      "id": 15
     }
   ],
-  "totalUsers": 17
+  "totalUsers": 14
 }
