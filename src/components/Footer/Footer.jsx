@@ -4,6 +4,7 @@ import './footer.css';
 const Footer = () => {
 	return (
 		<footer className='footer'>
+		<div className='footer_container'>
 			<div className="company_logo_wrapper">
 				<div className='company_logo'>
 					<a href='https://beeinterns.ru/'>
@@ -19,6 +20,7 @@ const Footer = () => {
 					<div className='developer'><a href='https://github.com/Volokhov-mda'>Никита Волохов</a></div>
 				</div>
 			</div>
+		</div>
 		</footer>
 	)
 }

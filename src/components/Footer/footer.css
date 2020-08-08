@@ -4,7 +4,17 @@
 	padding: 10px 0;
 
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
+}
+
+.footer_container {
+	width: 1200px;
+	max-width: 1200px;
+
+	margin: 0 20px;
+
+	display: flex;
+	justify-content: space-between;
 	align-items: center;
 }
 
