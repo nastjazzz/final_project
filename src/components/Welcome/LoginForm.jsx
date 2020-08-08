@@ -1,6 +1,7 @@
 import React from "react";
 
-const LoginForm = ({loginData, onLoginDataChange})  => {
+const LoginForm = ({loginData, checkCurrentLoginData, users})  => {
+    // props.match.path === '/login' ? setIsReg(false) : setIsReg(true);
     //loginData = {currentLogin: '', currentPassword: ''}
     return (
         <>
@@ -10,7 +11,6 @@ const LoginForm = ({loginData, onLoginDataChange})  => {
                 placeholder='Enter your login'
                 value={loginData.currentLogin}
                 className='input'
-                onChange={(e) => onLoginDataChange(e)}
             />
             <input
                 name='password'
@@ -18,9 +18,10 @@ const LoginForm = ({loginData, onLoginDataChange})  => {
                 placeholder='Enter your password'
                 className='input'
                 value={loginData.currentPassword}
-                onChange={(e) => onLoginDataChange(e)}
-
             />
+            <div>
+                <button onClick={() => checkCurrentLoginData(loginData, users)}>Войти</button>
+            </div>
         </>
     )
 }

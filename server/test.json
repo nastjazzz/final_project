@@ -1,0 +1,289 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "test",
+      "password": "test",
+      "email": "test@test.com",
+      "firstName": "Анастасия",
+      "lastName": "Замашнюк",
+      "location": {
+        "country": "Россия",
+        "city": "Москва",
+        "district": "САО"
+      },
+      "havePets": true,
+      "pets": {
+        "type": "dog",
+        "name": "Лаки",
+        "age": 1,
+        "gender": "female",
+        "breed": "овчарка"
+      }
+    },
+    {
+      "id": 2,
+      "login": "test2",
+      "password": "test2",
+      "firstName": "Станислав",
+      "lastName": "Тушников",
+      "location": {
+        "country": "Россия",
+        "city": "Москва",
+        "district": "ЮВАО"
+      },
+      "havePets": true,
+      "pets": {
+        "type": "dog",
+        "name": "Жуля",
+        "age": 10,
+        "gender": "female",
+        "breed": "такса"
+      }
+    },
+    {
+      "id": 3,
+      "firstName": "Иван",
+      "lastName": "Иванов",
+      "location": {
+        "country": "Россия",
+        "city": "Москва",
+        "district": "САО"
+      },
+      "havePets": true,
+      "pets": {
+        "type": "dog",
+        "name": "Рекс",
+        "age": 3,
+        "gender": "male",
+        "breed": "ретривер"
+      }
+    },
+    {
+      "id": 4,
+      "firstName": "Никита",
+      "lastName": "Никитин",
+      "location": {
+        "country": "Россия",
+        "city": "Москва",
+        "district": "ЮАО"
+      },
+      "havePets": true,
+      "pets": {
+        "type": "dog",
+        "name": "Джек",
+        "age": 2,
+        "gender": "male",
+        "breed": "хаски"
+      }
+    },
+    {
+      "id": 5,
+      "firstName": "Василий",
+      "lastName": "Васильев",
+      "location": {
+        "country": "Россия",
+        "city": "Москва",
+        "district": "САО"
+      },
+      "havePets": true,
+      "pets": {
+        "type": "dog",
+        "name": "Фиона",
+        "age": 1,
+        "gender": "female",
+        "breed": "овчарка"
+      }
+    },
+    {
+      "id": 6,
+      "firstName": "Анна",
+      "lastName": "Павлова",
+      "location": {
+        "country": "Россия",
+        "city": "Москва",
+        "district": "СЗАО"
+      },
+      "havePets": true,
+      "pets": {
+        "type": "dog",
+        "name": "Уна",
+        "age": 2,
+        "gender": "female",
+        "breed": "лабрадор"
+      }
+    },
+    {
+      "id": 7,
+      "firstName": "Алена",
+      "lastName": "Иванова",
+      "location": {
+        "country": "Россия",
+        "city": "Москва",
+        "district": "СВАО"
+      },
+      "havePets": true,
+      "pets": {
+        "type": "dog",
+        "name": "Арчи",
+        "age": 8,
+        "gender": "male",
+        "breed": "хаски"
+      }
+    },
+    {
+      "id": 8,
+      "firstName": "Екатерина",
+      "lastName": "Великая",
+      "location": {
+        "country": "Россия",
+        "city": "Москва",
+        "district": "ЦАО"
+      },
+      "havePets": true,
+      "pets": {
+        "type": "dog",
+        "name": "Барон",
+        "age": 4,
+        "gender": "male",
+        "breed": "овчарка"
+      }
+    },
+    {
+      "id": 9,
+      "firstName": "Татьяна",
+      "lastName": "Прус",
+      "location": {
+        "country": "Россия",
+        "city": "Москва",
+        "district": "ВАО"
+      },
+      "havePets": true,
+      "pets": {
+        "type": "dog",
+        "name": "Пуля",
+        "age": 2,
+        "gender": "female",
+        "breed": "ретривер"
+      }
+    },
+    {
+      "id": 10,
+      "firstName": "София",
+      "lastName": "Великая",
+      "location": {
+        "country": "Россия",
+        "city": "Москва",
+        "district": "ВАО"
+      },
+      "havePets": true,
+      "pets": {
+        "type": "dog",
+        "name": "Динка",
+        "age": 3,
+        "gender": "female",
+        "breed": "ретривер"
+      }
+    },
+    {
+      "id": 11,
+      "firstName": "Андрей",
+      "lastName": "Андреев",
+      "location": {
+        "country": "Россия",
+        "city": "Москва",
+        "district": "ЗелАО"
+      },
+      "havePets": true,
+      "pets": {
+        "type": "dog",
+        "name": "Каспер",
+        "age": 3,
+        "gender": "male",
+        "breed": "питбуль"
+      }
+    },
+    {
+      "id": 12,
+      "firstName": "Максим",
+      "lastName": "Максимов",
+      "location": {
+        "country": "Россия",
+        "city": "Москва",
+        "district": "ТАО"
+      },
+      "havePets": true,
+      "pets": {
+        "type": "dog",
+        "name": "Геральт",
+        "age": 0,
+        "gender": "male",
+        "breed": "питбуль"
+      }
+    },
+    {
+      "id": 13,
+      "firstName": "Александр",
+      "lastName": "Александров",
+      "location": {
+        "country": "Россия",
+        "city": "Москва",
+        "district": "НАО"
+      },
+      "havePets": true,
+      "pets": {
+        "type": "dog",
+        "name": "Сэнди",
+        "age": 5,
+        "gender": "female",
+        "breed": "такса"
+      }
+    },
+    {
+      "id": 14,
+      "firstName": "Мария",
+      "lastName": "Пенюгалова",
+      "location": {
+        "country": "Россия",
+        "city": "Москва",
+        "district": "ЗАО"
+      },
+      "havePets": true,
+      "pets": {
+        "type": "dog",
+        "name": "Зевс",
+        "age": 6,
+        "gender": "male",
+        "breed": "лабрадор"
+      }
+    },
+    {
+      "firstName": "11",
+      "petsName": "11",
+      "petsAge": "",
+      "login": "11",
+      "password": "11",
+      "password2": "11",
+      "id": 15
+    },
+    {
+      "firstName": "22",
+      "petsName": "22",
+      "petsAge": "",
+      "login": "22",
+      "password": "22",
+      "password2": "22",
+      "id": 16
+    },
+    {
+      "firstName": "Anastasiya",
+      "petsName": "gav",
+      "petsAge": "",
+      "login": "login",
+      "password": "58",
+      "password2": "58",
+      "id": 15
+    }
+  ],
+  "totalUsers": 17
+}
