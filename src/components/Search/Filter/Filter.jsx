@@ -13,6 +13,9 @@ function Filter({getState, onChangeCheckboxes}) {
 	const [menuHeightFirst, setMenuHeightFirst] = useState(21);
 	const [menuHeightSecond, setMenuHeightSecond] = useState(21);
 
+	let users = getState.users;
+	const types = React.useMemo(() => [...new Set(users.map(u => u.pets.type))], [users])
+	console.log('types:::::',types)
 	function calcHeightFirst(el) {
 		if (openFirst) {
 			const height = el.offsetHeight + 26;
@@ -54,13 +57,19 @@ function Filter({getState, onChangeCheckboxes}) {
 						<Parameter name='age 8'>Больше 8 лет</Parameter>
 					</ParametersBlock>
 
-					<ParametersBlock title='Порода'>
-						<Parameter name='breed ovcharka'>Овчарка</Parameter>
-						<Parameter name='breed retriver'>Ретривер</Parameter>
-						<Parameter name='breed pitbul'>Питбуль</Parameter>
-						<Parameter name='breed haski'>Хаски</Parameter>
-						<Parameter name='breed labrador'>Лабрадор</Parameter>
-						<Parameter name='breed taksa'>Такса</Parameter>
+					{/*<ParametersBlock title='Порода'>*/}
+					{/*	<Parameter name='breed ovcharka'>Овчарка</Parameter>*/}
+					{/*	<Parameter name='breed retriver'>Ретривер</Parameter>*/}
+					{/*	<Parameter name='breed pitbul'>Питбуль</Parameter>*/}
+					{/*	<Parameter name='breed haski'>Хаски</Parameter>*/}
+					{/*	<Parameter name='breed labrador'>Лабрадор</Parameter>*/}
+					{/*	<Parameter name='breed taksa'>Такса</Parameter>*/}
+					{/*</ParametersBlock>*/}
+
+					<ParametersBlock title='Тип'>
+						<Parameter name='type small'>Мелкая</Parameter>
+						<Parameter name='type medium'>Средняя</Parameter>
+						<Parameter name='type large'>Крупная</Parameter>
 					</ParametersBlock>
 
 					<ParametersBlock title='Район'>
