@@ -5,13 +5,11 @@
 .main {
     max-width: 1200px;
     margin: 0 auto;
-    /*height: 100vh;*/
 
     display: flex;
     justify-content: space-between;
 
     padding: 50px 0;
-
 }
 
 .title {
@@ -21,45 +19,50 @@
     color: #888888;
 }
 
+.auth__wrapper {
+    max-width: 350px;
+}
 
-
-@media  {
-    
+.auth__buttons {
+    display: flex;
+    margin-bottom: 20px;
+}
+.button__item {
+    width: 50%;
+    text-align: center;
+    padding: 10px 15px;
+    border: 1px solid #dddddd;
+}
+.button__item a {
+    color: #474a4d;
 }
 
 .form {
-    width: 400px;
     box-sizing: border-box;
 }
 
 .form input {
-    box-sizing: border-box;
-    font-size: 13px;
+    width: 100%;
+    color: #474a4d;
 
-    width: 300px;
-    height: 30px;
-    padding: 0 15px;
+    box-sizing: border-box;
+    padding: 10px 15px;
     margin-bottom: 15px;
+
     background: none;
     border: none;
     outline: none;
-    border-bottom: 1.5px solid #888888;
+    border-bottom: 1.5px solid #dddddd;
 }
 
-.form div {
-    width: 300px;
-    padding: 0 15px;
+.button {
     font-size: 14px;
     color: #474a4d;
-}
-
-.select {
+    float: right;
+    border: 1px solid #dddddd;
     background: none;
-    margin-bottom: 15px;
-    border: none;
-    margin-left: 30px;
-}
-
-.select > option {
-
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 15px;
 }

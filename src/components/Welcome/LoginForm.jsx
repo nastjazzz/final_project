@@ -6,20 +6,19 @@ const LoginForm = ({loginData, checkLoginData})  => {
             <input
                 name='login'
                 type='text'
-                placeholder='Enter your login'
+                placeholder='Введите логин'
                 value={loginData.currentLogin}
                 className='input'
             />
             <input
                 name='password'
                 type='password'
-                placeholder='Enter your password'
+                placeholder='Введите пароль'
                 className='input'
                 value={loginData.currentPassword}
             />
             <div>
-                {/*<button onClick={() => checkCurrentLoginData(loginData, users)}>Войти</button>*/}
-                <button onClick={checkLoginData}>Войти</button>
+                <button className='button' onClick={checkLoginData}>Войти</button>
             </div>
         </>
     )

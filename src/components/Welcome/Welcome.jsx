@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 // import Auth from './Form/Auth'
 import './welcome.css'
 // import "fontsource-roboto"
@@ -62,12 +62,16 @@ const Welcome = () => {
 		<div className='wrapper'>
 			<div className='main'>
 				<Title/>
-				<div>
-					<div>
-						<NavLink to='/login'>Логин</NavLink>
-						<NavLink to='/registration'>Регистрация</NavLink>
+				<div className='auth__wrapper'>
+					<div className='auth__buttons'>
+						<div className='button__item'><NavLink to='/login'>Логин</NavLink></div>
+						<div className='button__item'><NavLink to='/registration'>Регистрация</NavLink></div>
 					</div>
 					<form onChange={onChangeLoginData} onSubmit={onSubmit} className='form'>
+						{/* Костыль path='/' ?? */}
+						<Route path='/' exact render={() => <LoginForm
+							loginData={loginData}
+							checkLoginData={checkLoginData}/>}/>
 						<Route path='/login' render={() => <LoginForm
 							loginData={loginData}
 							checkLoginData={checkLoginData}/>}/>

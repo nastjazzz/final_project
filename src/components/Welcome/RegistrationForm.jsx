@@ -17,7 +17,7 @@ const RegistrationForm = ({regData, addNewUser}) => {
             <input name='reg_password' value={regData.password}type='password' placeholder='Придумайте пароль' />
             <input name='reg_password2' value={regData.password2}type='password' placeholder='Повторите пароль' />
             <div>
-                <button type='submit' onClick={addNewUser}>Зарегистрироваться</button>
+                <button className='button' type='submit' onClick={addNewUser}>Зарегистрироваться</button>
             </div>
         </>
     )
