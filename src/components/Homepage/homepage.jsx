@@ -4,7 +4,7 @@ import { YMaps, Map, Placemark, ZoomControl } from 'react-yandex-maps';
 import styles from './homepage.module.css';
 
 const mapData = {
-    center: [55.74, 37.2],
+    center: [55.74, 38],
     zoom: 10,
   };
   
@@ -20,11 +20,16 @@ function Homepage() {
                 <YMaps>
                     <div>
                         <Map defaultState={{ center: mapData.center, zoom: mapData.zoom, controls: [] }} width='100%' height='500px' id={styles.map}>
-                            {coordinates.map(coordinate => <Placemark geometry={coordinate} options={{ iconColor: '#2539af' }} />)}
+                            {coordinates.map(coordinate => <Placemark geometry={coordinate} options={{ iconColor: '#2539af' }} 
+                                                                      properties={{balloonContentHeader: "Кличка собаки (ФИО пользователя)",
+                                                                      balloonContentBody: "Какое-то <em>описание</em>",
+                                                                      balloonContentFooter: "<a href='/homepage' style='color: #2539af;text-decoration: underline'>Связаться</a>" }}
+                                                                      modules={['geoObject.addon.balloon', 'geoObject.addon.hint']} />)}
                             <div className={styles.map_description_wrapper}>
                                 <div className={styles.map_main_info}>Найди себе питомца, с которым ты хочешь погулять в Москве!</div>
                                 <div className={styles.map_sub_info}>Они уже готовы к прогулке!</div>
                             </div>
+                            <ZoomControl options={{ float: 'left' }} />
                         </Map>
                     </div>
                 </YMaps>
