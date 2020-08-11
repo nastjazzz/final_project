@@ -7,6 +7,7 @@ import Settings from "../Settings/Settings";
 import Recommendation from "../Search/Recommendation";
 import Messages from "../Messages/Messages";
 
+
 const Profile = (props) => {
 	// debugger;
 	// console.log('profile', props)

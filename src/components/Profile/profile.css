@@ -10,5 +10,110 @@
 
 .profile__component {
 	width: 900px;
-	background-color: khaki;
+	
+}
+.profile{
+	display:grid;
+	width:100%;
+	grid-template-areas: "img dog "
+						"info dog";
+	grid-template-columns: 250px 1fr;
+	grid-template-rows: 1fr 1fr;	
+	color:#888888;
+	border: 1px solid #888888;
+	margin-top:25px;
+	border-radius: 5px;
+	
+					 
+	
+
+}
+.user__img {
+	grid-area: img;
+	height: 250px;
+	width:250px;
+	background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.buttons__profile {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	min-height: 30%;
+}
+.button__profile {
+	min-width: 50%;
+	appearance: none;
+	border: 1px solid #888888;
+	/* border-color:#888888; */
+	border-radius: 5px;
+	/* background: white; */
+	color:black;
+	padding: 9px 20px;
+	font-size: 14px;
+	font-weight: normal;
+	
+	
+	
+}
+.button__profile:hover {
+	background: transparent;
+	color: #222;
+	border-color: #4676d7;
+}
+.button__profile:focus {
+
+}
+.info {
+	grid-area: info;
+	margin: 0 auto;
+	color:black;
+}
+.info__dog {
+	grid-area: dog;
+	/* background-color: powderblue; */
+}
+.info__dog-title {
+	text-align: center;
+}
+.dog__profile {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid #888888;
+	border-radius: 5px;
+	margin-left:20px;
+	margin-right:20px;
+
+}
+.dog__description {
+	margin-left: 20px;
+    font-size: 20px;
+    font-weight: normal;
+	
+
+}
+.dog__name {
+	margin-bottom: 40px;
+    font-size: 50px;
+    font-weight: bold;
+}
+.dog__img {
+	height: 200px;
+	width: 200px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-right:20px;
+	margin-top:20px;
+	margin-bottom:20px;
+	
+	
+}
+.info__dog-map {
+	border: 1px solid #888888;
+	/* border-color:#888888; */
+	border-radius: 5px;
+	/* min-height:300px; */
+	margin-left:20px;
+	margin-right:20px;
 }
