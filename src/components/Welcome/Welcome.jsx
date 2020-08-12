@@ -1,36 +1,29 @@
 import React, {useState} from 'react'
-// import Auth from './Form/Auth'
-import './welcome.css'
-// import "fontsource-roboto"
-// import Input from "@material-ui/core/Input";
 import axios from "axios";
-// import {Typography} from '@material-ui/core';
-import LoginForm from "./LoginForm";
-import Title from "./Title";
-import RegistrationForm from "./RegistrationForm";
-import {NavLink, Redirect } from "react-router-dom";
-import { Route } from "react-router-dom";
-import Profile from "../Profile/Profile";
+import {NavLink, Route} from "react-router-dom";
 import {history} from "../../index";
-// import {AuthError} from "../../App";
+
+import './welcome.css'
+import Title from "./Title";
+import LoginForm from "./LoginForm";
+import RegistrationForm from "./RegistrationForm";
 
 const Welcome = ({setIsAuth}) => {
 	const [loginData, setLoginData] = useState({'currentLogin': '', 'currentPassword': ''})
 	const [regData, setRegData] = useState({
 		'firstName': '',
 		'petsName': '',
-		'petsAge': '',
 		'login': '',
 		'password': '',
 		'password2': ''
 	})
 	const [isAuthError, setIsAuthError] = useState(false);
 
-	let onSubmit = (e) => {
+	const onSubmit = (e) => {
 		e.preventDefault();
 	}
 
-	let onChangeLoginData = (e) => {
+	const onChangeLoginData = (e) => {
 		if (e.target.name === 'login') {
 			setLoginData({...loginData, 'currentLogin': e.target.value})
 		} else if (e.target.name === 'password') {
@@ -48,14 +41,14 @@ const Welcome = ({setIsAuth}) => {
 		}
 	}
 
-	let putNewUserToServer = () => {
+	const putNewUserToServer = () => {
 		axios.post('/api/registration/', regData)
 			.then(response => {
 				console.log('/api/registration/ response:::', response)
 			})
 	}
 
-	let checkLoginData = () => {
+	const checkLoginData = () => {
 		axios.post('/api/login/', loginData)
 			.then(response => {
 				// console.log('/api/login/ response:::',response);
@@ -75,7 +68,6 @@ const Welcome = ({setIsAuth}) => {
 
 	return (
 		<div className='wrapper'>
-			{
 				<div className='main'>
 					<Title/>
 					<div className='auth__wrapper'>
@@ -88,8 +80,6 @@ const Welcome = ({setIsAuth}) => {
 							<div className='button__item'><NavLink to='/registration'>Регистрация</NavLink></div>
 						</div>
 						<form onChange={onChangeLoginData} onSubmit={onSubmit} className='form'>
-							{/*<Redirect from='/' to='/login' />*/}
-
 							{/* Костыль path='/' ?? */}
 							<Route path='/' exact render={() => <LoginForm
 								loginData={loginData}
@@ -102,7 +92,6 @@ const Welcome = ({setIsAuth}) => {
 						</form>
 					</div>
 				</div>
-			}
 		</div>
 	)
 }
