@@ -14,7 +14,7 @@ import Profile from "../Profile/Profile";
 import {history} from "../../index";
 // import {AuthError} from "../../App";
 
-const Welcome = ({setIsAuth, AuthError}) => {
+const Welcome = ({setIsAuth}) => {
 	const [loginData, setLoginData] = useState({'currentLogin': '', 'currentPassword': ''})
 	const [regData, setRegData] = useState({
 		'firstName': '',
@@ -65,7 +65,7 @@ const Welcome = ({setIsAuth, AuthError}) => {
 					setIsAuthError(false)
 					setIsAuth([true, data[1]]);
 					history.push('/profile/'+data[1])
-					return <Redirect to={`/profile/${data[1]}`} />
+					// return <Redirect to={`/profile/${data[1]}`} />
 				} else {
 					console.log('ничего не меняем');
 					setIsAuthError(true);

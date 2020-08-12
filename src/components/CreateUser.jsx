@@ -2,7 +2,7 @@ import React from 'react'
 import axios from "axios";
 
 //ребят, это просто тестовый компонент, чтобы понимать, что post запросы работают
-//я его подключала в компоненту <ProfileInfo/> чтобы понять, что все работает
+//я его подключала в компоненту <ProfileInfoTest/> чтобы понять, что все работает
 //
 const CreateUser = ({onChangeForm, createUser}) => {
     return (

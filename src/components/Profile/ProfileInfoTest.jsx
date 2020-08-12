@@ -1,7 +1,8 @@
 import React from 'react'
 import './profile.css'
+import {Link} from "react-router-dom";
 
-const ProfileInfo = ({user}) => {
+const ProfileInfoTest = ({user}) => {
 	return (
 		<div className="profile__component">
 			{
@@ -17,8 +18,9 @@ const ProfileInfo = ({user}) => {
 					)
 				})
 			}
+			<Link to={'/profile/10'} >Check</Link>
 		</div>
 	)
 }
 
-export default ProfileInfo
+export default ProfileInfoTest
