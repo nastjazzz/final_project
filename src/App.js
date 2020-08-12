@@ -4,6 +4,7 @@ import Header from './components/Header/Header'
 import './App.css'
 import Footer from './components/Footer/Footer'
 import Profile from './components/Profile/Profile'
+import Homepage from './components/Homepage/homepage'
 
 
 function App(props) {
@@ -13,7 +14,8 @@ function App(props) {
 			<Header/>
 			<div className="content__wrapper">
 				{/*<Welcome/>*/}
-				<Profile/>
+				{/* <Profile/> */}
+				<Homepage />
 			</div>
 			<Footer/>
 		</div>
