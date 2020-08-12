@@ -1,3 +1,70 @@
 .footer {
-	background-color: #ccc;
+	background-color: #fafafa;
+
+	padding: 10px 0;
+
+	display: flex;
+	justify-content: center;
+}
+
+.footer_container {
+	width: 1200px;
+	max-width: 1200px;
+
+	margin: 0 20px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.company_logo {
+	  font-size: 17px;
+	  font-weight: 700;
+
+	  /* Градиент */
+	  background: rgba(168,9,168,1);
+	  background: -moz-linear-gradient(left, rgba(168,9,168,1) 0%, rgba(153,9,153,1) 0%, rgba(147,10,155,1) 8%, rgba(124,13,165,1) 41%, rgba(107,16,173,1) 66%, rgba(24,13,181,1) 100%);
+	  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(168,9,168,1)), color-stop(0%, rgba(153,9,153,1)), color-stop(8%, rgba(147,10,155,1)), color-stop(41%, rgba(124,13,165,1)), color-stop(66%, rgba(107,16,173,1)), color-stop(100%, rgba(24,13,181,1)));
+	  background: -webkit-linear-gradient(left, rgba(168,9,168,1) 0%, rgba(153,9,153,1) 0%, rgba(147,10,155,1) 8%, rgba(124,13,165,1) 41%, rgba(107,16,173,1) 66%, rgba(24,13,181,1) 100%);
+	  background: -o-linear-gradient(left, rgba(168,9,168,1) 0%, rgba(153,9,153,1) 0%, rgba(147,10,155,1) 8%, rgba(124,13,165,1) 41%, rgba(107,16,173,1) 66%, rgba(24,13,181,1) 100%);
+	  background: -ms-linear-gradient(left, rgba(168,9,168,1) 0%, rgba(153,9,153,1) 0%, rgba(147,10,155,1) 8%, rgba(124,13,165,1) 41%, rgba(107,16,173,1) 66%, rgba(24,13,181,1) 100%);
+	  background: linear-gradient(to right, rgba(168,9,168,1) 0%, rgba(153,9,153,1) 0%, rgba(147,10,155,1) 8%, rgba(124,13,165,1) 41%, rgba(107,16,173,1) 66%, rgba(24,13,181,1) 100%);
+	  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a809a8', endColorstr='#180db5', GradientType=1 );
+
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.developed_wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.developed_title {
+	margin-bottom: 5px;
+	margin-right: 20px;
+
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.developers_wrapper {
+	display: flex;
+}
+
+.developer {
+	margin-bottom: 3px;
+	margin-right: 15px;
+
+	font-size: 13px;
+	font-weight: 400;
+}
+
+.developer:last-child {
+	margin: 0;
 }
