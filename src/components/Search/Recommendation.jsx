@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import './recommendation.css'
 import axios from 'axios';
 
-
 //фильтры
+import AgeFilter from "./Filter/components/FilterComponents/AgeFilter";
 import Filter from "./Filter/Filter";
 import TypeFilter from "./Filter/components/FilterComponents/TypeFilter";
 import GenderFilter from "./Filter/components/FilterComponents/GenderFilter";
@@ -19,6 +19,7 @@ const Recommendation = () => {
 	const [users, setUsers] = useState([]);
 
 	//arr of filter value
+	const [age, setAge] = React.useState(['','']);
 	const [type, setType] = React.useState([]);
 	const [gender, setGender] = React.useState([]);
 	const [district, setDistrict] = React.useState([]);
@@ -51,6 +52,9 @@ const Recommendation = () => {
 	const districts = React.useMemo(() => [...new Set(users.map(u => u.location.district))], [users])
 	console.log('districts:::', districts);
 
+	const onAgeChange = ({ target: { value, dataset: { index } } }) => {
+		setAge(age.map((n, i) => i === +index ? value : n));
+	};
 
 	const onTypeChange = ({target: {checked, value}}) => (
 		setType((!type.includes(value) && checked) ? [...type, value] : type.filter(n => n !== value))
@@ -62,11 +66,14 @@ const Recommendation = () => {
 		setDistrict((!district.includes(value) && checked) ? [...district, value] : district.filter(d => d !== value))
 	);
 
+
 //новый массив объектов отфильтрованных пользователей
 	filteredResults = users.filter(u => (
 		(!type.length || type.includes(u.pets.type)) &&
 		(!gender.length || gender.includes(u.pets.gender)) &&
-		(!district.length || district.includes(u.location.district))
+		(!district.length || district.includes(u.location.district)) &&
+		(!age[0].length || age[0] <= u.pets.age) &&
+		(!age[1].length || age[1] >= u.pets.age)
 	));
 
 	return (
@@ -74,6 +81,9 @@ const Recommendation = () => {
 			<Filter>
 				<ParametersBlock title='Пол'>
 					<GenderFilter value={gender} onChange={onGenderChange} genders={genders} />
+				</ParametersBlock>
+				<ParametersBlock title='Возраст'>
+					<AgeFilter value={age} onChange={onAgeChange} />
 				</ParametersBlock>
 				<ParametersBlock title='Тип собаки'>
 					<TypeFilter value={type} onChange={onTypeChange} types={types} />
