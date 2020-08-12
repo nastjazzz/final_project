@@ -5,7 +5,7 @@ import Filter from "./Filter/Filter";
 import SorryFilter from "./SorryFilter";
 import UsersCards from "./UsersCard";
 
-class Recommendation extends React.Component {
+class 	Recommendation extends React.Component {
 	state = {
 		user: {},
 		users: [],

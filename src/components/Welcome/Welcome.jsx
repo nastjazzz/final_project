@@ -8,10 +8,13 @@ import axios from "axios";
 import LoginForm from "./LoginForm";
 import Title from "./Title";
 import RegistrationForm from "./RegistrationForm";
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect } from "react-router-dom";
 import { Route } from "react-router-dom";
+import Profile from "../Profile/Profile";
+import {history} from "../../index";
+// import {AuthError} from "../../App";
 
-const Welcome = () => {
+const Welcome = ({setIsAuth, AuthError}) => {
 	const [loginData, setLoginData] = useState({'currentLogin': '', 'currentPassword': ''})
 	const [regData, setRegData] = useState({
 		'firstName': '',
@@ -21,6 +24,7 @@ const Welcome = () => {
 		'password': '',
 		'password2': ''
 	})
+	const [isAuthError, setIsAuthError] = useState(false);
 
 	let onSubmit = (e) => {
 		e.preventDefault();
@@ -47,40 +51,58 @@ const Welcome = () => {
 	let putNewUserToServer = () => {
 		axios.post('/api/registration/', regData)
 			.then(response => {
-				console.log('/api/registration/ response:::', response);
+				console.log('/api/registration/ response:::', response)
 			})
 	}
+
 	let checkLoginData = () => {
 		axios.post('/api/login/', loginData)
 			.then(response => {
-				console.log('/api/login/ response:::',response);
-				//тут придет какой-то ответ  надо что-то придумать дальше
+				// console.log('/api/login/ response:::',response);
+				let data = response.data;
+				// console.log('data::::',data);
+				if (data[0] === true) {
+					setIsAuthError(false)
+					setIsAuth([true, data[1]]);
+					history.push('/profile/'+data[1])
+					return <Redirect to={`/profile/${data[1]}`} />
+				} else {
+					console.log('ничего не меняем');
+					setIsAuthError(true);
+				}
 			})
 	}
 
 	return (
 		<div className='wrapper'>
-			<div className='main'>
-				<Title/>
-				<div className='auth__wrapper'>
-					<div className='auth__buttons'>
-						<div className='button__item'><NavLink to='/login'>Логин</NavLink></div>
-						<div className='button__item'><NavLink to='/registration'>Регистрация</NavLink></div>
+			{
+				<div className='main'>
+					<Title/>
+					<div className='auth__wrapper'>
+						{
+							isAuthError ?
+								<div className='error'>Некорректный логин и/или пароль</div> : null
+						}
+						<div className='auth__buttons'>
+							<div className='button__item'><NavLink to='/login'>Логин</NavLink></div>
+							<div className='button__item'><NavLink to='/registration'>Регистрация</NavLink></div>
+						</div>
+						<form onChange={onChangeLoginData} onSubmit={onSubmit} className='form'>
+							{/*<Redirect from='/' to='/login' />*/}
+
+							{/* Костыль path='/' ?? */}
+							<Route path='/' exact render={() => <LoginForm
+								loginData={loginData}
+								checkLoginData={checkLoginData}/>}/>
+							<Route exact path='/login' render={() => <LoginForm
+								loginData={loginData}
+								checkLoginData={checkLoginData}/>}/>
+							<Route exact path='/registration' render={() => <RegistrationForm addNewUser={putNewUserToServer}
+								regData={regData}/>}/>
+						</form>
 					</div>
-					<form onChange={onChangeLoginData} onSubmit={onSubmit} className='form'>
-						{/* Костыль path='/' ?? */}
-						<Route path='/' exact render={() => <LoginForm
-							loginData={loginData}
-							checkLoginData={checkLoginData}/>}/>
-						<Route path='/login' render={() => <LoginForm
-							loginData={loginData}
-							checkLoginData={checkLoginData}/>}/>
-						<Route path='/registration' render={() => <RegistrationForm
-							addNewUser={putNewUserToServer}
-							regData={regData}/>}/>
-					</form>
 				</div>
-			</div>
+			}
 		</div>
 	)
 }

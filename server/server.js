@@ -37,7 +37,7 @@ app.post('/api/registration/', (req, res) => {
     res.json("SERVER.JS - USER ADD!!!");
 })
 
-let check = (loginData, users) => {
+const checkLoginData = (loginData, users) => {
     let userObject = users.filter(user => {
         if (loginData.currentLogin === user.login) {
             if (loginData.currentPassword === user.password) {
@@ -47,25 +47,26 @@ let check = (loginData, users) => {
             return false;
         }
     })
-    if (userObject.length === 1) {
-        return true;
-    } else {
-        return false;
-    }
-    // надо придумать что-то, что изменится, если придет 1 элемент
-    // и с помощью этого 1 элемента открыть профиль пользователя
+    return userObject;
 }
 
 app.post('/api/login/', (req, res) => {
     const loginData = req.body;
     let users = TEST_DATA_JSON.users; //все пользователи
-    let otvet = check(loginData, users); //проверяю есть ли 1 пользователь
-    if (otvet) {
-        res.json("SERVER.JS - LOGIN/PASSWORD EXIST");
-    } else {
-        res.json("ERROR IN LOGIN");
-    }
+    let user = checkLoginData(loginData, users);
+    let id = (user.length === 1 && user.map(u => u.id)); //прошедший проверку id пользователя
+    console.log(user);
+    console.log(id);
+    id ? res.json([true, ...id]) : res.json(false);
+})
 
+app.get('/api/profile/:id', (req, res) => {
+    console.log('Request URL:', req.originalUrl);
+    console.log('Request ID:', req.params.id);
+    const id = +req.params.id;
+    const user = TEST_DATA_JSON.users.filter(u => u.id === id);
+    console.log(user);
+    res.json(user);
 })
 
 app.listen(port, () => {
