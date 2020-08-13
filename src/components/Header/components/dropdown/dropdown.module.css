@@ -136,3 +136,28 @@
     width: 100%;
     height: 100%;
   }
+
+@media (max-width: 660px) {
+  :root {
+    --translate: 0;
+    --border: none;
+    --border-radius: 0;
+    --bg:  #eee;
+  }
+
+  .dropdown {
+    width: 100vw;
+    left: 0;
+    top: 39px;
+  }
+
+  .menu__item {
+    padding: 8px 25px;
+
+    border-bottom: 1px dotted #ddd;
+  }
+
+  .menu__item:last-child {
+    border-bottom: none;
+  }
+}

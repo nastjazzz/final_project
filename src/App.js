@@ -16,11 +16,11 @@ function App() {
 	return (
 		<Router history={history}>
 			<div className="App">
-        <Header/>
-				<Route path='/' render={() => !isAuth[0] && <Welcome setIsAuth={setIsAuth}/>}/>
+        		<Header/>
+				{/* <Route path='/' render={() => !isAuth[0] && <Welcome setIsAuth={setIsAuth}/>}/>
 				<PrivateRoute path='/profile/:id' isAuth={isAuth} component={Profile} />
-        <Homepage />
-				<Footer/>
+        		<Homepage /> */}
+				{/* <Footer/> */}
 			</div>
 		</Router>
 	)
