@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { history } from "./index";
-import { Route, Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 import { PrivateRoute } from "./components/Router/PrivateRoute";
 import './App.css'
 import Header from './components/Header/Header'
@@ -13,13 +13,13 @@ function App() {
 	const [isAuth, setIsAuth] = useState([false, 0]);
 
 	return (
-		<Router history={history}>
+		// <Router history={history}>
 			<div className="App">
-				<Route path='/' render={() => !isAuth[0] && <Welcome setIsAuth={setIsAuth}/>}/>
+				<Route path='/' render={(props) => !isAuth[0] && <Welcome {...props} setIsAuth={setIsAuth}/>}/>
 				<PrivateRoute path='/profile/:id' isAuth={isAuth} component={Profile} />
 				<Footer/>
 			</div>
-		</Router>
+		// </Router>
 	)
 }
 

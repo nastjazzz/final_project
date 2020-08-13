@@ -5,13 +5,13 @@ import App from './App'
 import {BrowserRouter} from "react-router-dom";
 import {createBrowserHistory} from 'history';
 
-export const history = createBrowserHistory();
+const history = createBrowserHistory();
 
 ReactDOM.render(
-    <BrowserRouter>
+    <BrowserRouter history={history}>
         <React.StrictMode>
             <App/>
-        </React.StrictMode>,
+        </React.StrictMode>
     </BrowserRouter>,
     document.getElementById('root')
 )

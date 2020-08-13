@@ -1,14 +1,16 @@
 import React, {useState} from 'react'
 import axios from "axios";
 import {NavLink, Route} from "react-router-dom";
-import {history} from "../../index";
+// import {history} from "../../index";
 
 import './welcome.css'
 import Title from "./Title";
 import LoginForm from "./LoginForm";
 import RegistrationForm from "./RegistrationForm";
 
-const Welcome = ({setIsAuth}) => {
+const Welcome = ({setIsAuth, ...props}) => {
+	const history = props.history;
+	console.log('welcome props', props.history);
 	const [loginData, setLoginData] = useState({'currentLogin': '', 'currentPassword': ''})
 	const [regData, setRegData] = useState({
 		'firstName': '',
