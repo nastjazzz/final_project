@@ -20,7 +20,7 @@ function App() {
 				{/* <Route path='/' render={() => !isAuth[0] && <Welcome setIsAuth={setIsAuth}/>}/>
 				<PrivateRoute path='/profile/:id' isAuth={isAuth} component={Profile} />
         		<Homepage /> */}
-				{/* <Footer/> */}
+				<Footer/>
 			</div>
 		</Router>
 	)
