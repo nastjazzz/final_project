@@ -1,5 +1,6 @@
 import React from "react";
 import dogPhoto from "../dogPhoto.jpg";
+import {NavLink} from "react-router-dom";
 
 const UsersCards = ({ getState }) => {
     let usersFromServer = [...getState.users];
@@ -11,10 +12,10 @@ const UsersCards = ({ getState }) => {
             <div className='card__wrapper' key={user.id}>
                 <div className='pets-info'>
                     <div className='pets-info__name'>
-                        {user.pets.name}, {user.pets.age}
+                        <NavLink to={'/profile/' + user.id}>{user.pets.name},</NavLink>{user.pets.age}
                     </div>
                     <div className='pets-info__photo'>
-                        <img src={dogPhoto} alt="user`s dog" />
+                        <img src={user.pets.photo || dogPhoto} alt="user`s dog" />
                     </div>
                 </div>
                 <div className='user-info'>
