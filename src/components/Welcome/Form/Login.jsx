@@ -4,14 +4,17 @@ import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
 
 const Login = (props) => {
-	console.log('Login props', props)
+	// console.log('Login props', props);
+	// console.log('match.path:::', props);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [isReady, setReady] = useState(false);
-	const isReg = props.match.path === "/registration" ? true : false;
+	// const isReg = props.match.path === "/registration" ? true : false;
+	const [isReg, setReg] = useState(false);
 
 	const onSubmit = (e) => {
 		e.preventDefault();
+		console.log('e.target', e.target);
 		setReady(true);
 	};
 
