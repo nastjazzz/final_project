@@ -5,6 +5,8 @@
 
 	display: flex;
 	justify-content: center;
+
+	flex: 0 0 auto;
 }
 
 .footer_container {
