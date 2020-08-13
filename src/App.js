@@ -17,9 +17,11 @@ function App() {
 		<Router history={history}>
 			<div className="App">
         		<Header/>
-				<Route path='/' render={() => !isAuth[0] && <Welcome setIsAuth={setIsAuth}/>}/>
-				{/* <PrivateRoute path='/profile/:id' isAuth={isAuth} component={Profile} />
-        		<Homepage /> */}
+				<div className='content_wrapper'>
+					<Route path='/' render={() => !isAuth[0] && <Welcome setIsAuth={setIsAuth}/>}/>
+					{/* <PrivateRoute path='/profile/:id' isAuth={isAuth} component={Profile} />
+					<Homepage /> */}
+				</div>
 				<Footer/>
 			</div>
 		</Router>
