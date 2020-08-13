@@ -68,3 +68,18 @@ a:hover {
 .developer:last-child {
 	margin: 0;
 }
+
+@media (max-width: 660px) {
+	.footer_container {
+		margin: 0 50px;
+	}
+
+	.developed_wrapper {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.developers_wrapper {
+		flex-direction: column;
+	}
+}
