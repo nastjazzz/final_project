@@ -1,3 +1,8 @@
+:root {
+    --btn-like-padding: 10px 15px;
+    --form-text-size: 16px;
+}
+
 .wrapper {
     padding: 50px 20px;
 }
@@ -8,6 +13,7 @@
 
     display: flex;
     justify-content: space-between;
+    /* align-items: center; */
 
     padding: 50px 0;
     box-sizing: border-box;
@@ -18,9 +24,112 @@
     margin-left: 15px;
 }
 
+.title {
+    max-width: 450px;
+
+    margin-right: 10px;
+
+    font-size: 50px;
+    font-weight: 300;
+    color: #888888;
+}
+
+.auth__wrapper {
+    max-width: 350px;
+}
+
+.auth__buttons {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.button__item {
+    width: 50%;
+
+    font-size: var(--form-text-size);
+    text-align: center;
+    padding: var(--btn-like-padding);
+    border: 1px solid #dddddd;
+}
+
+.button__item a {
+    color: #474a4d;
+}
+
+.form {
+    box-sizing: border-box;
+}
+
+.form input {
+    width: 100%;
+    color: #474a4d;
+
+    box-sizing: border-box;
+    padding: var(--btn-like-padding);
+    margin-bottom: 15px;
+
+    font-size: var(--form-text-size);
+
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid #dddddd;
+}
+
+.button {
+    font-size: 14px;
+    color: #474a4d;
+    float: right;
+    border: 1px solid #dddddd;
+    background: none;
+    outline: none;
+    padding: var(--btn-like-padding);
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
 .error {
     text-align: center;
     color: #c90000;
     font-weight: 500;
     margin-bottom: 15px;
+}
+
+@media (max-width: 660px) {
+    :root {
+        --btn-like-padding: 5px;
+        --form-text-size: 12px;
+    }
+
+    .wrapper {
+        padding: 10px 20px;
+    }
+
+    .main {
+        padding: 25px 0;
+    }
+
+    .title {
+        font-size: 33px;
+        margin-right: 20px;
+    }
+
+    .auth__buttons {
+        margin-bottom: 10px;
+    }
+
+    .form input {
+        margin-bottom: 10px;
+    }
+
+    .button {
+        margin-top: 7px;
+    }
+}
+
+@media (max-width: 400px) {
+    .title {
+        font-size: 23px;
+        margin-right: 20px;
+    }
 }

@@ -4,7 +4,6 @@ import profileImg from './user.svg';
 
 // Import components.
 import Logo from './components/logo/logo';
-import Link from './components/link/link';
 import Avatar from './components/avatar/avatar';
 import Dropdown from './components/dropdown/dropdown';
 
