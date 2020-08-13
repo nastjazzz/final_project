@@ -7,6 +7,7 @@ import Header from './components/Header/Header'
 import Welcome from './components/Welcome/Welcome'
 import Profile from './components/Profile/Profile'
 import Footer from './components/Footer/Footer'
+import Homepage from './components/Homepage/homepage'
 
 function App() {
 	//[false,0] - unAuth, [true,id] - auth
@@ -15,8 +16,10 @@ function App() {
 	return (
 		<Router history={history}>
 			<div className="App">
+        <Header/>
 				<Route path='/' render={() => !isAuth[0] && <Welcome setIsAuth={setIsAuth}/>}/>
 				<PrivateRoute path='/profile/:id' isAuth={isAuth} component={Profile} />
+        <Homepage />
 				<Footer/>
 			</div>
 		</Router>
