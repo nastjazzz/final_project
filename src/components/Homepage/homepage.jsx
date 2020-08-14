@@ -3,15 +3,25 @@ import './homepage.module.css';
 import { YMaps, Map, Placemark, ZoomControl } from 'react-yandex-maps';
 import styles from './homepage.module.css';
 
+const windowWidth = window.innerWidth;
+
 const mapData = {
-    center: [55.74, 38],
+    Y: windowWidth >= 950 ? 38 : (windowWidth >= 660 ? 37.85 : (windowWidth > 500 ? 37.77 : 37.6)),
+    X: 55.74,
     zoom: 10,
   };
   
-  const coordinates = [
+let coordinates = [
     [55.684758, 37.738521],
     [57.684758, 39.738521]
-  ];
+];
+
+window.onresize = function() {
+    if (window.innerWidth <= 950) {
+        mapData.center = [55, 38];
+        console.log('вроде да');
+    }
+};
 
 function Homepage() {
     return (
@@ -33,7 +43,9 @@ function Homepage() {
                                 </nav>
                             </div>
                         </div>
-                        <Map defaultState={{ center: mapData.center, zoom: mapData.zoom, controls: [] }} width='100%' height='500px' id={styles.map}>
+                        <Map defaultState={{ 
+                            center: [mapData.X, mapData.Y], 
+                            zoom: mapData.zoom, controls: [] }} width='100%' height='500px' id={styles.map}>
                             {coordinates.map(coordinate => <Placemark geometry={coordinate} options={{ iconColor: '#2539af' }} 
                                                                       properties={{balloonContentHeader: "Кличка собаки (ФИО пользователя)",
                                                                       balloonContentBody: "Какое-то <em>описание</em>",
