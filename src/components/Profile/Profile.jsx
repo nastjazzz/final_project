@@ -4,7 +4,7 @@ import { Route } from "react-router-dom";
 
 import './profile.css'
 import Sidebar from '../Sidebar/Sidebar'
-import ProfileInfo from './ProfileInfo'
+// import ProfileInfo from './ProfileInfo'
 // import { Route } from "react-router-dom";
 // import Settings from "../Settings/Settings";
 // import Recommendation from "../Search/Recommendation";
