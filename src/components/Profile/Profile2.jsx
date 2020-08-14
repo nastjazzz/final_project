@@ -8,31 +8,37 @@ import Messages from "../Messages/Messages";
 import Recommendation from "../Search/Recommendation";
 import Settings from "../Settings/Settings";
 import ProfileInfoTest from './ProfileInfoTest'
-import { useCookies } from 'react-cookie';
 
-const Profile = ({...props}) => {
-	const [userData, setUserData] = useState([]);
-	const [cookie, setCookie] = useCookies(['name']);
-	console.log('userData Profile', userData);
+const Profile2 = ({...props}) => {
+
+	// let user = {};
+	const [user, setUser] = useState({});
+	console.log('15:  user Profile = ', user);
+
+//если нет, значит null
+//если есть, значит не null
+	const check = localStorage.getItem("user"); //если есть, тогда это объект с пользователем
+	console.log('20:  check = ',check);
+
 	let id = props.match.params.id;
-	console.log('profile id',id);
-	console.log('profile props',props);
-	// get
+	console.log('23: profile id = ',id);
 
 	useEffect(() => {
 		axios.get(`/api/profile/${id}`)
 			.then(response => {
-				console.log('USER ID RESP', response);
-				let data = response.data;
-				setUserData(data);
+				console.log('28:  USER ID RESP', response);
+				let data = response.data; //object
+				setUser(data);
+				// user = data;
 			})
 	}, [id]);
 
 	return (
 		<div className="content">
-			<Sidebar />
+			{check !== null ? <Sidebar /> : null}
+			{/*<Sidebar />*/}
+			{ user.id !== undefined ?  <ProfileInfoTest id={id} user={user}/> : null}
 
-			<Route path={`/profile/${id}`} exact render={() => <ProfileInfoTest user={userData}/>}/>
 			{/*<Route path={`/profile/${id}/messages`} exact render={() => <Messages/>}/>*/}
 			{/*<Route path={`/profile/${id}/settings`} render={() => <Settings/>}/>*/}
 			<Route path='/search' exact render={() => <Recommendation/>}/>
@@ -42,4 +48,4 @@ const Profile = ({...props}) => {
 	)
 }
 
-export default Profile
+export default Profile2

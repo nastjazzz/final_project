@@ -1,25 +1,30 @@
 import React, {useState} from 'react'
 import { history } from "./index";
-import { Route, BrowserRouter as Router } from 'react-router-dom'
-import { PrivateRoute } from "./components/Router/PrivateRoute";
+import { Route, Router, Switch } from 'react-router-dom'
+import cookie from 'react-cookie'
+
 import './App.css'
 import Header from './components/Header/Header'
 import Welcome from './components/Welcome/Welcome'
 import Profile from './components/Profile/Profile'
 import Footer from './components/Footer/Footer'
 import Homepage from './components/Homepage/homepage'
+import Recommendation from "./components/Search/Recommendation";
+
+import Profile2 from "./components/Profile/Profile2";
 
 function App() {
-	//[false,0] - unAuth, [true,id] - auth
-	const [isAuth, setIsAuth] = useState([false, 0]);
-
 	return (
 		// <Router history={history}>
 		<div className="App">
 			<Header/>
-			<Route path='/' render={(props) => !isAuth[0] && <Welcome {...props} setIsAuth={setIsAuth}/>}/>
-			<PrivateRoute path='/profile/:id' isAuth={isAuth} component={Profile}/>
-			<Homepage/>
+			<Route exact path={['/', '/login', '/registration']} render={(props) => <Welcome {...props}/>}/>
+			{/*<Route exact path='/profile/:id' render={(props) => <Profile {...props} />}/>*/}
+			<Route exact path='/profile/:id' render={(props) => <Profile2 {...props} />}/>
+
+			<Route path='/search' exact render={() => <Recommendation/>}/>
+
+			<Route path='/map' render={() => <Homepage/>}/>
 			<Footer/>
 		</div>
 		// </Router>
