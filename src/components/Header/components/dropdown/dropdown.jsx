@@ -41,7 +41,7 @@ function NavItem(props) {
 function DropdownMenu(props) {
     const [activeMenu, setActiveMenu] = useState('main');
     // КОСТЫЛЬ!!!
-    const [menuHeight, setMenuHeight] = useState(73);
+    const [menuHeight, setMenuHeight] = useState(110);
     // КОСТЫЛЬ КОНЧИЛСЯ!!!
     const dropdownRef = useRef(null);
 
@@ -68,6 +68,8 @@ function DropdownMenu(props) {
                 <div className={styles.menu}>
                     <DropdownItem>My Profile</DropdownItem>
                     <DropdownItem leftIcon={<CogIcon />} rightIcon={<ChevronIcon />} goToMenu='settings'>Settings</DropdownItem>
+                    <DropdownItem>Выйти</DropdownItem>
+                    {/* localStorage.removeItem("user") - вот это надо как-то прикрепить к клику */}
                 </div>
             </CSSTransition>
 

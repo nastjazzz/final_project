@@ -57,7 +57,7 @@ app.post('/api/login/', (req, res) => {
     let id = (user.length === 1 && user.map(u => u.id)); //прошедший проверку id пользователя
     console.log(user);
     console.log(id);
-    id ? res.json([true, ...id]) : res.json(false);
+    id ? res.json(...user) : res.json(false);
 })
 
 app.get('/api/profile/:id', (req, res) => {
@@ -65,8 +65,8 @@ app.get('/api/profile/:id', (req, res) => {
     console.log('Request ID:', req.params.id);
     const id = +req.params.id;
     const user = TEST_DATA_JSON.users.filter(u => u.id === id);
-    console.log(user);
-    res.json(user);
+    console.log(...user);
+    res.json(...user);
 })
 
 app.listen(port, () => {

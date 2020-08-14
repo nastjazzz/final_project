@@ -14,11 +14,11 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Лаки",
 				"age": 1,
-				"gender": "female",
-				"breed": "овчарка"
+				"gender": "девочка",
+				"breed": "овчарка",
+				"type": "крупная"
 			}
 		},
 		{
@@ -34,11 +34,12 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Жуля",
+				"photo": "https://avatars.mds.yandex.net/get-zen_doc/1706643/pub_5de6717a027a1500c46f714c_5de6a9141d656a00aeaf40c6/scale_1200",
 				"age": 10,
-				"gender": "female",
-				"breed": "такса"
+				"gender": "девочка",
+				"breed": "такса",
+				"type": "мелкая"
 			}
 		},
 		{
@@ -52,11 +53,12 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Рекс",
+				"photo": "https://i.pinimg.com/736x/8f/ae/72/8fae72189289f99f113754e8178ff28c--animale-retriever-puppies.jpg",
 				"age": 3,
-				"gender": "male",
-				"breed": "ретривер"
+				"gender": "мальчик",
+				"breed": "ретривер",
+				"type": "крупная"
 			}
 		},
 		{
@@ -70,11 +72,12 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Джек",
-				"age": 2,
-				"gender": "male",
-				"breed": "хаски"
+				"photo": "https://i.pinimg.com/originals/a5/72/43/a5724380d54ae1abfc2a153dac76cb74.jpg",
+				"age": 0.5,
+				"gender": "мальчик",
+				"breed": "хаски",
+				"type": "крупная"
 			}
 		},
 		{
@@ -88,11 +91,12 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Фиона",
 				"age": 1,
-				"gender": "female",
-				"breed": "овчарка"
+				"gender": "девочка",
+				"breed": "овчарка",
+				"photo": "https://yt3.ggpht.com/a/AATXAJwP2WFTK9eQYiMAswPQqeMkfy5Mt4ioyoq3FQ=s900-c-k-c0xffffffff-no-rj-mo",
+				"type": "крупная"
 			}
 		},
 		{
@@ -106,11 +110,12 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Уна",
 				"age": 2,
-				"gender": "female",
-				"breed": "лабрадор"
+				"gender": "девочка",
+				"breed": "лабрадор",
+				"photo": "https://prokamen.com/wp-content/uploads/labrador-664.jpg",
+				"type": "крупная"
 			}
 		},
 		{
@@ -124,11 +129,12 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Арчи",
 				"age": 8,
-				"gender": "male",
-				"breed": "хаски"
+				"gender": "мальчик",
+				"breed": "хаски",
+				"photo": "https://funik.ru/wp-content/uploads/2018/10/a2158910befacbdd595c-700x933.jpg",
+				"type": "крупная"
 			}
 		},
 		{
@@ -142,11 +148,12 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Барон",
 				"age": 4,
-				"gender": "male",
-				"breed": "овчарка"
+				"gender": "мальчик",
+				"breed": "овчарка",
+				"photo": "https://avatars.mds.yandex.net/get-pdb/1939042/668fe5e5-1549-414f-9b05-2460fcbdcca7/s600",
+				"type": "крупная"
 			}
 		},
 		{
@@ -160,11 +167,12 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Пуля",
 				"age": 2,
-				"gender": "female",
-				"breed": "ретривер"
+				"gender": "девочка",
+				"breed": "ретривер",
+				"photo": "https://i.pinimg.com/236x/4c/29/03/4c29039a481d1a383ba0443f192f319b--retriever-puppies-psy.jpg",
+				"type": "крупная"
 			}
 		},
 		{
@@ -178,11 +186,11 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Динка",
 				"age": 3,
-				"gender": "female",
-				"breed": "ретривер"
+				"gender": "девочка",
+				"breed": "ретривер",
+				"type": "крупная"
 			}
 		},
 		{
@@ -196,11 +204,12 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Каспер",
 				"age": 3,
-				"gender": "male",
-				"breed": "питбуль"
+				"gender": "мальчик",
+				"breed": "питбуль",
+				"photo": "https://i.pinimg.com/236x/44/7a/05/447a05e4f1b3a85cfdbc1204959fa86e.jpg",
+				"type": "средняя"
 			}
 		},
 		{
@@ -214,11 +223,12 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Геральт",
-				"age": 0,
-				"gender": "male",
-				"breed": "питбуль"
+				"age": 0.5,
+				"gender": "мальчик",
+				"breed": "питбуль",
+				"photo": "https://avatars.mds.yandex.net/get-zen_doc/16074/pub_5d90efd82beb4900b3037f93_5d90f643fbe6e700adaa4856/scale_1200",
+				"type": "средняя"
 			}
 		},
 		{
@@ -232,11 +242,12 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Сэнди",
 				"age": 5,
-				"gender": "female",
-				"breed": "такса"
+				"gender": "девочка",
+				"breed": "такса",
+				"photo": "https://yandex.ru/images/_crpd/fQ8l7hv49/50bf89VOKl/dHOZJCzO9IcgKR65z-gd-EI5hl-s-34eMSPH3YNsW5Df7HBvyp39A04YyXyif-nf-4iq2eRU7kcb9MZnQgi76WIzkiZmnrHVbCkNrti1Gu1DM9YD-K45Rzokw8-CaEPOytdNAbnqk3wqYL4ajzC9h_uOscK7RNQr",
+				"type": "мелкая"
 			}
 		},
 		{
@@ -250,11 +261,12 @@
 			},
 			"havePets": true,
 			"pets": {
-				"type": "dog",
 				"name": "Зевс",
 				"age": 6,
-				"gender": "male",
-				"breed": "лабрадор"
+				"gender": "мальчик",
+				"breed": "лабрадор",
+				"type": "средняя",
+				"photo": "https://avatars.mds.yandex.net/get-pdb/1976636/dc27e5c0-16a9-4ec2-8197-bd1d980e15b2/s1200?webp=false"
 			}
 		}
 

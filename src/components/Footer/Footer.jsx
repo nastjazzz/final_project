@@ -16,7 +16,7 @@ const Footer = () => {
 				<div className='developed_title'>Разработали:</div>
 				<div className='developers_wrapper'>
 					<div className='developer'><a href='https://github.com/nastjazzz'>Анастасия Замашнюк</a></div>
-					<div className='developer'><a href='https://github.com/inezav'>Инна (?)</a></div>
+					<div className='developer'><a href='https://github.com/inezav'>Инна Федяева</a></div>
 					<div className='developer'><a href='https://github.com/Volokhov-mda'>Никита Волохов</a></div>
 				</div>
 			</div>

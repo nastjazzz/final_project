@@ -10,7 +10,7 @@ export const PrivateRoute = ({ component: Component, isAuth, ...props }) => {
             isAuth[0] === true
                 ? <Component {...props} id={isAuth[1]}/>
                 : <Redirect to={{
-                    pathname: '/login',
+                    pathname: '/',
                     state: {from: props.location}
                 }}/>
         )}/>
