@@ -18,17 +18,27 @@ function Homepage() {
         <div className={styles.homepage_wrapper}>
             <div className={styles.homepage_content}>
                 <YMaps>
-                    <div>
+                    <div className={styles.map_wrapper}>
+                        <div className={styles.map_description_wrapper}>
+                            <div className={styles.map_main_info}>Найди себе питомца, с которым ты хочешь погулять в Москве</div>
+                            <div className={styles.map_sub_info_wrapper}>
+                                <nav className={styles.moreThan500px}>
+                                    <div className={styles.map_sub_info}>Они уже готовы к прогулке</div>
+                                </nav>
+
+                                <nav className={styles.lessThan500px}>
+                                    <div className={styles.map_sub_info}>
+                                        <span className={styles.arrow}>↓</span> Они уже готовы к прогулке <span className={styles.arrow}>↓</span>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
                         <Map defaultState={{ center: mapData.center, zoom: mapData.zoom, controls: [] }} width='100%' height='500px' id={styles.map}>
                             {coordinates.map(coordinate => <Placemark geometry={coordinate} options={{ iconColor: '#2539af' }} 
                                                                       properties={{balloonContentHeader: "Кличка собаки (ФИО пользователя)",
                                                                       balloonContentBody: "Какое-то <em>описание</em>",
                                                                       balloonContentFooter: "<a href='/homepage' style='color: #2539af;text-decoration: underline'>Связаться</a>" }}
                                                                       modules={['geoObject.addon.balloon', 'geoObject.addon.hint']} />)}
-                            <div className={styles.map_description_wrapper}>
-                                <div className={styles.map_main_info}>Найди себе питомца, с которым ты хочешь погулять в Москве!</div>
-                                <div className={styles.map_sub_info}>Они уже готовы к прогулке!</div>
-                            </div>
                             <ZoomControl options={{ float: 'left' }} />
                         </Map>
                     </div>
