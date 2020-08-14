@@ -8,6 +8,7 @@ import Messages from "../Messages/Messages";
 import Recommendation from "../Search/Recommendation";
 import Settings from "../Settings/Settings";
 import ProfileInfoTest from './ProfileInfoTest'
+import Header from "../Header/Header";
 
 const Profile2 = ({...props}) => {
 
@@ -34,17 +35,19 @@ const Profile2 = ({...props}) => {
 	}, [id]);
 
 	return (
-		<div className="content">
-			{check !== null ? <Sidebar /> : null}
-			{/*<Sidebar />*/}
-			{ user.id !== undefined ?  <ProfileInfoTest id={id} user={user}/> : null}
+		<>
+			{/*<Header />*/}
+			<div className="content">
+				{check !== null ? <Sidebar /> : null}
+				{/*<Sidebar />*/}
+				{ user.id !== undefined ?  <ProfileInfoTest user={user}/> : null}
 
-			{/*<Route path={`/profile/${id}/messages`} exact render={() => <Messages/>}/>*/}
-			{/*<Route path={`/profile/${id}/settings`} render={() => <Settings/>}/>*/}
-			<Route path='/search' exact render={() => <Recommendation/>}/>
+				{/*<Route path={`/profile/${id}/messages`} exact render={() => <Messages/>}/>*/}
+				{/*<Route path={`/profile/${id}/settings`} render={() => <Settings/>}/>*/}
+				<Route path='/search' exact render={() => <Recommendation/>}/>
 
-		</div>
-
+			</div>
+		</>
 	)
 }
 

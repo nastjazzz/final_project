@@ -1,13 +1,11 @@
 import React, {useState} from 'react'
 import axios from "axios";
-import {NavLink, withRouter, Route} from "react-router-dom";
-import {Redirect} from 'react-router'
+import {NavLink, Route, Redirect} from "react-router-dom";
 
 import './welcome.css'
 import Title from "./Title";
 import LoginForm from "./LoginForm";
 import RegistrationForm from "./RegistrationForm";
-
 
 const Welcome = (props) => {
 console.log('welcome props',props)
@@ -20,7 +18,6 @@ console.log('welcome props',props)
 		'password2': ''
 	})
 	const [isAuthError, setIsAuthError] = useState(false);
-
 
 	const onSubmit = (e) => {
 		e.preventDefault();
@@ -57,7 +54,6 @@ console.log('welcome props',props)
 				let data = response.data;
 				if (data) {
 					setIsAuthError(false)
-					// setCookies('isAuth', `true`);
 					localStorage.setItem("user", JSON.stringify(data));
 					console.log('проверь локалСторедж')
 					props.history.push('/profile/'+data.id)
@@ -65,14 +61,13 @@ console.log('welcome props',props)
 				} else {
 					console.log('ничего не меняем');
 					setIsAuthError(true);
-					// setCookies('isAuth', 'false', { path: '/' });
-
 				}
 			})
 	}
 
 	return (
-		<div className='wrapper'>
+		<>
+			<div className='wrapper'>
 				<div className='main'>
 					<Title/>
 					<div className='auth__wrapper'>
@@ -81,25 +76,28 @@ console.log('welcome props',props)
 								<div className='error'>Некорректный логин и/или пароль</div> : null
 						}
 						<div className='auth__buttons'>
-							<div className='button__item'><NavLink to='/login'>Логин</NavLink></div>
-							<div className='button__item'><NavLink to='/registration'>Регистрация</NavLink></div>
+							<div className='button__item'>
+								<NavLink to='/login'>Логин</NavLink>
+							</div>
+							<div className='button__item'>
+								<NavLink to='/registration'>Регистрация</NavLink>
+							</div>
 						</div>
 						<form onChange={onChangeLoginData} onSubmit={onSubmit} className='form'>
-							{/* Костыль path='/' ?? */}
-							{/*<Route path='/' exact render={() => <LoginForm*/}
-							{/*	loginData={loginData}*/}
-							{/*	checkLoginData={checkLoginData}/>}/>*/}
-							<Route exact path={['/','/login']} render={() => <LoginForm
-								loginData={loginData}
-								checkLoginData={checkLoginData}/>}/>
-							<Route exact path='/registration' render={() => <RegistrationForm addNewUser={putNewUserToServer}
-								regData={regData}/>}/>
+							<Route exact path={['/', '/login']} render={() =>
+								<LoginForm
+									loginData={loginData}
+									checkLoginData={checkLoginData}/>}/>
+							<Route exact path='/registration' render={() =>
+								<RegistrationForm
+									addNewUser={putNewUserToServer}
+									regData={regData}/>}/>
 						</form>
 					</div>
 				</div>
-		</div>
+			</div>
+		</>
 	)
 }
 
-// export default withRouter(Welcome);
 export default Welcome;
