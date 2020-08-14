@@ -3,23 +3,32 @@ import cl from './sidebar.module.css'
 import {NavLink} from "react-router-dom";
 
 const Sidebar = () => {
+	const isAuthUser = JSON.parse(localStorage.getItem('user'));
+	//либо null, либо object
+
 	return (
-		<div className={cl.wrapper}>
-			<ul className={cl.list}>
-				<li className={cl.list__item}>
-					<NavLink to="/profile" activeClassName={cl.active}>Профиль</NavLink>
-				</li>
-				<li className={cl.list__item}>
-					<NavLink to="/messages" activeClassName={cl.active}>Сообщения</NavLink>
-				</li>
-				<li className={cl.list__item}>
-					<NavLink to="/search" activeClassName={cl.active}>Рекомендации</NavLink>
-				</li>
-				<li className={cl.list__item}>
-					<NavLink to="/settings" activeClassName={cl.active}>Настройки</NavLink>
-				</li>
-			</ul>
-		</div>
+		<>
+			{
+				isAuthUser ?
+					<div className={cl.wrapper}>
+						<ul className={cl.list}>
+							<li className={cl.list__item}>
+								<NavLink to={`/profile/${isAuthUser.id}`} activeClassName={cl.active}>Профиль</NavLink>
+							</li>
+							<li className={cl.list__item}>
+								<NavLink to="/profile/messages" activeClassName={cl.active}>Сообщения</NavLink>
+							</li>
+							<li className={cl.list__item}>
+								<NavLink to="/search" activeClassName={cl.active}>Рекомендации</NavLink>
+							</li>
+							<li className={cl.list__item}>
+								<NavLink to="/profile/settings" activeClassName={cl.active}>Настройки</NavLink>
+							</li>
+						</ul>
+					</div>
+					: null
+			}
+		</>
 	)
 }
 

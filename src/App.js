@@ -1,20 +1,26 @@
 import React from 'react'
-import Header from './components/Header/Header'
-// import Welcome from './components/Welcome/Welcome'
+import { Route, Switch } from 'react-router-dom'
+
 import './App.css'
-import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
+import Welcome from './components/Welcome/Welcome'
 import Profile from './components/Profile/Profile'
+import Footer from './components/Footer/Footer'
+import Homepage from './components/Homepage/homepage'
+import Recommendation from "./components/Search/Recommendation";
 
+import Profile2 from "./components/Profile/Profile2";
 
-function App(props) {
-	// console.log('app', props);
+function App() {
 	return (
 		<div className="App">
 			<Header/>
-			<div className="content__wrapper">
-				{/*<Welcome/>*/}
-				<Profile/>
-			</div>
+			{/*<Switch>*/}
+				<Route exact path={['/', '/login', '/registration']} render={(props) => <Welcome {...props}/>}/>
+				<Route exact path='/profile/:id' render={(props) => <Profile2 {...props} />}/>
+				<Route exact path='/search' component={Recommendation}/>
+				<Route exact path={['/', '/map']} component={Homepage} />
+			{/*</Switch>*/}
 			<Footer/>
 		</div>
 	)

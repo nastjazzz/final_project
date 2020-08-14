@@ -2,6 +2,9 @@
 	"users": [
 		{
 			"id": 1,
+			"login": "test",
+			"password": "test",
+			"email": "test@test.com",
 			"firstName": "Анастасия",
 			"lastName": "Замашнюк",
 			"location": {
@@ -20,6 +23,8 @@
 		},
 		{
 			"id": 2,
+			"login": "test2",
+			"password": "test2",
 			"firstName": "Станислав",
 			"lastName": "Тушников",
 			"location": {

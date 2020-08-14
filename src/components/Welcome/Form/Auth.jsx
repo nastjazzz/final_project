@@ -2,7 +2,7 @@ import React from 'react'
 import './Form.css'
 import Buttons from './Buttons'
 import Login from './Login'
-import { Route } from "react-router-dom";
+import { BrowserRouter as Route } from "react-router-dom";
 
 const Auth = (props) => {
 
@@ -13,8 +13,9 @@ const Auth = (props) => {
 	return (
 		<div className="main__form">
 			<Buttons />
-			<Route path='/login' component={Login} />
-			<Route path='/registration' component={Login} />
+			<Login/>
+			{/*<Route path='/login' component={Login} />*/}
+			<Route path='/registration' render={() => <Login />} />
 		</div>
 	)
 }
