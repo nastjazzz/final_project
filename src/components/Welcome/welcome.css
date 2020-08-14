@@ -100,11 +100,11 @@
     }
 
     .main {
-        padding: 25px 0;
+        padding: 25px 0 10px 0;
     }
 
     .title {
-        font-size: 33px;
+        font-size: 32px;
         margin-right: 20px;
     }
 
@@ -121,9 +121,22 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .title {
+        margin-right: 0;
+
         font-size: 23px;
-        margin-right: 20px;
+        text-align: center;
+    }
+
+    .auth__wrapper {
+        margin-top: 18px;
+        max-width: none;
+        width: 100%;
     }
 }
