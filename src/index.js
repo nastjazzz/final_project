@@ -11,7 +11,7 @@ export const history = createBrowserHistory();
 
 ReactDOM.render(
     <BrowserRouter>
-        <CookiesProvider>
+      <CookiesProvider>
             <React.StrictMode>
                 <App/>
             </React.StrictMode>

@@ -1,220 +1,103 @@
-import React from 'react';
-import axios from 'axios';
+import React, {useEffect, useState} from 'react';
 import './recommendation.css'
+import axios from 'axios';
+
+//фильтры
+import AgeFilter from "./Filter/components/FilterComponents/AgeFilter";
 import Filter from "./Filter/Filter";
-import SorryFilter from "./SorryFilter";
-import UsersCards from "./UsersCard";
+import TypeFilter from "./Filter/components/FilterComponents/TypeFilter";
+import GenderFilter from "./Filter/components/FilterComponents/GenderFilter";
+import DistrictFilter from "./Filter/components/FilterComponents/DiscrictFilter";
 
-class 	Recommendation extends React.Component {
-	state = {
-		user: {},
-		users: [],
-		totalUsers: 0
-	};
+import UsersCards from "./UsersCards/UsersCards";
+import SorryFilter from "./Help/SorryFilter";
+import ParametersBlock from "./Filter/components/parametersBlock/parametersBlock";
 
-	getUsersFromServer() {
+const Recommendation = () => {
+
+	//all users from server
+	const [users, setUsers] = useState([]);
+
+	//arr of filter value
+	const [age, setAge] = React.useState(['','']);
+	const [type, setType] = React.useState([]);
+	const [gender, setGender] = React.useState([]);
+	const [district, setDistrict] = React.useState([]);
+
+	//конечный массив пользователей, который пойдет в <UsersCards />
+	let filteredResults;
+
+	let getUsersFromServer = () => {
 		axios.get('/api/users/')
 			.then(resp => {
-				let data = resp.data.users; //получаем пол-лей с сервера
-				// console.log('response', resp);
-				this.setState({users: data, totalUsers: data.length})
-				console.log('state.users', this.state);
+				let data = resp.data.users; //получаем объект с пользователями с сервера
+				setUsers(data) //записываем их в массив
 			})
 			.catch(err => console.log('err', err))
 	}
 
-	componentDidMount() {
-		this.getUsersFromServer();
-	}
+	useEffect(() => {
+		getUsersFromServer();
+	}, [])
 
-	onGenderFilterChecked = (e, gender) => {
-		let isChecked = !!e.target.checked; //проверяю нажали на чекбокс или сняли метку
-		console.log('isChecked ', isChecked);
+	//arr of dog's types
+	const types = React.useMemo(() => [...new Set(users.map(u => u.pets.type))],[users]);
+	console.log('types:::', types);
 
-		if (isChecked) {
-			let res = this.state.users.filter(user => user.pets.gender === gender)
-			console.log(res);
-			this.setState({users: res})
-			console.log('state.users', this.state);
-		} else {
-			this.getUsersFromServer();
-		}
-	}
+	//arr of dog's genders
+	const genders = React.useMemo(() => [...new Set(users.map(u => u.pets.gender))], [users]);
+	console.log('genders:::', genders);
 
-	onAgeFilterChecked = (e, age) => {
-		let isChecked = !!e.target.checked; //проверяю нажали на чекбокс или сняли метку
-		let arrOfAge = age.split('-');
-		let filteredDogs;
+	//arr of districts
+	const districts = React.useMemo(() => [...new Set(users.map(u => u.location.district))], [users])
+	console.log('districts:::', districts);
 
-		if (isChecked) {
-			if (arrOfAge[1] === '3') {
-				filteredDogs = this.state.users.filter(user => user.pets.age <= 3 && user.pets.age >= 1)
-				this.setState({users: filteredDogs})
-			} else if (arrOfAge[1] === '8') {
-				filteredDogs = this.state.users.filter(user => user.pets.age <= 8 && user.pets.age >= 4)
-				this.setState({users: filteredDogs})
-			} else if (arrOfAge[0] === '1') {
-				filteredDogs = this.state.users.filter(user => user.pets.age < 1)
-				this.setState({users: filteredDogs})
-			} else if (arrOfAge[0] === '8') {
-				filteredDogs = this.state.users.filter(user => user.pets.age > 8)
-				this.setState({users: filteredDogs})
+	const onAgeChange = ({ target: { value, dataset: { index } } }) => {
+		setAge(age.map((n, i) => i === +index ? value : n));
+	};
+
+	const onTypeChange = ({target: {checked, value}}) => (
+		setType((!type.includes(value) && checked) ? [...type, value] : type.filter(n => n !== value))
+	);
+	const onGenderChange = ({target: {checked, value}}) => (
+		setGender((!gender.includes(value) && checked) ? [...gender, value] : gender.filter(g => g !== value))
+	);
+	const onDistrictChange = ({target: {checked, value}}) => (
+		setDistrict((!district.includes(value) && checked) ? [...district, value] : district.filter(d => d !== value))
+	);
+
+
+//новый массив объектов отфильтрованных пользователей
+	filteredResults = users.filter(u => (
+		(!type.length || type.includes(u.pets.type)) &&
+		(!gender.length || gender.includes(u.pets.gender)) &&
+		(!district.length || district.includes(u.location.district)) &&
+		(!age[0].length || age[0] <= u.pets.age) &&
+		(!age[1].length || age[1] >= u.pets.age)
+	));
+
+	return (
+		<div className='recommendation'>
+			<Filter>
+				<ParametersBlock title='Пол'>
+					<GenderFilter value={gender} onChange={onGenderChange} genders={genders} />
+				</ParametersBlock>
+				<ParametersBlock title='Возраст'>
+					<AgeFilter value={age} onChange={onAgeChange} />
+				</ParametersBlock>
+				<ParametersBlock title='Тип собаки'>
+					<TypeFilter value={type} onChange={onTypeChange} types={types} />
+				</ParametersBlock>
+				<ParametersBlock title='Район'>
+					<DistrictFilter value={district} onChange={onDistrictChange} districts={districts} />
+				</ParametersBlock>
+			</Filter>
+			{
+				filteredResults.length ?
+					<UsersCards users={filteredResults}/> : <SorryFilter/>
 			}
-		} else {
-			this.getUsersFromServer();
-			console.log('надо подумать над несколькими фильтрами, типа до года + 1-3г')
-		}
-	}
-
-	onBreedFilterChecked = (e, breed) => {
-		let isChecked = !!e.target.checked; //проверяю нажали на чекбокс или сняли метку
-		let filteredDogs;
-
-		if (isChecked) {
-			switch (breed) {
-				case 'ovcharka':
-					filteredDogs = this.state.users.filter(user => {
-						return user.pets.breed.toLowerCase() === 'Овчарка'.toLowerCase();
-					});
-					this.setState({users: filteredDogs});
-					break;
-				case 'retriver':
-					filteredDogs = this.state.users.filter(user => {
-						return user.pets.breed.toLowerCase() === 'Ретривер'.toLowerCase();
-					});
-					this.setState({users: filteredDogs});
-					break;
-				case 'pitbul':
-					filteredDogs = this.state.users.filter(user => {
-						return user.pets.breed.toLowerCase() === 'Питбуль'.toLowerCase();
-					});
-					this.setState({users: filteredDogs});
-					break;
-				case 'haski':
-					filteredDogs = this.state.users.filter(user => {
-						return user.pets.breed.toLowerCase() === 'Хаски'.toLowerCase();
-					});
-					this.setState({users: filteredDogs});
-					break;
-				case 'labrador':
-					filteredDogs = this.state.users.filter(user => {
-						return user.pets.breed.toLowerCase() === 'Лабрадор'.toLowerCase();
-					});
-					this.setState({users: filteredDogs});
-					break;
-				case 'taksa':
-					filteredDogs = this.state.users.filter(user => {
-						return user.pets.breed.toLowerCase() === 'Такса'.toLowerCase();
-					});
-					this.setState({users: filteredDogs});
-					break;
-				default:
-					break;
-			}
-		} else {
-			this.getUsersFromServer();
-		}
-	}
-
-	onLocationFilterChecked = (e, location) => {
-		let isChecked = !!e.target.checked; //проверяю нажали на чекбокс или сняли метку
-		let filteredDogs;
-		console.log('115:::',location);
-		if (isChecked) {
-			switch (location) {
-				case 'CAO':
-					filteredDogs = this.state.users.filter(user => user.location.district === 'ЦАО')
-					this.setState({users: filteredDogs});
-					break;
-				case 'SAO':
-					filteredDogs = this.state.users.filter(user => user.location.district === 'САО')
-					this.setState({users: filteredDogs});
-					break;
-				case 'SVAO':
-					filteredDogs = this.state.users.filter(user => user.location.district === 'СВАО')
-					this.setState({users: filteredDogs});
-					break;
-				case 'VAO':
-					filteredDogs = this.state.users.filter(user => user.location.district === 'ВАО')
-					this.setState({users: filteredDogs});
-					break;
-				case 'YVAO':
-					filteredDogs = this.state.users.filter(user => user.location.district === 'ЮВАО')
-					this.setState({users: filteredDogs});
-					break;
-				case 'YAO':
-					filteredDogs = this.state.users.filter(user => user.location.district === 'ЮАО')
-					this.setState({users: filteredDogs});
-					break;
-				case 'YZAO':
-					filteredDogs = this.state.users.filter(user => user.location.district === 'ЮЗАО')
-					this.setState({users: filteredDogs});
-					break;
-				case 'ZAO':
-					filteredDogs = this.state.users.filter(user => user.location.district === 'ЗАО')
-					this.setState({users: filteredDogs});
-					break;
-				case 'SZAO':
-					filteredDogs = this.state.users.filter(user => user.location.district === 'СЗАО')
-					this.setState({users: filteredDogs});
-					break;
-				case 'ZelAO':
-					filteredDogs = this.state.users.filter(user => user.location.district === 'ЗелАО')
-					this.setState({users: filteredDogs});
-					break;
-				case 'TAO':
-					filteredDogs = this.state.users.filter(user => user.location.district === 'ТАО')
-					this.setState({users: filteredDogs});
-					break;
-				case 'NAO':
-					filteredDogs = this.state.users.filter(user => user.location.district === 'НАО')
-					this.setState({users: filteredDogs});
-					break;
-				default:
-					break;
-			}
-		} else {
-			this.getUsersFromServer();
-		}
-	}
-
-// !!!нужно доработать ошибки!!!
-// сейчас плохо работает снятие чекбоксов и последующее отображение результатов
-// надо подумать как брать предыдущий результат
-// + скорее всего надо выносить методы, тк слишком много получилось
-// + некорректно отображаются результаты, если одновременно нажаты 2 чекбокса(н, мальчики + девочки)
-// надо дописывать в state польз-лей, а не перезаписывать
-
-	onChangeCheckboxes = (e) => {
-		let name = e.target.name;
-		let arrOfName = name.split(' ');
-		console.log('onChangeCheckboxes', arrOfName);
-
-		if (arrOfName[0] === 'gender') {
-			this.onGenderFilterChecked(e, arrOfName[1]);
-		} else if (arrOfName[0] === 'age') {
-			this.onAgeFilterChecked(e, arrOfName[1]);
-		} else if (arrOfName[0] === 'breed') {
-			this.onBreedFilterChecked(e, arrOfName[1]);
-		} else if (arrOfName[0] === 'location') {
-			this.onLocationFilterChecked(e, arrOfName[1])
-		}
-	}
-
-	render() {
-		return (
-			<div className='recommendation'>
-				<Filter
-					getState={this.state}
-					onChangeCheckboxes={this.onChangeCheckboxes} />
-				{
-					this.state.users.length ?
-						<UsersCards getState={this.state}/> :
-						<SorryFilter/>
-				}
-			</div>
-		)
-	}
+		</div>
+	)
 }
 
 export default Recommendation;

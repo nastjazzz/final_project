@@ -4,6 +4,12 @@ import { Route } from "react-router-dom";
 
 import './profile.css'
 import Sidebar from '../Sidebar/Sidebar'
+import ProfileInfo from './ProfileInfo'
+// import { Route } from "react-router-dom";
+// import Settings from "../Settings/Settings";
+// import Recommendation from "../Search/Recommendation";
+// import Messages from "../Messages/Messages";
+// import Recommendation from "../Search/Recommendation";
 import Messages from "../Messages/Messages";
 import Recommendation from "../Search/Recommendation";
 import Settings from "../Settings/Settings";

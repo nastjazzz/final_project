@@ -1,6 +1,8 @@
 .parameter {
-    margin-left: 23px;
+    margin-left: 20px;
     margin-bottom: 5px;
+
+    font-size: 15px;
 
     display: flex;
     align-items: center;
