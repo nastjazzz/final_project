@@ -14,22 +14,6 @@
     display: flex;
     align-items: center;
   }
-
-  .indicator {
-    width: 5px;
-    height: 5px;
-
-    margin-left: 3px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .indicator svg {
-    width: 100%;
-    height: 100%;
-  }
   
   a {
     color: var(--text-color);
@@ -63,6 +47,11 @@
     justify-content: center;
     transition: filter 300ms;
     background-color: rgb(37, 57, 175);
+  }
+
+  .main__icon__button {
+    display: flex;
+    align-items: center;
   }
   
   .main__icon__button:hover, .icon__button:hover {
