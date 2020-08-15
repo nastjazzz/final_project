@@ -9,7 +9,6 @@ import Recommendation from "./components/Search/Recommendation";
 import Homepage from './components/Homepage/homepage'
 import Footer from './components/Footer/Footer'
 
-
 function App() {
 	return (
 		<div className="App">

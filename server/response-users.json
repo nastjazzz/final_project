@@ -43,6 +43,8 @@
 			"id": 3,
 			"firstName": "Иван",
 			"lastName": "Иванов",
+			"login": "testLogin3",
+			"password": "testPassword3",
 			"location": {
 				"country": "Россия",
 				"city": "Москва",
@@ -61,6 +63,8 @@
 			"id": 4,
 			"firstName": "Никита",
 			"lastName": "Никитин",
+			"login": "testLogin4",
+			"password": "testPassword4",
 			"location": {
 				"country": "Россия",
 				"city": "Москва",
@@ -79,6 +83,8 @@
 			"id": 5,
 			"firstName": "Василий",
 			"lastName": "Васильев",
+			"login": "testLogin5",
+			"password": "testPassword5",
 			"location": {
 				"country": "Россия",
 				"city": "Москва",
@@ -97,6 +103,8 @@
 			"id": 6,
 			"firstName": "Анна",
 			"lastName": "Павлова",
+			"login": "testLogin6",
+			"password": "testPassword6",
 			"location": {
 				"country": "Россия",
 				"city": "Москва",
@@ -115,6 +123,8 @@
 			"id": 7,
 			"firstName": "Алена",
 			"lastName": "Иванова",
+			"login": "testLogin7",
+			"password": "testPassword7",
 			"location": {
 				"country": "Россия",
 				"city": "Москва",
@@ -133,6 +143,8 @@
 			"id": 8,
 			"firstName": "Екатерина",
 			"lastName": "Великая",
+			"login": "testLogin8",
+			"password": "testPassword8",
 			"location": {
 				"country": "Россия",
 				"city": "Москва",
@@ -151,6 +163,8 @@
 			"id": 9,
 			"firstName": "Татьяна",
 			"lastName": "Прус",
+			"login": "testLogin9",
+			"password": "testPassword9",
 			"location": {
 				"country": "Россия",
 				"city": "Москва",
@@ -169,6 +183,8 @@
 			"id": 10,
 			"firstName": "София",
 			"lastName": "Великая",
+			"login": "10testLogin",
+			"password": "10testPassword",
 			"location": {
 				"country": "Россия",
 				"city": "Москва",
@@ -186,6 +202,8 @@
 			"id": 11,
 			"firstName": "Андрей",
 			"lastName": "Андреев",
+			"login": "11testLogin",
+			"password": "11testPassword",
 			"location": {
 				"country": "Россия",
 				"city": "Москва",
@@ -204,6 +222,8 @@
 			"id": 12,
 			"firstName": "Максим",
 			"lastName": "Максимов",
+			"login": "12testLogin",
+			"password": "12testPassword",
 			"location": {
 				"country": "Россия",
 				"city": "Москва",
@@ -222,6 +242,8 @@
 			"id": 13,
 			"firstName": "Александр",
 			"lastName": "Александров",
+			"login": "13testLogin",
+			"password": "13testPassword",
 			"location": {
 				"country": "Россия",
 				"city": "Москва",
@@ -240,6 +262,8 @@
 			"id": 14,
 			"firstName": "Мария",
 			"lastName": "Пенюгалова",
+			"login": "14testLogin",
+			"password": "14testPassword",
 			"location": {
 				"country": "Россия",
 				"city": "Москва",
