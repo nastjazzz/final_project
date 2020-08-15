@@ -7,7 +7,7 @@ import Welcome from './components/Welcome/Welcome'
 import Profile from './components/Profile/Profile'
 import Footer from './components/Footer/Footer'
 import Homepage from './components/Homepage/homepage'
-import Recommendation from "./components/Search/Recommendation";
+import Recommendation from "./components/Recommendation/Recommendation";
 
 import Profile2 from "./components/Profile/Profile2";
 

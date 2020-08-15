@@ -41,3 +41,17 @@
     margin: auto;
     color: dimgray;
 }
+
+@media (max-width: 660px) {
+    .card__wrapper {
+        width: 150px;
+
+        margin-bottom: 15px;
+        /* margin-right: 0; */
+    }
+
+    .pets-info__photo img {
+        width: 120px;
+        height: 150px;
+    }
+}

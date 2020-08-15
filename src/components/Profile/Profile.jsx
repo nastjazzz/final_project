@@ -11,7 +11,7 @@ import Sidebar from '../Sidebar/Sidebar'
 // import Messages from "../Messages/Messages";
 // import Recommendation from "../Search/Recommendation";
 import Messages from "../Messages/Messages";
-import Recommendation from "../Search/Recommendation";
+import Recommendation from "../Recommendation/Recommendation";
 import Settings from "../Settings/Settings";
 import ProfileInfoTest from './ProfileInfoTest'
 import { useCookies } from 'react-cookie';
