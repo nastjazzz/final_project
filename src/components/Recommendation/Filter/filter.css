@@ -10,7 +10,7 @@
 }
 
 .filter {
-    max-width: 200px;
+    width: 160px;
     border: 1px solid #ccc;
     padding: 10px 20px;
 }
@@ -107,7 +107,7 @@
     }
 
     .filter {
-        min-width: 145px;
+        width: 145px;
         /* max-width: 500px; */
     }
 
@@ -129,7 +129,7 @@
     }
 
     .filter {
-        min-width: 100px;
+        width: 100px;
         /* max-width: 500px; */
     }
 
