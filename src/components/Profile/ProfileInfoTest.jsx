@@ -1,7 +1,5 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import './profile.css'
-import axios from "axios";
-import {Redirect} from "react-router-dom";
 
 const ProfileInfoTest = ({user}) => {
 
@@ -21,29 +19,27 @@ const ProfileInfoTest = ({user}) => {
 		userDataForProfileInfo = {...user};
 		console.log('currentUser === null', userDataForProfileInfo);
 	}
-
+//сделать функцию логаута, которая будет убирать из localStorage item
+// и редирект на стартовую страницу, например?
 	const logout = () => {
 		localStorage.removeItem('user');
 		// <Redirect to={'/'} />
 	}
 
 	return (
-		<div className="profile__component">
-			<div>
-				{
-					userDataForProfileInfo ?
-						<div>
-							Имя: {userDataForProfileInfo.firstName} <br/>
-							Фамилия: {userDataForProfileInfo.lastName}<br/>
-							Кличка собаки: {userDataForProfileInfo.pets.name}<br/>
-							Возраст собаки: {userDataForProfileInfo.pets.age}<br/>
-							Чаще всего гуляют в {userDataForProfileInfo.location.district}<br/>
-							<button onClick={logout}>Log out</button>
-						</div>
-						: null
-
-				}
-			</div>
+		<div className="profile-info__wrapper">
+			{
+				userDataForProfileInfo ?
+					<div>
+						Имя: {userDataForProfileInfo.firstName} <br/>
+						Фамилия: {userDataForProfileInfo.lastName}<br/>
+						Кличка собаки: {userDataForProfileInfo.pets.name}<br/>
+						Возраст собаки: {userDataForProfileInfo.pets.age}<br/>
+						Чаще всего гуляют в {userDataForProfileInfo.location.district}<br/>
+						<button onClick={logout}>Log out</button>
+					</div>
+					: null
+			}
 		</div>
 	)
 }

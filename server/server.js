@@ -38,22 +38,25 @@ app.post('/api/registration/', (req, res) => {
 })
 
 const checkLoginData = (loginData, users) => {
-    let userObject = users.filter(user => {
-        if (loginData.currentLogin === user.login) {
-            if (loginData.currentPassword === user.password) {
+    let checkUser = users.filter(user => {
+        if (loginData.login === user.login) {
+            if (loginData.password === user.password) {
                 return true;
             }
         } else {
             return false;
         }
     })
-    return userObject;
+    return checkUser;
 }
 
 app.post('/api/login/', (req, res) => {
     const loginData = req.body;
+    console.log('loginData', loginData);
     let users = TEST_DATA_JSON.users; //все пользователи
+    // let users = DATA_JSON.users; //все пользователи
     let user = checkLoginData(loginData, users);
+    // console.log('user after check', user);
     let id = (user.length === 1 && user.map(u => u.id)); //прошедший проверку id пользователя
     console.log(user);
     console.log(id);

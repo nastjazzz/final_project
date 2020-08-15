@@ -11,13 +11,11 @@ import Dropdown from './components/dropdown/dropdown';
 function Header() {
 	const isUserAuth = JSON.parse(localStorage.getItem('user'));
 
-
 	return (
-
 		<nav className={styles.nav}>
 			<div className={`${styles.nav__wrapper} ${styles.flex__row}`}>
 				<div className={styles.left__header}>
-					<Logo />
+					<Logo/>
 					{
 						isUserAuth ?
 							<div className={`${styles.menu__wrapper} ${styles.flex__row}`}>

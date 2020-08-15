@@ -4,8 +4,8 @@
       "id": 1,
       "login": "testLogin",
       "password": "testPass",
-      "firstName": "Анастасия",
-      "lastName": "Замашнюк",
+      "firstName": "Александра",
+      "lastName": "Александрова",
       "location": {
         "country": "Россия",
         "city": "Москва",
@@ -22,8 +22,8 @@
     },
     {
       "id": 2,
-      "login": "test2",
-      "password": "test2",
+      "login": "test22",
+      "password": "test22",
       "firstName": "Станислав",
       "lastName": "Тушников",
       "location": {
@@ -255,7 +255,16 @@
         "gender": "male",
         "breed": "лабрадор"
       }
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "petName": "",
+      "login": "",
+      "password": "",
+      "petAge": "",
+      "id": 15
     }
   ],
-  "totalUsers": 14
+  "totalUsers": 15
 }

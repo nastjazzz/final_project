@@ -1,6 +1,7 @@
 import React from "react";
 import './usersCards.css'
-import dogPhoto from "../../dogPhoto.jpg";
+import dogPhoto from "../../../dogPhoto.jpg";
+import defaultDogPhoto from '../../../dog.png';
 import UserInfo from "./components/UserInfo";
 import DogInfo from "./components/DogInfo";
 
@@ -16,7 +17,7 @@ const UsersCards = ({ users }) => {
                                 id={user.id}
                                 age={user.pets.age}
                                 dogName={user.pets.name}
-                                photo={user.pets.photo || dogPhoto}/>
+                                photo={user.pets.photo || defaultDogPhoto}/>
                             <UserInfo
                                 id={user.id}
                                 userName={user.firstName}

@@ -3,8 +3,8 @@ import './recommendation.css'
 import axios from 'axios';
 
 //фильтры
-import AgeFilter from "./Filter/components/FilterComponents/AgeFilter";
 import Filter from "./Filter/Filter";
+import AgeFilter from "./Filter/components/FilterComponents/AgeFilter";
 import TypeFilter from "./Filter/components/FilterComponents/TypeFilter";
 import GenderFilter from "./Filter/components/FilterComponents/GenderFilter";
 import DistrictFilter from "./Filter/components/FilterComponents/DiscrictFilter";
@@ -14,11 +14,9 @@ import SorryFilter from "./Help/SorryFilter";
 import ParametersBlock from "./Filter/components/parametersBlock/parametersBlock";
 
 const Recommendation = () => {
-
 	//all users from server
 	const [users, setUsers] = useState([]);
 
-	//arr of filter value
 	const [age, setAge] = React.useState(['','']);
 	const [type, setType] = React.useState([]);
 	const [gender, setGender] = React.useState([]);
@@ -27,35 +25,36 @@ const Recommendation = () => {
 	//конечный массив пользователей, который пойдет в <UsersCards />
 	let filteredResults;
 
+//глянуть последнее видео, там об это говорилось --начало--
 	let getUsersFromServer = () => {
 		axios.get('/api/users/')
 			.then(resp => {
 				let data = resp.data.users; //получаем объект с пользователями с сервера
 				setUsers(data) //записываем их в массив
 			})
-			.catch(err => console.log('err', err))
+			.catch(error => console.log('error [getUsersFromServer]', error))
 	}
 
 	useEffect(() => {
 		getUsersFromServer();
 	}, [])
+	//--конец--
 
 	//arr of dog's types
 	const types = React.useMemo(() => [...new Set(users.map(u => u.pets.type))],[users]);
-	console.log('types:::', types);
+	// console.log('types:::', types);
 
 	//arr of dog's genders
 	const genders = React.useMemo(() => [...new Set(users.map(u => u.pets.gender))], [users]);
-	console.log('genders:::', genders);
+	// console.log('genders:::', genders);
 
 	//arr of districts
 	const districts = React.useMemo(() => [...new Set(users.map(u => u.location.district))], [users])
-	console.log('districts:::', districts);
+	// console.log('districts:::', districts);
 
 	const onAgeChange = ({ target: { value, dataset: { index } } }) => {
 		setAge(age.map((n, i) => i === +index ? value : n));
 	};
-
 	const onTypeChange = ({target: {checked, value}}) => (
 		setType((!type.includes(value) && checked) ? [...type, value] : type.filter(n => n !== value))
 	);
@@ -65,7 +64,6 @@ const Recommendation = () => {
 	const onDistrictChange = ({target: {checked, value}}) => (
 		setDistrict((!district.includes(value) && checked) ? [...district, value] : district.filter(d => d !== value))
 	);
-
 
 //новый массив объектов отфильтрованных пользователей
 	filteredResults = users.filter(u => (

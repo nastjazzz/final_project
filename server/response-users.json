@@ -2,17 +2,15 @@
 	"users": [
 		{
 			"id": 1,
-			"login": "test",
-			"password": "test",
-			"email": "test@test.com",
-			"firstName": "Анастасия",
-			"lastName": "Замашнюк",
+			"login": "testLogin",
+			"password": "testPassword",
+			"firstName": "Александра",
+			"lastName": "Александрова",
 			"location": {
 				"country": "Россия",
 				"city": "Москва",
 				"district": "САО"
 			},
-			"havePets": true,
 			"pets": {
 				"name": "Лаки",
 				"age": 1,
@@ -32,7 +30,6 @@
 				"city": "Москва",
 				"district": "ЮВАО"
 			},
-			"havePets": true,
 			"pets": {
 				"name": "Жуля",
 				"photo": "https://avatars.mds.yandex.net/get-zen_doc/1706643/pub_5de6717a027a1500c46f714c_5de6a9141d656a00aeaf40c6/scale_1200",
@@ -51,7 +48,6 @@
 				"city": "Москва",
 				"district": "САО"
 			},
-			"havePets": true,
 			"pets": {
 				"name": "Рекс",
 				"photo": "https://i.pinimg.com/736x/8f/ae/72/8fae72189289f99f113754e8178ff28c--animale-retriever-puppies.jpg",
@@ -70,7 +66,6 @@
 				"city": "Москва",
 				"district": "ЮАО"
 			},
-			"havePets": true,
 			"pets": {
 				"name": "Джек",
 				"photo": "https://i.pinimg.com/originals/a5/72/43/a5724380d54ae1abfc2a153dac76cb74.jpg",
@@ -89,7 +84,6 @@
 				"city": "Москва",
 				"district": "САО"
 			},
-			"havePets": true,
 			"pets": {
 				"name": "Фиона",
 				"age": 1,
@@ -108,7 +102,6 @@
 				"city": "Москва",
 				"district": "СЗАО"
 			},
-			"havePets": true,
 			"pets": {
 				"name": "Уна",
 				"age": 2,
@@ -127,7 +120,6 @@
 				"city": "Москва",
 				"district": "СВАО"
 			},
-			"havePets": true,
 			"pets": {
 				"name": "Арчи",
 				"age": 8,
@@ -146,7 +138,6 @@
 				"city": "Москва",
 				"district": "ЦАО"
 			},
-			"havePets": true,
 			"pets": {
 				"name": "Барон",
 				"age": 4,
@@ -165,7 +156,6 @@
 				"city": "Москва",
 				"district": "ВАО"
 			},
-			"havePets": true,
 			"pets": {
 				"name": "Пуля",
 				"age": 2,
@@ -184,7 +174,6 @@
 				"city": "Москва",
 				"district": "ВАО"
 			},
-			"havePets": true,
 			"pets": {
 				"name": "Динка",
 				"age": 3,
@@ -202,7 +191,6 @@
 				"city": "Москва",
 				"district": "ЗелАО"
 			},
-			"havePets": true,
 			"pets": {
 				"name": "Каспер",
 				"age": 3,
@@ -221,7 +209,6 @@
 				"city": "Москва",
 				"district": "ТАО"
 			},
-			"havePets": true,
 			"pets": {
 				"name": "Геральт",
 				"age": 0.5,
@@ -240,7 +227,6 @@
 				"city": "Москва",
 				"district": "НАО"
 			},
-			"havePets": true,
 			"pets": {
 				"name": "Сэнди",
 				"age": 5,
@@ -259,7 +245,6 @@
 				"city": "Москва",
 				"district": "ЗАО"
 			},
-			"havePets": true,
 			"pets": {
 				"name": "Зевс",
 				"age": 6,

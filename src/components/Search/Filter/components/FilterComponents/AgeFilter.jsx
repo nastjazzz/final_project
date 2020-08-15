@@ -1,12 +1,9 @@
 import React from "react";
 import './filterComponents.css'
 
-const PriceInput = ({ index, ...props }) => (
-    <input className="price-input" data-index={index} {...props} />
-);
-
 const AgeFilter = ({value, onChange}) => {
     return (
+        //привести к одному стилю
         <div className='age-input__wrapper'>
             <input
                 className='age-input'

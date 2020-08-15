@@ -8,7 +8,7 @@
 
 }
 
-.profile__component {
-	width: 900px;
-	background-color: khaki;
+.profile-info__wrapper {
+	max-width: 900px;
+	/*background-color: khaki;*/
 }
