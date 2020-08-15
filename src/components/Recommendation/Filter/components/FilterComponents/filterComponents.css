@@ -16,3 +16,14 @@
         width: 30px;
     }
 }
+
+@media (max-width: 500px) {
+    .age-input {
+        height: 10px;
+        width: 18px;
+    }
+
+    .age-input__wrapper {
+        margin-left: 12px;
+    }
+}

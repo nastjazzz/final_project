@@ -115,3 +115,25 @@
         margin-bottom: 4px;
     }
 }
+
+@media (max-width: 500px) {
+    :root {
+        /* Filter title and subtitle */
+        --ft-font-size: 14px;
+        --fst-font-size: 10px;
+        /* Item title and subtitle */
+        --it-font-size: 14px; 
+        --ist-font-size: 10px;
+
+        --tri-size: 9px;
+    }
+
+    .filter {
+        min-width: 100px;
+        /* max-width: 500px; */
+    }
+
+    .item__title {
+        padding-left: 12px;
+    }
+}

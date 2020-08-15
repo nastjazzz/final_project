@@ -13,3 +13,9 @@
 .parameter__checkbox {
     margin: 0 5px 0 0;
 }
+
+@media (max-width: 500px) {
+    .parameter {
+        margin-left: 12px;
+    }
+}
