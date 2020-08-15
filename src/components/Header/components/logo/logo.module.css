@@ -1,3 +1,7 @@
+.logo__wrapper {
+	cursor: pointer;	
+}
+
 #text__logo {
 	font-size: 17px;
 	font-weight: 700;

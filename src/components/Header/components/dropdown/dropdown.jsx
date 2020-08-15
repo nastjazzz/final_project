@@ -52,7 +52,7 @@ function DropdownMenu(props) {
 
     function DropdownItem(props) {
         return (
-            <a href='#' className={styles.menu__item} onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
+            <a href='#' className={styles.menu__item} onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)} onClick={props.onClick}>
                 <span className={styles.icon__button}>{props.leftIcon}</span> 
 
                 <span className={styles.menu__item__content}>{props.children}</span>
@@ -68,7 +68,7 @@ function DropdownMenu(props) {
                 <div className={styles.menu}>
                     <DropdownItem>My Profile</DropdownItem>
                     <DropdownItem leftIcon={<CogIcon />} rightIcon={<ChevronIcon />} goToMenu='settings'>Settings</DropdownItem>
-                    <DropdownItem>Выйти</DropdownItem>
+                    <DropdownItem onClick={() => { window.localStorage.clear(); window.location.href = '/'; }}>Выйти</DropdownItem>
                     {/* localStorage.removeItem("user") - вот это надо как-то прикрепить к клику */}
                 </div>
             </CSSTransition>
