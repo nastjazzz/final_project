@@ -1,8 +1,29 @@
+:root {
+	--lt-font-size: 22px;
+	--lst-font-size: 13px;
+
+	--li-font-size: 18px;
+}
+
 .wrapper {
-	width: 150px;
-	padding: 25px 20px;
+	width: 160px;
+	padding: 10px 20px;
+	border: 1px solid #ccc;
 	/*margin-right: 10px;*/
 	/*background-color: #fff;*/
+}
+
+.list__title {
+	font-size: var(--lt-font-size);
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.list__subtitle {
+    font-size: var(--lst-font-size);
+    color: dimgray;
+    margin-bottom: 10px;
 }
 
 .list {
@@ -12,8 +33,14 @@
 	/*padding: 20px;*/
 }
 
+
 .list__item {
+	padding: 5px 5px 5px 0;
 	margin-bottom: 10px;
+	border-bottom: 1px dotted #ddd;
+
+	font-size: var(--li-font-size);
+	font-weight: 500;
 }
 
 .list__item  a{
@@ -24,4 +51,25 @@
 
 .list__item a.active {
 	color: gold;
+}
+
+@media (max-width: 660px) {
+	:root {
+		--lt-font-size: 18px;
+	}
+
+	.wrapper {
+		width: 145px;
+	}
+}
+
+@media (max-width: 500px) {
+	:root {
+		--lt-font-size: 14px;
+		--li-font-size: 14px; 
+	}
+
+	.wrapper {
+		width: 100px;
+	}
 }
