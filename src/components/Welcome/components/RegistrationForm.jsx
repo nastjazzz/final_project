@@ -97,7 +97,8 @@ const RegistrationForm = ({...props}) => {
                        placeholder='Укажите возраст питомца'/>
             {!isValidPetAge[0] ? <div className='valid-error'>{isValidPetAge[1]}</div> : null}
             {/* надо ли добавлять еще полей? */}
-            <input className='submit-btn' type='submit' value='Зарегистрироваться'/>
+            <input className='submit-btn button ' type='submit' value='Зарегистрироваться'/>
+            {/*<button className='button submit-btn' type='submit'>Зарегистрироваться</button>*/}
         </form>
     )
 }

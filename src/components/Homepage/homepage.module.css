@@ -21,9 +21,15 @@
     margin: 0 20px; */
 }
 
-#map {
+.map_wrapper {
     position: relative;
 }
+
+#map {
+    position: relative;
+    height: 500px;
+}
+
 
 .map_description_wrapper {
     position: absolute;
@@ -51,4 +57,91 @@
 .map_sub_info {
     margin-top: 13px;
     font-size: 25px;
+}
+
+.lessThan500px {
+    display: none;
+}
+
+.arrow {
+    display: inline-block;
+
+    margin: 0 5px;
+
+    font-size: 23px;
+
+    animation: arrowMove .9s infinite;
+}
+
+@media (max-width: 660px) {
+    .map_description_wrapper {
+        padding: 15px;
+        margin: 0 7vw 0 57vw;
+    }
+
+    .map_main_info {
+        font-size: 30px;
+    }
+
+    .map_sub_info {
+        font-size: 20px;
+    }
+
+    .moreThan500px {
+        display: block;
+    }
+
+    .lessThan500px {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    #map {
+        position: static;
+        height: auto;
+    }
+
+    .map_description_wrapper {
+        position: static;
+        transform: none;
+
+        max-width: none;
+        margin: 0;
+
+        padding: 10px;
+        background: rgb(37, 57, 175);
+    }
+
+    .map_main_info {
+        font-size: 20px;
+
+        text-align: center;
+    }
+
+    .map_sub_info {
+        margin-top: 3px;
+
+        font-size: 15px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .moreThan500px {
+        display: none;
+    }
+
+    .lessThan500px {
+        display: block;
+    }
+}
+
+@keyframes arrowMove {
+    0% { transform: translateY(-5%); }
+    50% { transform: translateY(5%); }
+    100% { transform: translateY(-5%); }
 }

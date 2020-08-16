@@ -321,7 +321,18 @@
                 "name": "23",
                 "age": "23"
             }
+        },
+        {
+            "id": 19,
+            "firstName": "Куку",
+            "lastName": "Фамилия",
+            "login": "testLogin1",
+            "password": "testPass",
+            "pets": {
+                "name": "пес",
+                "age": "2"
+            }
         }
     ],
-    "totalUsers": 18
+    "totalUsers": 19
 }

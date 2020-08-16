@@ -63,7 +63,7 @@ const LoginForm = ({...props}) => {
                 value={password}
                 onChange={onChangePassword}
             />
-            <input className='submit-btn' type="submit" value='Войти'/>
+            <input className='submit-btn button' type="submit" value='Войти'/>
         </form>
     )
 }

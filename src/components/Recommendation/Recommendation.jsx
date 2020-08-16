@@ -76,24 +76,26 @@ const Recommendation = () => {
 
 	return (
 		<div className='recommendation'>
-			<Filter>
-				<ParametersBlock title='Пол'>
-					<GenderFilter value={gender} onChange={onGenderChange} genders={genders} />
-				</ParametersBlock>
-				<ParametersBlock title='Возраст'>
-					<AgeFilter value={age} onChange={onAgeChange} />
-				</ParametersBlock>
-				<ParametersBlock title='Тип собаки'>
-					<TypeFilter value={type} onChange={onTypeChange} types={types} />
-				</ParametersBlock>
-				<ParametersBlock title='Район'>
-					<DistrictFilter value={district} onChange={onDistrictChange} districts={districts} />
-				</ParametersBlock>
-			</Filter>
-			{
-				filteredResults.length ?
-					<UsersCards users={filteredResults}/> : <SorryFilter/>
-			}
+			<div className='recommendation_content'>
+				<Filter>
+					<ParametersBlock title='Пол'>
+						<GenderFilter value={gender} onChange={onGenderChange} genders={genders} />
+					</ParametersBlock>
+					<ParametersBlock title='Возраст'>
+						<AgeFilter value={age} onChange={onAgeChange} />
+					</ParametersBlock>
+					<ParametersBlock title='Тип собаки'>
+						<TypeFilter value={type} onChange={onTypeChange} types={types} />
+					</ParametersBlock>
+					<ParametersBlock title='Район'>
+						<DistrictFilter value={district} onChange={onDistrictChange} districts={districts} />
+					</ParametersBlock>
+				</Filter>
+				{
+					filteredResults.length ?
+						<UsersCards users={filteredResults}/> : <SorryFilter/>
+				}
+			</div>
 		</div>
 	)
 }

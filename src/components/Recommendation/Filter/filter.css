@@ -1,0 +1,139 @@
+:root {
+    /* Filter title and subtitle */
+    --ft-font-size: 22px;
+    --fst-font-size: 13px;
+    /* Item title and subtitle */
+    --it-font-size: 18px; 
+    --ist-font-size: 15px;
+
+    --tri-size: 12px;
+}
+
+.filter {
+    width: 160px;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+}
+
+.filter__title {
+    font-size: var(--ft-font-size);
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.filter__subtitle {
+    font-size: var(--fst-font-size);
+    color: dimgray;
+    margin-bottom: 10px;
+}
+
+/* тэг details */
+.filter__item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--ft-font-size);
+    outline: none;
+}
+
+.item__body {
+    margin-top: 5px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.parameters__wrapper {
+    margin: 5px 0;
+}
+
+/* summary */
+.item__subtitle {
+    position: relative;
+
+    font-size: var(--ist-font-size);
+    font-weight: 500;
+    outline: none;
+    border-bottom: 1px dotted #ddd;
+    padding: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+
+    transition: height var(--speed) ease;
+
+    cursor: pointer;
+}
+
+.item__title {
+    position: relative;
+
+    padding-left: 19px;
+    font-size: var(--it-font-size);
+}
+
+.item__title::before {
+    position: absolute;
+    content: '';
+
+    background-image: url('./components//icons/indicator.svg');
+    background-size: var(--tri-size) var(--tri-size);
+
+    width: var(--tri-size);
+    height: var(--tri-size);
+
+    top: 4px;
+    left: -3px;
+}
+
+.item__title[rotate='true']::before {
+    animation: rotate .5s forwards;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(90deg); }
+}
+
+@media (max-width: 660px) {
+    :root {
+        /* Filter title and subtitle */
+        --ft-font-size: 18px;
+        --fst-font-size: 11px;
+        /* Item title and subtitle */
+        --it-font-size: 18px; 
+        --ist-font-size: 15px;
+
+        /* --tri-size: 9px; */
+    }
+
+    .filter {
+        width: 145px;
+        /* max-width: 500px; */
+    }
+
+    .filter__title {
+        margin-bottom: 4px;
+    }
+}
+
+@media (max-width: 500px) {
+    :root {
+        /* Filter title and subtitle */
+        --ft-font-size: 14px;
+        --fst-font-size: 10px;
+        /* Item title and subtitle */
+        --it-font-size: 14px; 
+        --ist-font-size: 10px;
+
+        --tri-size: 9px;
+    }
+
+    .filter {
+        width: 100px;
+        /* max-width: 500px; */
+    }
+
+    .item__title {
+        padding-left: 12px;
+    }
+}

@@ -1,0 +1,19 @@
+.recommendation {
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.recommendation_content {
+    padding: 0 20px;
+    max-width: 1200px;
+    display: flex;
+    flex: auto;   
+}
+
+@media (max-width: 660px) {
+    .recommendation_content {
+        padding: 0;
+    }
+}

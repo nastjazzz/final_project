@@ -27,7 +27,7 @@ const ProfileInfoTest = ({user}) => {
 	}
 
 	return (
-		<div className="profile-info__wrapper">
+		<div className="profile__component">
 			{
 				userDataForProfileInfo ?
 					<div>
