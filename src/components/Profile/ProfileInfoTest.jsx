@@ -35,7 +35,7 @@ const ProfileInfoTest = ({user}) => {
 						Фамилия: {userDataForProfileInfo.lastName}<br/>
 						Кличка собаки: {userDataForProfileInfo.pets.name}<br/>
 						Возраст собаки: {userDataForProfileInfo.pets.age}<br/>
-						Чаще всего гуляют в {userDataForProfileInfo.location.district}<br/>
+						Чаще всего гуляют в {userDataForProfileInfo.location ? userDataForProfileInfo.location.district : 'не указано'}<br/>
 						<button onClick={logout}>Log out</button>
 					</div>
 					: null

@@ -21,12 +21,19 @@ app.get('/api/users/', (req, res) => {
 });
 
 app.post('/api/registration/', (req, res) => {
-    let newUser = req.body;
-    newUser.id = TEST_DATA_JSON.users.length + 1;
-    TEST_DATA_JSON.users.push(newUser);
-    TEST_DATA_JSON.totalUsers = TEST_DATA_JSON.users.length;
-    fs.writeFileSync('./test.json', JSON.stringify(TEST_DATA_JSON, null, 2));
-    res.json("SERVER.JS - USER ADD!!!");
+    let newUser = {id: TEST_DATA_JSON.users.length + 1, ...req.body}; //данные нового пользователя + id
+    console.log('NEW_USER', newUser);
+    const userWithNewLogin = TEST_DATA_JSON.users.filter(u => u.login === newUser.login);
+    //если что-то находится после .filter, значит логин уже занят
+    if (userWithNewLogin.length === 0) {
+        TEST_DATA_JSON.users.push(newUser);
+        TEST_DATA_JSON.totalUsers = TEST_DATA_JSON.users.length;
+        fs.writeFileSync('./test.json', JSON.stringify(TEST_DATA_JSON, null, 4));
+        res.json({isReg: true, newUser: newUser});
+    } else {
+        res.json({isReg: false});
+    }
+
 })
 
 const checkLoginData = (loginData, users) => {

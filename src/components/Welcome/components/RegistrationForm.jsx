@@ -3,7 +3,6 @@ import axios from "axios";
 import './components.css';
 
 const RegistrationForm = ({...props}) => {
-
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [firstName, setFirstName] = useState('');
@@ -11,21 +10,20 @@ const RegistrationForm = ({...props}) => {
     const [petAge, setPetAge] = useState('');
     const [petName, setPetName] = useState('');
 
-    const [error, setError] = useState(false);
+    const [error, setError] = useState([false, '']);
     const [isValidLogin, setIsValidLogin] = useState(true);
     const [isValidPassword, setIsValidPassword] = useState(true);
-    const [isValidPetAge, setIsValidPetAge] = useState(true);
+    const [isValidPetAge, setIsValidPetAge] = useState([true, '']);
 
-    //должна быть проверка на отсутствие пустых инпутов
     const onSubmit = (e) => {
         e.preventDefault();
 
         if (firstName.length && lastName.length && login.length && password.length
             && petName.length && petAge.length && isValidLogin && isValidPassword) {
             putNewUserToServer();
-            setError(false);
+            setError([false, '']);
         } else {
-            setError(true);
+            setError([true, 'Заполните все приведенные ниже поля!']);
         }
     }
     const onChangeFirstName = (e) => {
@@ -42,6 +40,8 @@ const RegistrationForm = ({...props}) => {
     }
     const onChangePetAge = (e) => {
         const age = e.target.value;
+        (isNaN(+age) ?
+            setIsValidPetAge([false, 'Укажите количество полных лет!']) : setIsValidPetAge([true, '']))
         setPetAge(age);
     }
     const onChangeLogin = (e) => {
@@ -55,8 +55,7 @@ const RegistrationForm = ({...props}) => {
         setPassword(passwd);
     }
     const putNewUserToServer = () => {
-        axios.post('/api/registration/',
-            {
+        axios.post('/api/registration/', {
                 firstName,
                 lastName,
                 login,
@@ -67,21 +66,22 @@ const RegistrationForm = ({...props}) => {
                 }})
             .then(response => {
                 console.log('/api/registration/ response:::', response);
-                //либо есть такой логин, либо нет
-                //надо на сервере доделать проверку введенных значений
-                //а то сейчас можно установить все что угодно, в тч одинаковые логины
-                //и надо придумать что-то с паролями
-                //после того, как пришел success с сервера, то можно также установить
-                //значение в localStorage и сделать как в логине, тк перенаправление в профиль одинаковое?
+                if (response.data.isReg === true) {
+                    localStorage.setItem('user', JSON.stringify(response.data.newUser));
+                    props.history.push('/profile/' + response.data.newUser.id);
+                    window.location.reload();
+                } else {
+                    setError([true, 'Такой логин уже занят! Придумайте другой логин']);
+                }
             })
     }
 
     return (
         <form className={'form'} onSubmit={onSubmit}>
-            {error ? <div className='error'>Заполните все приведенные ниже поля</div> : null}
+            {error[0] ? <div className='error'>{error[1]}</div> : null}
 
             <input className='input' onChange={onChangeLogin} value={login} type='text' placeholder='Придумайте логин'/>
-            {isValidLogin ? null : <div className='valid-error'>Логин должен содержать от 5 до 20 символов</div>}
+            {isValidLogin ? null : <div className='valid-error'>Логин должен быть от 5 до 20 символов</div>}
             <input className='input' onChange={onChangePassword} value={password} type='password'
                    placeholder='Придумайте пароль'/>
             {isValidPassword ? null : <div className='valid-error'>Пароль должен содержать от 6 символов</div>}
@@ -92,9 +92,11 @@ const RegistrationForm = ({...props}) => {
                    placeholder='Введите фамилию'/>
 
             <input className='input' onChange={onChangePetName} value={petName} type='text'
-                   placeholder='Укажите имя питомца'/>
-            <input className='input' onChange={onChangePetAge} value={petAge} placeholder='Укажите возраст питомца'/>
-            {/* может тип добавить еще? */}
+                   placeholder='Укажите имя питомца' />
+            <input className='input' onChange={onChangePetAge} value={petAge} type='text'
+                       placeholder='Укажите возраст питомца'/>
+            {!isValidPetAge[0] ? <div className='valid-error'>{isValidPetAge[1]}</div> : null}
+            {/* надо ли добавлять еще полей? */}
             <input className='submit-btn' type='submit' value='Зарегистрироваться'/>
         </form>
     )
