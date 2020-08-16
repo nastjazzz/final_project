@@ -28,6 +28,7 @@ function Filter(props) {
 
 	return (
 		<div className='filter'>
+			<div className='back__button' onClick={() => {window.location.href = `/profile/${JSON.parse(window.localStorage['user']).id}`}}>← Назад</div>
 			<div className='filter__title'>
 				Рекомендации
 			</div>
