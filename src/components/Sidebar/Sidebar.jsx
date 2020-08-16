@@ -7,7 +7,7 @@ const Sidebar = () => {
 	//либо null, либо object
 
 	return (
-		<div className={cl.wrapper}>
+		<>
 			{
 				isAuthUser ?
 					<div className={cl.wrapper}>
@@ -30,7 +30,7 @@ const Sidebar = () => {
 					</div>
 					: null
 			}
-		</div>
+		</>
 	)
 }
 

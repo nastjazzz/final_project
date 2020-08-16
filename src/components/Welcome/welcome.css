@@ -19,11 +19,6 @@
     box-sizing: border-box;
 }
 
-.auth__wrapper {
-    width: 350px;
-    margin-left: 15px;
-}
-
 .title {
     max-width: 450px;
 
@@ -60,7 +55,7 @@
     box-sizing: border-box;
 }
 
-.form input {
+.input {
     width: 100%;
     color: #474a4d;
 
@@ -118,7 +113,7 @@
         margin-bottom: 10px;
     }
 
-    .form input {
+    .input {
         margin-bottom: 10px;
     }
 
