@@ -10,6 +10,12 @@ import Settings from "../Settings/Settings";
 import ProfileInfoTest from './ProfileInfoTest'
 import { useCookies } from 'react-cookie';
 
+const logout = () => {
+	localStorage.removeItem('user');
+	history.push('/');
+	window.location.reload();
+}
+
 const Pr = ({...props}) => {
 	const [userData, setUserData] = useState([]);
 	const [cookie, setCookie] = useCookies(['name']);
