@@ -1,6 +1,7 @@
 .recommendation {
     display: flex;
     flex: auto;
+	/* flex-direction: column; */
     justify-content: center;
     align-items: center;
 }
@@ -8,12 +9,16 @@
 .recommendation_content {
     padding: 0 20px;
     max-width: 1200px;
+    width: 1200px;
     display: flex;
-    flex: auto;   
+    min-height: calc(100vh - 99px);
+	/* flex: 1 0 auto; */
 }
 
 @media (max-width: 660px) {
     .recommendation_content {
         padding: 0;
+
+        min-height: calc(100vh - 136px);
     }
 }

@@ -49,7 +49,7 @@ function NavItem(props) {
 function DropdownMenu(props) {
     const [activeMenu, setActiveMenu] = useState('main');
     // КОСТЫЛЬ!!!
-    const [menuHeight, setMenuHeight] = useState(110);
+    const [menuHeight, setMenuHeight] = useState(73);
     // КОСТЫЛЬ КОНЧИЛСЯ!!!
     const dropdownRef = useRef(null);
 
@@ -60,7 +60,7 @@ function DropdownMenu(props) {
 
     function DropdownItem(props) {
         return (
-            <a href='#' className={styles.menu__item} onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)} onClick={props.onClick}>
+            <a href='#' className={styles.menu__item} onClick={() => props.goToMenu && setActiveMenu(props.goToMenu) && props.onClick()}>
                 <span className={styles.icon__button}>{props.leftIcon}</span> 
 
                 <span className={styles.menu__item__content}>{props.children}</span>
@@ -74,21 +74,22 @@ function DropdownMenu(props) {
         <div className={styles.dropdown} style={{height: menuHeight}} ref={dropdownRef}>
             <CSSTransition in={activeMenu === 'main'} unmountOnExit timeout={500} classNames='menu-primary' onEnter={calcHeight}>
                 <div className={styles.menu}>
-                    <DropdownItem leftIcon={<User />} onClick={() => { window.location.href = '/profile/' + JSON.parse(window.localStorage['user']).id; }}>My Profile</DropdownItem>
-                    <DropdownItem leftIcon={<CogIcon />} rightIcon={<ChevronIcon />} goToMenu='settings'>Settings</DropdownItem>
+                    <DropdownItem leftIcon={<User />} onClick={() => { window.location.href = '/profile/' + JSON.parse(window.localStorage['user']).id; }}>Мой профиль</DropdownItem>
+                    {/* <DropdownItem leftIcon={<CogIcon />} rightIcon={<ChevronIcon />} goToMenu='settings'>Settings</DropdownItem> */}
                     <DropdownItem leftIcon={<LogOut />} onClick={() => { window.localStorage.clear(); window.location.href = '/'; }}>Выйти</DropdownItem>
                     {/* localStorage.removeItem("user") - вот это надо как-то прикрепить к клику */}
                 </div>
             </CSSTransition>
 
-            <CSSTransition in={activeMenu === 'settings'} unmountOnExit timeout={500} classNames="menu-secondary" onEnter={calcHeight}>
+            {/* Пришлось удалить ненужный переход на другую страницу dropbox. А жаль :( */}
+            {/* <CSSTransition in={activeMenu === 'settings'} unmountOnExit timeout={500} classNames="menu-secondary" onEnter={calcHeight}>
                 <div className={styles.menu}>
                     <DropdownItem leftIcon={<ArrowIcon />} goToMenu='main'>Go back</DropdownItem>
                     <DropdownItem leftIcon={<ArrowIcon />} goToMenu='main'>Go back once more</DropdownItem>
                     <DropdownItem>Profile settings</DropdownItem>
                     <DropdownItem>Add something shocking</DropdownItem>
                 </div>
-            </CSSTransition>
+            </CSSTransition> */}
         </div>
     );
 }

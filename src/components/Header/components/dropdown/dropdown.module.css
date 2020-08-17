@@ -7,7 +7,7 @@
     --border: 1px solid #474a4d;
     --border-radius: 5px;
     --speed: 500ms; 
-    --translate: -29%;
+    --translate: -26%;
   }
 
   .nickname_wrapper {
@@ -67,7 +67,7 @@
   .dropdown {
     position: absolute;
     top: 43px;
-    width: 160px;
+    width: 170px;
     transform: translateX(var(--translate));
     background-color: var(--bg);
     border: var(--border);
@@ -111,7 +111,7 @@
   }
 
   .menu__item__content {
-    max-width: 95px;
+    /* max-width: 145px; */
   }
   
   .icon__right {
