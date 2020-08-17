@@ -20,13 +20,3 @@
 		padding: 0;
 	}
 }
-
-.dog-photo img {
-	width: 300px;
-	max-height: 350px;
-}
-
-.file-upload {
-	background-color: white;
-	padding: 15px 20px;
-}

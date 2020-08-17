@@ -31,7 +31,7 @@ function Homepage() {
 			.catch(error => console.log('error [getUsersFromServer]', error))
     };
     
-    let getAgeString = (age) => {
+    const getAgeString = (age) => {
         if (age == 0) return `${age} лет`;
         else if (age == 1) return `${age} год`;
         else if (age >= 2 && age <= 4) return `${age} года`;
@@ -72,7 +72,9 @@ function Homepage() {
                                                                                              `style='color: #2539af;text-decoration: underline'>` +
                                                                                                  `${user.firstName} ${user.lastName}` + 
                                                                                              `</a>)`,
-                                                          balloonContentBody: `${user.pets.gender[0].toUpperCase() + user.pets.gender.slice(1)}, ${user.pets.breed}, ${getAgeString(user.pets.age)}`,
+                                                          balloonContentBody: 
+                                                                `<img src=${user.pets.photo} style='height: 175px'>` +
+                                                                `<div>${user.pets.gender[0].toUpperCase() + user.pets.gender.slice(1)}, ${user.pets.breed}, ${getAgeString(user.pets.age)}</div>`,
                                                           balloonContentFooter: `<a href='/profile/${user.id}' style='color: #2539af;text-decoration: underline'>Связаться</a>` }}
                                                           modules={['geoObject.addon.balloon', 'geoObject.addon.hint']} />)}
                             <ZoomControl options={{ float: 'left' }} />
