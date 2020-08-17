@@ -65,7 +65,7 @@ function Homepage() {
                         </div>
                         <Map defaultState={{ 
                             center: [mapData.X, mapData.Y], 
-                            zoom: mapData.zoom, controls: [] }} width='100%' height='500px' id={styles.map}>
+                            zoom: mapData.zoom, controls: [] }} width='100%' height='100%' id={styles.map}>
                             {users.map(user => <Placemark geometry={user.location.coords} options={{ iconColor: '#2539af' }} 
                                                           properties={{balloonContentHeader: `${user.pets.name} ` + 
                                                                                              `(Хозяин - <a href='/profile/${user.id}'` + 

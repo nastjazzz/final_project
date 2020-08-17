@@ -60,7 +60,7 @@ function DropdownMenu(props) {
 
     function DropdownItem(props) {
         return (
-            <a href='#' className={styles.menu__item} onClick={() => props.goToMenu && setActiveMenu(props.goToMenu) && props.onClick()}>
+            <a href='#' className={styles.menu__item} onClick={() => { props.goToMenu && setActiveMenu(props.goToMenu); props.onClick()} }>
                 <span className={styles.icon__button}>{props.leftIcon}</span> 
 
                 <span className={styles.menu__item__content}>{props.children}</span>

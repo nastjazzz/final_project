@@ -27,7 +27,7 @@
 
 #map {
     position: relative;
-    height: 500px;
+    min-height: calc(100vh - 99px);
 }
 
 
@@ -74,6 +74,10 @@
 }
 
 @media (max-width: 660px) {
+    #map {
+        min-height: calc(100vh - 136px);
+    }
+    
     .map_description_wrapper {
         padding: 15px;
         margin: 0 7vw 0 57vw;
@@ -100,6 +104,8 @@
     #map {
         position: static;
         height: auto;
+
+        min-height: calc(100vh);
     }
 
     .map_description_wrapper {
