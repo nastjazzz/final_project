@@ -1,299 +1,340 @@
 {
-	"users": [
-		{
-			"id": 1,
-			"login": "testLogin",
-			"password": "testPassword",
-			"firstName": "Александра",
-			"lastName": "Александрова",
-			"location": {
-				"country": "Россия",
-				"city": "Москва",
-				"district": "САО",
-				"coords": [55.818548, 37.557306]
-			},
-			"pets": {
-				"name": "Лаки",
-				"age": 1,
-				"photo": "",
-				"gender": "девочка",
-				"breed": "овчарка",
-				"type": "крупная"
-			}
-		},
-		{
-			"id": 2,
-			"login": "test2",
-			"password": "test2",
-			"firstName": "Станислав",
-			"lastName": "Тушников",
-			"location": {
-				"country": "Россия",
-				"city": "Москва",
-				"district": "ЮВАО",
-				"coords": [55.684758, 37.738521]
-			},
-			"pets": {
-				"name": "Жуля",
-				"photo": "https://avatars.mds.yandex.net/get-zen_doc/1706643/pub_5de6717a027a1500c46f714c_5de6a9141d656a00aeaf40c6/scale_1200",
-				"age": 10,
-				"gender": "девочка",
-				"breed": "такса",
-				"type": "мелкая"
-			}
-		},
-		{
-			"id": 3,
-			"firstName": "Иван",
-			"lastName": "Иванов",
-			"login": "testLogin3",
-			"password": "testPassword3",
-			"location": {
-				"country": "Россия",
-				"city": "Москва",
-				"district": "САО",
-				"coords": [55.820624, 37.565629]
-			},
-			"pets": {
-				"name": "Рекс",
-				"photo": "https://i.pinimg.com/736x/8f/ae/72/8fae72189289f99f113754e8178ff28c--animale-retriever-puppies.jpg",
-				"age": 3,
-				"gender": "мальчик",
-				"breed": "ретривер",
-				"type": "крупная"
-			}
-		},
-		{
-			"id": 4,
-			"firstName": "Никита",
-			"lastName": "Никитин",
-			"login": "testLogin4",
-			"password": "testPassword4",
-			"location": {
-				"country": "Россия",
-				"city": "Москва",
-				"district": "ЮАО",
-				"coords": [55.626079, 37.679352]
-			},
-			"pets": {
-				"name": "Джек",
-				"photo": "https://i.pinimg.com/originals/a5/72/43/a5724380d54ae1abfc2a153dac76cb74.jpg",
-				"age": 0.5,
-				"gender": "мальчик",
-				"breed": "хаски",
-				"type": "крупная"
-			}
-		},
-		{
-			"id": 5,
-			"firstName": "Василий",
-			"lastName": "Васильев",
-			"login": "testLogin5",
-			"password": "testPassword5",
-			"location": {
-				"country": "Россия",
-				"city": "Москва",
-				"district": "САО",
-				"coords": [55.794972, 37.556427]
-			},
-			"pets": {
-				"name": "Фиона",
-				"age": 1,
-				"gender": "девочка",
-				"breed": "овчарка",
-				"photo": "https://yt3.ggpht.com/a/AATXAJwP2WFTK9eQYiMAswPQqeMkfy5Mt4ioyoq3FQ=s900-c-k-c0xffffffff-no-rj-mo",
-				"type": "крупная"
-			}
-		},
-		{
-			"id": 6,
-			"firstName": "Анна",
-			"lastName": "Павлова",
-			"login": "testLogin6",
-			"password": "testPassword6",
-			"location": {
-				"country": "Россия",
-				"city": "Москва",
-				"district": "СЗАО",
-				"coords": [55.828813, 37.454339]
-			},
-			"pets": {
-				"name": "Уна",
-				"age": 2,
-				"gender": "девочка",
-				"breed": "лабрадор",
-				"photo": "https://prokamen.com/wp-content/uploads/labrador-664.jpg",
-				"type": "крупная"
-			}
-		},
-		{
-			"id": 7,
-			"firstName": "Алена",
-			"lastName": "Иванова",
-			"login": "testLogin7",
-			"password": "testPassword7",
-			"location": {
-				"country": "Россия",
-				"city": "Москва",
-				"district": "СВАО",
-				"coords": [55.835406, 37.597000]
-			},
-			"pets": {
-				"name": "Арчи",
-				"age": 8,
-				"gender": "мальчик",
-				"breed": "хаски",
-				"photo": "https://funik.ru/wp-content/uploads/2018/10/a2158910befacbdd595c-700x933.jpg",
-				"type": "крупная"
-			}
-		},
-		{
-			"id": 8,
-			"firstName": "Екатерина",
-			"lastName": "Великая",
-			"login": "testLogin8",
-			"password": "testPassword8",
-			"location": {
-				"country": "Россия",
-				"city": "Москва",
-				"district": "ЦАО",
-				"coords": [55.778128, 37.619434]
-			},
-			"pets": {
-				"name": "Барон",
-				"age": 4,
-				"gender": "мальчик",
-				"breed": "овчарка",
-				"photo": "https://avatars.mds.yandex.net/get-pdb/1939042/668fe5e5-1549-414f-9b05-2460fcbdcca7/s600",
-				"type": "крупная"
-			}
-		},
-		{
-			"id": 9,
-			"firstName": "Татьяна",
-			"lastName": "Прус",
-			"login": "testLogin9",
-			"password": "testPassword9",
-			"location": {
-				"country": "Россия",
-				"city": "Москва",
-				"district": "ВАО",
-				"coords": [55.764601, 37.759726]
-			},
-			"pets": {
-				"name": "Пуля",
-				"age": 2,
-				"gender": "девочка",
-				"breed": "ретривер",
-				"photo": "https://i.pinimg.com/236x/4c/29/03/4c29039a481d1a383ba0443f192f319b--retriever-puppies-psy.jpg",
-				"type": "крупная"
-			}
-		},
-		{
-			"id": 10,
-			"firstName": "София",
-			"lastName": "Великая",
-			"login": "10testLogin",
-			"password": "10testPassword",
-			"location": {
-				"country": "Россия",
-				"city": "Москва",
-				"district": "ВАО",
-				"coords": [55.802210, 37.689091]
-			},
-			"pets": {
-				"name": "Динка",
-				"age": 3,
-				"gender": "девочка",
-				"breed": "ретривер",
-				"type": "крупная"
-			}
-		},
-		{
-			"id": 11,
-			"firstName": "Андрей",
-			"lastName": "Андреев",
-			"login": "11testLogin",
-			"password": "11testPassword",
-			"location": {
-				"country": "Россия",
-				"city": "Москва",
-				"district": "ЗелАО",
-				"coords": [55.987395, 37.218865]
-			},
-			"pets": {
-				"name": "Каспер",
-				"age": 3,
-				"gender": "мальчик",
-				"breed": "питбуль",
-				"photo": "https://i.pinimg.com/236x/44/7a/05/447a05e4f1b3a85cfdbc1204959fa86e.jpg",
-				"type": "средняя"
-			}
-		},
-		{
-			"id": 12,
-			"firstName": "Максим",
-			"lastName": "Максимов",
-			"login": "12testLogin",
-			"password": "12testPassword",
-			"location": {
-				"country": "Россия",
-				"city": "Москва",
-				"district": "ТАО",
-				"coords": [55.501287, 37.306361]
-			},
-			"pets": {
-				"name": "Геральт",
-				"age": 0.5,
-				"gender": "мальчик",
-				"breed": "питбуль",
-				"photo": "https://avatars.mds.yandex.net/get-zen_doc/16074/pub_5d90efd82beb4900b3037f93_5d90f643fbe6e700adaa4856/scale_1200",
-				"type": "средняя"
-			}
-		},
-		{
-			"id": 13,
-			"firstName": "Александр",
-			"lastName": "Александров",
-			"login": "13testLogin",
-			"password": "13testPassword",
-			"location": {
-				"country": "Россия",
-				"city": "Москва",
-				"district": "НАО",
-				"coords": [55.600981, 37.417768]
-			},
-			"pets": {
-				"name": "Сэнди",
-				"age": 5,
-				"gender": "девочка",
-				"breed": "такса",
-				"photo": "https://yandex.ru/images/_crpd/fQ8l7hv49/50bf89VOKl/dHOZJCzO9IcgKR65z-gd-EI5hl-s-34eMSPH3YNsW5Df7HBvyp39A04YyXyif-nf-4iq2eRU7kcb9MZnQgi76WIzkiZmnrHVbCkNrti1Gu1DM9YD-K45Rzokw8-CaEPOytdNAbnqk3wqYL4ajzC9h_uOscK7RNQr",
-				"type": "мелкая"
-			}
-		},
-		{
-			"id": 14,
-			"firstName": "Мария",
-			"lastName": "Пенюгалова",
-			"login": "14testLogin",
-			"password": "14testPassword",
-			"location": {
-				"country": "Россия",
-				"city": "Москва",
-				"district": "ЗАО",
-				"coords": [55.757919, 37.421279]
-			},
-			"pets": {
-				"name": "Зевс",
-				"age": 6,
-				"gender": "мальчик",
-				"breed": "лабрадор",
-				"type": "средняя",
-				"photo": "https://avatars.mds.yandex.net/get-pdb/1976636/dc27e5c0-16a9-4ec2-8197-bd1d980e15b2/s1200?webp=false"
-			}
-		}
-
-	],
-	"totalUsers": 14
+    "users": [
+        {
+            "id": 1,
+            "login": "testLogin",
+            "password": "testPassword",
+            "firstName": "Александра",
+            "lastName": "Александрова",
+            "location": {
+                "country": "Россия",
+                "city": "Москва",
+                "district": "САО",
+                "coords": [
+                    55.818548,
+                    37.557306
+                ]
+            },
+            "pets": {
+                "name": "Лаки",
+                "age": 1,
+                "photo": "",
+                "gender": "девочка",
+                "breed": "овчарка",
+                "type": "крупная"
+            }
+        },
+        {
+            "id": 2,
+            "login": "test2",
+            "password": "test2",
+            "firstName": "Станислав",
+            "lastName": "Тушников",
+            "location": {
+                "country": "Россия",
+                "city": "Москва",
+                "district": "ЮВАО",
+                "coords": [
+                    55.684758,
+                    37.738521
+                ]
+            },
+            "pets": {
+                "name": "Жуля",
+                "photo": "https://avatars.mds.yandex.net/get-zen_doc/1706643/pub_5de6717a027a1500c46f714c_5de6a9141d656a00aeaf40c6/scale_1200",
+                "age": 10,
+                "gender": "девочка",
+                "breed": "такса",
+                "type": "мелкая"
+            }
+        },
+        {
+            "id": 3,
+            "firstName": "Иван",
+            "lastName": "Иванов",
+            "login": "testLogin3",
+            "password": "testPassword3",
+            "location": {
+                "country": "Россия",
+                "city": "Москва",
+                "district": "САО",
+                "coords": [
+                    55.820624,
+                    37.565629
+                ]
+            },
+            "pets": {
+                "name": "Рекс",
+                "photo": "https://i.pinimg.com/736x/8f/ae/72/8fae72189289f99f113754e8178ff28c--animale-retriever-puppies.jpg",
+                "age": 3,
+                "gender": "мальчик",
+                "breed": "ретривер",
+                "type": "крупная"
+            }
+        },
+        {
+            "id": 4,
+            "firstName": "Никита",
+            "lastName": "Никитин",
+            "login": "testLogin4",
+            "password": "testPassword4",
+            "location": {
+                "country": "Россия",
+                "city": "Москва",
+                "district": "ЮАО",
+                "coords": [
+                    55.626079,
+                    37.679352
+                ]
+            },
+            "pets": {
+                "name": "Джек",
+                "photo": "https://i.pinimg.com/originals/a5/72/43/a5724380d54ae1abfc2a153dac76cb74.jpg",
+                "age": 0.5,
+                "gender": "мальчик",
+                "breed": "хаски",
+                "type": "крупная"
+            }
+        },
+        {
+            "id": 5,
+            "firstName": "Василий",
+            "lastName": "Васильев",
+            "login": "testLogin5",
+            "password": "testPassword5",
+            "location": {
+                "country": "Россия",
+                "city": "Москва",
+                "district": "САО",
+                "coords": [
+                    55.794972,
+                    37.556427
+                ]
+            },
+            "pets": {
+                "name": "Фиона",
+                "age": 1,
+                "gender": "девочка",
+                "breed": "овчарка",
+                "photo": "https://yt3.ggpht.com/a/AATXAJwP2WFTK9eQYiMAswPQqeMkfy5Mt4ioyoq3FQ=s900-c-k-c0xffffffff-no-rj-mo",
+                "type": "крупная"
+            }
+        },
+        {
+            "id": 6,
+            "firstName": "Анна",
+            "lastName": "Павлова",
+            "login": "testLogin6",
+            "password": "testPassword6",
+            "location": {
+                "country": "Россия",
+                "city": "Москва",
+                "district": "СЗАО",
+                "coords": [
+                    55.828813,
+                    37.454339
+                ]
+            },
+            "pets": {
+                "name": "Уна",
+                "age": 2,
+                "gender": "девочка",
+                "breed": "лабрадор",
+                "photo": "https://prokamen.com/wp-content/uploads/labrador-664.jpg",
+                "type": "крупная"
+            }
+        },
+        {
+            "id": 7,
+            "firstName": "Алена",
+            "lastName": "Иванова",
+            "login": "testLogin7",
+            "password": "testPassword7",
+            "location": {
+                "country": "Россия",
+                "city": "Москва",
+                "district": "СВАО",
+                "coords": [
+                    55.835406,
+                    37.597
+                ]
+            },
+            "pets": {
+                "name": "Арчи",
+                "age": 8,
+                "gender": "мальчик",
+                "breed": "хаски",
+                "photo": "https://funik.ru/wp-content/uploads/2018/10/a2158910befacbdd595c-700x933.jpg",
+                "type": "крупная"
+            }
+        },
+        {
+            "id": 8,
+            "firstName": "Екатерина",
+            "lastName": "Великая",
+            "login": "testLogin8",
+            "password": "testPassword8",
+            "location": {
+                "country": "Россия",
+                "city": "Москва",
+                "district": "ЦАО",
+                "coords": [
+                    55.778128,
+                    37.619434
+                ]
+            },
+            "pets": {
+                "name": "Барон",
+                "age": 4,
+                "gender": "мальчик",
+                "breed": "овчарка",
+                "photo": "https://avatars.mds.yandex.net/get-pdb/1939042/668fe5e5-1549-414f-9b05-2460fcbdcca7/s600",
+                "type": "крупная"
+            }
+        },
+        {
+            "id": 9,
+            "firstName": "Татьяна",
+            "lastName": "Прус",
+            "login": "testLogin9",
+            "password": "testPassword9",
+            "location": {
+                "country": "Россия",
+                "city": "Москва",
+                "district": "ВАО",
+                "coords": [
+                    55.764601,
+                    37.759726
+                ]
+            },
+            "pets": {
+                "name": "Пуля",
+                "age": 2,
+                "gender": "девочка",
+                "breed": "ретривер",
+                "photo": "https://i.pinimg.com/236x/4c/29/03/4c29039a481d1a383ba0443f192f319b--retriever-puppies-psy.jpg",
+                "type": "крупная"
+            }
+        },
+        {
+            "id": 10,
+            "firstName": "София",
+            "lastName": "Великая",
+            "login": "10testLogin",
+            "password": "10testPassword",
+            "location": {
+                "country": "Россия",
+                "city": "Москва",
+                "district": "ВАО",
+                "coords": [
+                    55.80221,
+                    37.689091
+                ]
+            },
+            "pets": {
+                "name": "Динка",
+                "age": 3,
+                "gender": "девочка",
+                "breed": "ретривер",
+                "type": "крупная"
+            }
+        },
+        {
+            "id": 11,
+            "firstName": "Андрей",
+            "lastName": "Андреев",
+            "login": "11testLogin",
+            "password": "11testPassword",
+            "location": {
+                "country": "Россия",
+                "city": "Москва",
+                "district": "ЗелАО",
+                "coords": [
+                    55.987395,
+                    37.218865
+                ]
+            },
+            "pets": {
+                "name": "Каспер",
+                "age": 3,
+                "gender": "мальчик",
+                "breed": "питбуль",
+                "photo": "https://i.pinimg.com/236x/44/7a/05/447a05e4f1b3a85cfdbc1204959fa86e.jpg",
+                "type": "средняя"
+            }
+        },
+        {
+            "id": 12,
+            "firstName": "Максим",
+            "lastName": "Максимов",
+            "login": "12testLogin",
+            "password": "12testPassword",
+            "location": {
+                "country": "Россия",
+                "city": "Москва",
+                "district": "ТАО",
+                "coords": [
+                    55.501287,
+                    37.306361
+                ]
+            },
+            "pets": {
+                "name": "Геральт",
+                "age": 0.5,
+                "gender": "мальчик",
+                "breed": "питбуль",
+                "photo": "https://avatars.mds.yandex.net/get-zen_doc/16074/pub_5d90efd82beb4900b3037f93_5d90f643fbe6e700adaa4856/scale_1200",
+                "type": "средняя"
+            }
+        },
+        {
+            "id": 13,
+            "firstName": "Александр",
+            "lastName": "Александров",
+            "login": "13testLogin",
+            "password": "13testPassword",
+            "location": {
+                "country": "Россия",
+                "city": "Москва",
+                "district": "НАО",
+                "coords": [
+                    55.600981,
+                    37.417768
+                ]
+            },
+            "pets": {
+                "name": "Сэнди",
+                "age": 5,
+                "gender": "девочка",
+                "breed": "такса",
+                "photo": "https://yandex.ru/images/_crpd/fQ8l7hv49/50bf89VOKl/dHOZJCzO9IcgKR65z-gd-EI5hl-s-34eMSPH3YNsW5Df7HBvyp39A04YyXyif-nf-4iq2eRU7kcb9MZnQgi76WIzkiZmnrHVbCkNrti1Gu1DM9YD-K45Rzokw8-CaEPOytdNAbnqk3wqYL4ajzC9h_uOscK7RNQr",
+                "type": "мелкая"
+            }
+        },
+        {
+            "id": 14,
+            "firstName": "Мария",
+            "lastName": "Пенюгалова",
+            "login": "14testLogin",
+            "password": "14testPassword",
+            "location": {
+                "country": "Россия",
+                "city": "Москва",
+                "district": "ЗАО",
+                "coords": [
+                    55.757919,
+                    37.421279
+                ]
+            },
+            "pets": {
+                "name": "Зевс",
+                "age": 6,
+                "gender": "мальчик",
+                "breed": "лабрадор",
+                "type": "средняя",
+                "photo": "https://avatars.mds.yandex.net/get-pdb/1976636/dc27e5c0-16a9-4ec2-8197-bd1d980e15b2/s1200?webp=false"
+            }
+        }
+    ],
+    "totalUsers": 14
 }
