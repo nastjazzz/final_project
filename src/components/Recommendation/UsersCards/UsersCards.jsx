@@ -1,7 +1,6 @@
 import React from "react";
 import './usersCards.css'
-import dogPhoto from "../../../dogPhoto.jpg";
-import defaultDogPhoto from '../../../dog.png';
+import defaultDogPhoto from '../../../media/defaultDogPhoto.png';
 import UserInfo from "./components/UserInfo";
 import DogInfo from "./components/DogInfo";
 
