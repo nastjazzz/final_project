@@ -10,16 +10,15 @@ import Settings from "../Settings/Settings";
 import ProfileInfoTest from './ProfileInfoTest'
 
 const Profile = ({...props}) => {
-	// user = {};
 	const [user, setUser] = useState({});
 	console.log('15:  user Profile = ', user);
 
 //если нет, значит null
 //если есть, значит не null
-	const check = localStorage.getItem("user"); //если есть, тогда это объект с авториз пользователем
-	console.log('20:  check = ',check);
+	const authUser = JSON.parse(localStorage.getItem("user")); //если есть, тогда это объект с авториз пользователем
+	// console.log('20:  check = ',check);
 
-	let id = props.match.params.id;
+	const id = props.match.params.id;
 	console.log('23: profile id = ',id);
 
 	useEffect(() => {
@@ -33,8 +32,8 @@ const Profile = ({...props}) => {
 
 	return (
 		<div className="content">
-			{check !== null ? <Sidebar/> : null}
-			{user.id !== undefined ? <ProfileInfoTest user={user}/> : null}
+			{authUser !== null ? <Sidebar/> : null}
+			{user.id !== undefined ? <ProfileInfoTest user={user} {...props} /> : null}
 			{/*<Route path={`/profile/${id}/messages`} exact render={() => <Messages/>}/>*/}
 			{/*<Route path={`/profile/${id}/settings`} render={() => <Settings/>}/>*/}
 			<Route path='/search' exact render={() => <Recommendation/>}/>

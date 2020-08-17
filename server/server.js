@@ -1,8 +1,13 @@
 const express = require('express');
-const path = require('path'),
-    bodyParser = require('body-parser');
+const path = require('path');
+const bodyParser = require('body-parser');
+const fs = require('fs');
+
+// const cors = require('cors');
+// const fileUpload = require('express-fileupload');
+const checkLoginData = require('./helpers');
+
 const port = 3001;
-const fs = require('fs')
 const app = express();
 
 // let DATA_JSON = JSON.parse(fs.readFileSync('./response-users.json', 'utf8'))
@@ -10,14 +15,32 @@ let TEST_DATA_JSON = JSON.parse(fs.readFileSync('./test.json', 'utf8'))
 
 
 app.use(bodyParser.json());
+// app.use(fileUpload());
+// app.use(cors());
+// app.use(express.static('public'));
 // app.use(express.static(path.join(__dirname, '../my-app/build')));
 
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
   res.send(`<h1>API Running on the port ${port}</h1>`);
 });
 
 app.get('/api/users/', (req, res) => {
-	res.sendFile(path.resolve(__dirname, './response-users.json'));
+    res.sendFile(path.resolve(__dirname, './response-users.json'));
+});
+
+//пока просто для теста попробовать
+app.post('/upload', (req, res) => {
+    if (!req.files) {
+        return res.status(500).send({ status: "file is not found" })
+    }
+    const uploadFile = req.files.file;
+    console.log('uploadFile', uploadFile)
+    uploadFile.mv(`./public/${uploadFile.name}`, function (err) {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.send({name: uploadFile.name, path: `/public/${uploadFile.name}`});
+    });
 });
 
 app.post('/api/registration/', (req, res) => {
@@ -35,19 +58,6 @@ app.post('/api/registration/', (req, res) => {
     }
 
 })
-
-const checkLoginData = (loginData, users) => {
-    let checkUser = users.filter(user => {
-        if (loginData.login === user.login) {
-            if (loginData.password === user.password) {
-                return true;
-            }
-        } else {
-            return false;
-        }
-    })
-    return checkUser;
-}
 
 app.post('/api/login/', (req, res) => {
     const loginData = req.body;

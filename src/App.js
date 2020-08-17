@@ -5,7 +5,6 @@ import './App.css'
 import Header from './components/Header/Header'
 import Welcome from './components/Welcome/Welcome'
 import Profile from "./components/Profile/Profile";
-// import Recommendation from "./components/Search/Recommendation";
 import Recommendation from "./components/Recommendation/Recommendation";
 import Homepage from './components/Homepage/homepage'
 import Footer from './components/Footer/Footer'
