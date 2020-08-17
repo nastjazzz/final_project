@@ -1,20 +1,26 @@
 import React from 'react'
+import { Route, Switch } from 'react-router-dom'
+
+import './App.css'
 import Header from './components/Header/Header'
 import Welcome from './components/Welcome/Welcome'
-import './App.css'
+import Profile from "./components/Profile/Profile";
+import Recommendation from "./components/Recommendation/Recommendation";
+import Homepage from './components/Homepage/homepage'
 import Footer from './components/Footer/Footer'
-import Profile from './components/Profile/Profile'
+import {Page404} from "./components/Pages/Page404";
 
-
-function App(props) {
-	// console.log('app', props);
+function App() {
 	return (
 		<div className="App">
 			<Header/>
-			<div className="content__wrapper">
-				<Welcome/>
-				<Profile/>
-			</div>
+			<Switch>
+				<Route exact path={['/', '/login', '/registration']} render={(props) => <Welcome {...props}/>}/>
+				<Route exact path='/profile/:id' render={(props) => <Profile {...props} />}/>
+				<Route exact path='/search' component={Recommendation} />
+				<Route exact path={['/', '/map']} component={Homepage} />
+				<Route path='*' component={Page404} />
+			</Switch>
 			<Footer/>
 		</div>
 	)

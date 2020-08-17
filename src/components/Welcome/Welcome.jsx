@@ -1,31 +1,33 @@
 import React from 'react'
-import Auth from './Form/Auth'
+import {Route} from "react-router-dom";
+
 import './welcome.css'
-import "fontsource-roboto"
-import {Typography} from '@material-ui/core';
+import Title from "./components/Title";
+import AuthButtons from "./components/AuthButtons";
+import LoginForm from "./components/LoginForm";
+import RegistrationForm from "./components/RegistrationForm";
 
+const Welcome = (props) => {
+	const authUser = JSON.parse(localStorage.getItem('user'));
 
-const Title = () => {
 	return (
-		<div className="title">
-			{/*<Typography variant="h2">*/}
-			Выбери компанию себе и любимому питомцу для прогулок!
-			{/*</Typography>*/}
-		</div>
+		<>
+			{ //мне не нравится такая проверка, надо переделать
+				!authUser ?
+					<div className='wrapper'>
+						<div className='main'>
+							<Title/>
+							<div className='auth__wrapper'>
+								<AuthButtons {...props} />
+								<Route exact path={['/', '/login']} render={(props) => <LoginForm {...props}/>}/>
+								<Route exact path='/registration' render={(props) => <RegistrationForm {...props}/>}/>
+							</div>
+						</div>
+					</div>
+					: null
+			}
+		</>
 	)
 }
 
-const Welcome = () => {
-	return (
-		<div className='wrapper'>
-			<div className='main'>
-				<Title/>
-				<Auth/>
-			</div>
-		</div>
-	)
-}
-
-export default Welcome
-
-// export default Welcome
+export default Welcome;
