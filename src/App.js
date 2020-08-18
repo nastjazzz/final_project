@@ -16,7 +16,7 @@ function App() {
 	return (
 		<UserInfo.Provider value={JSON.parse(localStorage.getItem('user'))}>
 			<div className="App">
-				<UserInfo.Consumer>{value => <Header userInfo={value}/>}</UserInfo.Consumer>
+				<Header />
 				<Switch>
 					<Route exact path={['/', '/login', '/registration']} render={(props) => <Welcome {...props}/>}/>
 					<Route exact path='/profile/:id' render={(props) => <Profile {...props} />}/>

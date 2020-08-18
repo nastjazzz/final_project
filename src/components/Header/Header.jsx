@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import styles from './Header.module.css';
-import profileImg from './user.svg';
+import profileImg, { ReactComponent } from './user.svg';
 
 // Import components.
 import Logo from './components/logo/logo';
@@ -9,28 +9,30 @@ import Dropdown from './components/dropdown/dropdown';
 
 import UserInfo from './../../UserContext';
 
-function Header(props) {
-	const isUserAuth = props.userInfo;
+class Header extends React.Component {
+	static contextType = UserInfo;
 
-	console.log(isUserAuth);
+	render() {
+		const isUserAuth = this.context;
 
-	return (
-		<nav className={styles.nav}>
-			<div className={`${styles.nav__wrapper} ${styles.flex__row}`}>
-				<div className={styles.left__header}>
-					<Logo />
+		return (
+			<nav className={styles.nav}>
+				<div className={`${styles.nav__wrapper} ${styles.flex__row}`}>
+					<div className={styles.left__header}>
+						<Logo />
+					</div>
+					{
+						isUserAuth ?
+							<div className={`${styles.profile__wrapper} ${styles.flex__row}`}>
+								<Avatar source={`${profileImg}`}/>
+								<Dropdown nickname={isUserAuth.firstName}/>
+							</div>
+							: null
+					}
 				</div>
-				{
-					isUserAuth ?
-						<div className={`${styles.profile__wrapper} ${styles.flex__row}`}>
-							<Avatar source={`${profileImg}`}/>
-							<Dropdown nickname={isUserAuth.firstName}/>
-						</div>
-						: null
-				}
-			</div>
-		</nav>
-	)
+			</nav>
+		)
+	}
 }
 
 export default Header
