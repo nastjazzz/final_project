@@ -21,12 +21,13 @@ const ProfileInfo = ({user, ...props}) => {
 		<div className="profile__component">
 			{
 				user ?
-					<div className="info"> 
-						<div className="dog__img">
+					<div className="profile__component info"> 
+						<div className="dog__desc">
+							Кличка собаки: {user.pets.name}
 							{user.pets.photo || defaultDogPhoto}
 						</div>
 						<div className="dog__desc">
-							Кличка собаки: {user.pets.name}<br/>
+							
 							Возраст собаки: {user.pets.age}<br/>
 						</div>
 						<div className="user">
@@ -38,7 +39,7 @@ const ProfileInfo = ({user, ...props}) => {
 							Чаще всего гуляют в {user.location ? user.location.district : 'не указано'}<br/>
 						</div>
 
-						<button className="logout" onClick={logout}>Log out</button>
+						{/* <button className="logout" onClick={logout}>Log out</button> */}
 					</div>
 					: null
 			}

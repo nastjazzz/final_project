@@ -11,7 +11,8 @@
 }
 
 .profile__component {
-	width: 900px;
+	/* width: 900px; */
+	
 
 	
 
@@ -20,11 +21,12 @@
 	display:grid;
 	grid-template-areas: "img desc "
 						"user user"
-						"map map"
-						"logout logout";
-    grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr 1fr;    
+						"map map";
+    /* grid-template-columns: 1fr 1fr; */
+	grid-template-rows: 1fr 1fr 1fr;  
+	grid-template-columns:repeat( minmax(375px, 1fr));  
 	margin-top:25px;
+	align-items: center;
 }
 .dog_img {
 	grid-area: img;
@@ -60,13 +62,13 @@
 
 
 }
-.logout {
+/* .logout {
 	grid-area:logout;
 	border-radius: 5px;
 	width: 30%;
 	height: 50px;
 	margin-top:20px;
-}
+} */
 
 
 @media (max-width: 660px) {
