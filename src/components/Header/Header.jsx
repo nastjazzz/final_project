@@ -7,8 +7,12 @@ import Logo from './components/logo/logo';
 import Avatar from './components/avatar/avatar';
 import Dropdown from './components/dropdown/dropdown';
 
-function Header() {
-	const isUserAuth = JSON.parse(localStorage.getItem('user'));
+import UserInfo from './../../UserContext';
+
+function Header(props) {
+	const isUserAuth = props.userInfo;
+
+	console.log(isUserAuth);
 
 	return (
 		<nav className={styles.nav}>
