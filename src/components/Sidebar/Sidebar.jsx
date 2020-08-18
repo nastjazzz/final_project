@@ -12,7 +12,6 @@ const Sidebar = () => {
 				isAuthUser ?
 					<div className={cl.wrapper}>
 						<div className={cl.list__title}>Меню</div>
-						{/* <div className={cl.list__subtitle}>Выбирайте</div> */}
 						<ul className={cl.list}>
 							<li className={cl.list__item}>
 								<NavLink to={`/profile/${isAuthUser.id}`} activeClassName={cl.active}>Профиль</NavLink>

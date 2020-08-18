@@ -2,12 +2,14 @@ import React, {useState} from "react";
 import '../welcome.css'
 import axios from "axios";
 import {Redirect} from "react-router-dom";
+import Loader from "../../Loader/Loader";
 
 const LoginForm = ({...props}) => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
 
     const [isAuthError, setIsAuthError] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -15,7 +17,7 @@ const LoginForm = ({...props}) => {
         if (login.length && password.length) {
             checkLoginData();
         } else {
-
+            setIsAuthError(true);
         }
     }
     const onChangeLogin = (e) => {
@@ -27,25 +29,33 @@ const LoginForm = ({...props}) => {
         setPassword(password);
     }
     const checkLoginData = () => {
+        setIsAuthError(false);
+        setIsLoading(true);
         axios.post('/api/login/', {login, password})
             .then(response => {
                 let data = response.data;
+                console.log('LOGIN-RESPONSE', data);
                 if (data) {
+                    setIsLoading(false);
                     setIsAuthError(false)
                     localStorage.setItem("user", JSON.stringify(data));
                     console.log('проверь локалСторедж')
                     props.history.push('/profile/' + data.id)
-                    window.location.reload();
+                    // window.location.reload();
                     // return <Redirect to={`/profile/${data.id}`}/>
                 } else {
+                    setIsLoading(false);
+
                     console.log('ничего не меняем');
                     setIsAuthError(true);
                 }
             })
+            .catch(error => console.log('/api/login/ error', error))
     }
 
     return (
         <form className='form' onSubmit={onSubmit}>
+            {isLoading ? <Loader /> : null}
             { isAuthError ? <div className='error'>Некорректный логин и/или пароль</div> : null }
             <input
                 name='login'

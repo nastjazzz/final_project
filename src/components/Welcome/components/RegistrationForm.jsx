@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import './components.css';
+import Loader from "../../Loader/Loader";
 
 const RegistrationForm = ({...props}) => {
     const [login, setLogin] = useState('');
@@ -14,6 +15,8 @@ const RegistrationForm = ({...props}) => {
     const [isValidLogin, setIsValidLogin] = useState(true);
     const [isValidPassword, setIsValidPassword] = useState(true);
     const [isValidPetAge, setIsValidPetAge] = useState([true, '']);
+
+    const [isLoading, setIsLoading] = useState(false);
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -55,6 +58,7 @@ const RegistrationForm = ({...props}) => {
         setPassword(passwd);
     }
     const putNewUserToServer = () => {
+        setIsLoading(true);
         axios.post('/api/registration/', {
                 firstName,
                 lastName,
@@ -65,19 +69,24 @@ const RegistrationForm = ({...props}) => {
                     "age": petAge
                 }})
             .then(response => {
+                setIsLoading(false);
                 console.log('/api/registration/ response:::', response);
                 if (response.data.isReg === true) {
                     localStorage.setItem('user', JSON.stringify(response.data.newUser));
                     props.history.push('/profile/' + response.data.newUser.id);
                     window.location.reload();
-                } else {
-                    setError([true, 'Такой логин уже занят! Придумайте другой логин']);
                 }
+            })
+            .catch(error => {
+                console.log('registr error', error);
+                setIsLoading(false);
+                setError([true, 'Такой логин уже занят! Придумайте другой логин']);
             })
     }
 
     return (
         <form className={'form'} onSubmit={onSubmit}>
+            {isLoading ? <Loader /> : null}
             {error[0] ? <div className='error'>{error[1]}</div> : null}
 
             <input className='input' onChange={onChangeLogin} value={login} type='text' placeholder='Придумайте логин'/>

@@ -2,7 +2,7 @@ import React from "react";
 import './styles.css'
 import {NavLink} from "react-router-dom";
 
-export const Page404 = () => {
+export const Page404 = ({...props}) => {
     return (
         <main className='page-error__wrapper'>
             <div className='page-error__content'>
@@ -10,6 +10,9 @@ export const Page404 = () => {
                 <p>К сожалению, страница, которую вы ищете, не существует!</p>
                 <div className='page-error_button'>
                     <NavLink to={'/'}>Вернуться на главную</NavLink>
+                </div>
+                <div className='page-error_button'>
+                    <button onClick={() => {props.history.goBack()}}>Назад</button>
                 </div>
             </div>
         </main>

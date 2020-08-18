@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './profile.css'
 import UploadFile from "./UploadFile";
+import BigLoader from "../Loader/BigLoader";
 
 const ProfileInfoTest = ({user, ...props}) => {
 	// debugger;

@@ -42,16 +42,16 @@ app.post('/api/login/', (req, res) => {
     const user = checkLoginData(loginData, DATA_JSON.users);
     //подумать
     let id = (user.length === 1 && user.map(u => u.id)); //прошедший проверку id пользователя
-    id ? res.json(...user) : res.status(401).json(false);
+    id ? res.json(...user) : res.json(false);
 })
 
 app.get('/api/profile/:id', (req, res) => {
     console.log('Request URL:', req.originalUrl);
     console.log('Request ID:', req.params.id);
     const id = +req.params.id;
-    const user = DATA_JSON.users.filter(u => u.id === id);
-    console.log(...user);
-    res.json(...user);
+    const user = [...DATA_JSON.users.filter(u => u.id === id)];
+
+    user.length === 1 ? res.json(...user) : res.status(404).json({"message": "No user with this id!"})
 })
 
 app.listen(port, () => {
