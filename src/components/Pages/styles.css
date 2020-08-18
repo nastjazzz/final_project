@@ -5,6 +5,7 @@
     align-items: center;
 }
 .page-error__content {
+    padding: 20px;
     max-width: 500px;
     text-align: center;
 }

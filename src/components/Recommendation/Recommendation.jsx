@@ -12,6 +12,7 @@ import DistrictFilter from "./Filter/components/FilterComponents/DiscrictFilter"
 import UsersCards from "./UsersCards/UsersCards";
 import SorryFilter from "./Help/SorryFilter";
 import ParametersBlock from "./Filter/components/parametersBlock/parametersBlock";
+import BigLoader from "../Loader/BigLoader";
 
 const Recommendation = () => {
 	//all users from server
@@ -23,14 +24,14 @@ const Recommendation = () => {
 	const [district, setDistrict] = React.useState([]);
 
 	//конечный массив пользователей, который пойдет в <UsersCards />
-	let filteredResults;
+	let filteredResults = [];
 
 //глянуть последнее видео, там об это говорилось --начало--
 	let getUsersFromServer = () => {
 		axios.get('/api/users/')
 			.then(resp => {
 				let data = resp.data.users; //получаем объект с пользователями с сервера
-				setUsers(data) //записываем их в массив
+				setUsers(data); //записываем их в массив
 			})
 			.catch(error => console.log('error [getUsersFromServer]', error))
 	}
@@ -92,8 +93,9 @@ const Recommendation = () => {
 					</ParametersBlock>
 				</Filter>
 				{
-					filteredResults.length ?
-						<UsersCards users={filteredResults}/> : <SorryFilter/>
+					users.length && filteredResults ?
+						<UsersCards users={filteredResults} />
+						: <BigLoader/>
 				}
 			</div>
 		</div>

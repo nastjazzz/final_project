@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './profile.css'
 import UploadFile from "./UploadFile";
 // import dogPhoto from "../../../dogPhoto.jpg";
-import defaultDogPhoto from './dog.png';
+import defaultDogPhoto from '../../media/defaultDogPhoto.png';
 // import UserInfo from "./components/UserInfo";
 // import DogInfo from "./components/DogInfo";
 
@@ -23,21 +23,29 @@ const ProfileInfo = ({user, ...props}) => {
 				user ?
 					<div className="profile__component info"> 
 						<div className="dog__desc">
-							Кличка собаки: {user.pets.name}
-							{user.pets.photo || defaultDogPhoto}
+							<h1 className="dog__name">{user.pets.name}</h1>
+							<div className="dog__img">{user.pets.photo || defaultDogPhoto}</div>
+							<button className="send">Написать сообщение</button>
 						</div>
-						<div className="dog__desc">
-							
-							Возраст собаки: {user.pets.age}<br/>
+						<div className="desc">
+							<div className="dog__main">
+								<h3 className="profile__subtitle">О питомце:</h3>
+								<div className ="item">Возраст: {user.pets.age}</div>
+								<div className ="item">Пол:</div>
+								<div className ="item">Порода:</div>
+								<div className ="item">Чаще всего гуляют в</div>
+								<div className="sep"></div>
+								<h3 className="profile__subtitle">Комментарий хозяина:</h3>
+
+
+							</div>
+							<div className="user">
+								<h3 className="profile__subtitle">О хозяине:</h3>
+								<div className ="item">{user.firstName} {user.lastName}</div>
+								<div className ="item">Телефон:</div>
+							</div>
 						</div>
-						<div className="user">
-							Имя: {user.firstName} <br/>
-							Фамилия: {user.lastName}<br/>
-							Телефон:
-						</div>
-						<div className="map">
-							Чаще всего гуляют в {user.location ? user.location.district : 'не указано'}<br/>
-						</div>
+						
 
 						{/* <button className="logout" onClick={logout}>Log out</button> */}
 					</div>
