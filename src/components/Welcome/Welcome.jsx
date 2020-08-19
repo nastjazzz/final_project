@@ -11,10 +11,9 @@ const Welcome = (props) => {
 
 	const authUser = JSON.parse(localStorage.getItem('user'));
 
-
 	return (
 		<>
-			{ //мне не нравится такая проверка, надо переделать
+			{
 				!authUser ?
 					<div className='wrapper'>
 						<div className='main'>

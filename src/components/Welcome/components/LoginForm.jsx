@@ -28,65 +28,35 @@ const LoginForm = ({...props}) => {
         const password = e.target.value;
         setPassword(password);
     }
-
-    const testLogin = () => {
-        let log = 'login';
-        let pass = 'password';
-        const auth = `${log}:${pass}`
-        // const auth = 'Basic ' + new Buffer(log + ':' + pass).toString('base64');
-        // console.log('clientHash', auth);
-        // const config = {
-        //     headers: {
-        //         'Authorization': auth
-        //     }
-        // }
-        //axios.post(url, data, { config })
-        axios.get('/api/auth/login/', {
-            headers: {
-                'Authorization': auth
-            }
-        }).then(response => {
-                console.log(response);
-            }).catch(error => {
-                console.log(error);
-        })
-
-    }
-
-
     const checkLoginData = () => {
 
         setIsAuthError(false);
         setIsLoading(true);
+        const auth = `${login}:${password}`;
 
-        // axios.post('/api/login/', {login, password}, {
-        //     headers: {
-        //         'Authorization': 'secretToken'
-        //     }
-        // }).then(response => {
-        //     let data = response.data;
-        //     console.log('LOGIN-RESPONSE', data);
-        //     if (data) {
-        //         setIsLoading(false);
-        //         setIsAuthError(false)
-        //         localStorage.setItem("user", JSON.stringify(data));
-        //         console.log('проверь локалСторедж')
-        //         props.history.push('/profile/' + data.id)
-        //         // window.location.reload();
-        //         // return <Redirect to={`/profile/${data.id}`}/>
-        //     } else {
-        //         setIsLoading(false);
-        //
-        //         console.log('ничего не меняем');
-        //         setIsAuthError(true);
-        //     }
-        // }).catch(error => console.log('/api/login/ error', error))
+        axios.get('/api/login/', {
+            headers: {
+                'Authorization': auth
+            }
+        })
+            .then(response => {
+                setIsLoading(false);
+                console.log(response);
+                if (response.status === 200) {
+                    localStorage.setItem("user", JSON.stringify({"user": true})); //??
+                    props.history.push('/profile/2')
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                setIsAuthError(true);
+                setIsLoading(false);
+            })
+
     }
 
     return (
         <form className='form' onSubmit={onSubmit}>
-            <button onClick={testLogin}>testAuthHeaders</button>
-
             {isLoading ? <Preloader /> : null}
             { isAuthError ? <div className='error'>Некорректный логин и/или пароль</div> : null }
             <input

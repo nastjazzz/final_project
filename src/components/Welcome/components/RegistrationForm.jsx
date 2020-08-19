@@ -58,13 +58,6 @@ const RegistrationForm = ({...props}) => {
         setPassword(passwd);
     }
 
-    // axios.post(url, {
-    //     //...data
-    // }, {
-    //     headers: {
-    //         ...
-    //     }
-    // })
     const putNewUserToServer = () => {
         setIsLoading(true);
         axios.post('/api/registration/', {
