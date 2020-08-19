@@ -4,6 +4,8 @@ import { YMaps, Map, Placemark, ZoomControl } from 'react-yandex-maps';
 import styles from './homepage.module.css';
 import axios from 'axios';
 
+import defaultDogPhoto from '../../media/defaultDogPhoto.png';
+
 const windowWidth = window.innerWidth;
 
 const mapData = {
@@ -74,7 +76,7 @@ function Homepage() {
                                                                                                     `${user.firstName} ${user.lastName}` + 
                                                                                                 `</a>)`,
                                                             balloonContentBody: 
-                                                                    `<img src=${user.pets.photo} style='height: 175px'>` +
+                                                                    `<img src=${user.pets.photo || defaultDogPhoto} style='height: 175px'>` +
                                                                     `<div>${user.pets.gender[0].toUpperCase() + user.pets.gender.slice(1)}, ${user.pets.breed}, ${getAgeString(user.pets.age)}</div>`,
                                                             balloonContentFooter: `<a href='/profile/${user.id}' style='color: #2539af;text-decoration: underline'>Связаться</a>` }}
                                                             modules={['geoObject.addon.balloon', 'geoObject.addon.hint']} />)}
