@@ -49,7 +49,7 @@ const ProfileInfo = ({user, ...props}) => {
 								<div className="info__wrapper">
 									<div className="profile__subtitle">Комментарий хозяина:</div>
 									<div className="items__wrapper">
-										<div className="item_mini">{user.pets.about}</div>
+										<div className="item">{user.pets.about || "Хозяин ничего не написал про своего пса :("}</div>
 									</div>
 								</div>
 							</div>
@@ -58,7 +58,7 @@ const ProfileInfo = ({user, ...props}) => {
 									<div className="profile__subtitle">О хозяине:</div>
 									<div className="items__wrapper">
 										<div className="item">{user.firstName} {user.lastName}</div>
-										<div className="item">Телефон: {user.telephone}</div>
+										<div className="item">Телефон: {user.telephone || "не указан"}</div>
 									</div>
 								</div>
 							</div>
