@@ -8,7 +8,7 @@ import Messages from "../Messages/Messages";
 import Recommendation from "../Recommendation/Recommendation";
 import Settings from "../Settings/Settings";
 import ProfileInfo from './ProfileInfo';
-import BigLoader from "../Loader/BigLoader";
+import BigPreloader from "../Preloader/BigPreloader";
 import {Page404} from "../Pages/Page404";
 
 const Profile = ({...props}) => {
@@ -39,7 +39,7 @@ const Profile = ({...props}) => {
 						{authUser !== null ? <Sidebar/> : null}
 						{
 							user.id !== undefined ?
-								<ProfileInfo user={user} {...props} /> : <BigLoader/>
+								<ProfileInfo user={user} {...props} /> : <BigPreloader/>
 						}
 						{/*<Route path={`/profile/${id}/messages`} exact render={() => <Messages/>}/>*/}
 						{/*<Route path={`/profile/${id}/settings`} render={() => <Settings/>}/>*/}

@@ -1,18 +1,20 @@
 import React from 'react'
 import {Route} from "react-router-dom";
 
-import './welcome.css'
+import './home.css'
 import Title from "./components/Title";
 import AuthButtons from "./components/AuthButtons";
 import LoginForm from "./components/LoginForm";
 import RegistrationForm from "./components/RegistrationForm";
+import Homepage from "../Homepage/homepage";
 
-const Welcome = (props) => {
+const Home = (props) => {
+	//если что-то есть в localstorage
 	const authUser = JSON.parse(localStorage.getItem('user'));
 
 	return (
-		<>
-			{ //мне не нравится такая проверка, надо переделать
+		<div>
+			{
 				!authUser ?
 					<div className='wrapper'>
 						<div className='main'>
@@ -26,8 +28,9 @@ const Welcome = (props) => {
 					</div>
 					: null
 			}
-		</>
+			<Homepage />
+		</div>
 	)
 }
 
-export default Welcome;
+export default Home;

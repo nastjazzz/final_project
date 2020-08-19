@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import './components.css';
-import Loader from "../../Loader/Loader";
+import Preloader from "../../Preloader/Preloader";
 
 const RegistrationForm = ({...props}) => {
     const [login, setLogin] = useState('');
@@ -57,6 +57,7 @@ const RegistrationForm = ({...props}) => {
         (passwd.length < 6 || passwd.length > 30) ? setIsValidPassword(false) : setIsValidPassword(true);
         setPassword(passwd);
     }
+
     const putNewUserToServer = () => {
         setIsLoading(true);
         axios.post('/api/registration/', {
@@ -67,7 +68,11 @@ const RegistrationForm = ({...props}) => {
                 "pets": {
                     "name": petName,
                     "age": petAge
-                }})
+                }}, {
+            headers: {
+                'Authorization': 'secretToken'
+            }
+        })
             .then(response => {
                 setIsLoading(false);
                 console.log('/api/registration/ response:::', response);
@@ -86,7 +91,7 @@ const RegistrationForm = ({...props}) => {
 
     return (
         <form className={'form'} onSubmit={onSubmit}>
-            {isLoading ? <Loader /> : null}
+            {isLoading ? <Preloader /> : null}
             {error[0] ? <div className='error'>{error[1]}</div> : null}
 
             <input className='input' onChange={onChangeLogin} value={login} type='text' placeholder='Придумайте логин'/>

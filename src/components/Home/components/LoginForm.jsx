@@ -1,8 +1,7 @@
 import React, {useState} from "react";
-import '../welcome.css'
+import '../home.css'
 import axios from "axios";
-import {Redirect} from "react-router-dom";
-import Loader from "../../Loader/Loader";
+import Preloader from "../../Preloader/Preloader";
 
 const LoginForm = ({...props}) => {
     const [login, setLogin] = useState('');
@@ -29,33 +28,35 @@ const LoginForm = ({...props}) => {
         setPassword(password);
     }
     const checkLoginData = () => {
+
         setIsAuthError(false);
         setIsLoading(true);
-        axios.post('/api/login/', {login, password})
-            .then(response => {
-                let data = response.data;
-                console.log('LOGIN-RESPONSE', data);
-                if (data) {
-                    setIsLoading(false);
-                    setIsAuthError(false)
-                    localStorage.setItem("user", JSON.stringify(data));
-                    console.log('проверь локалСторедж')
-                    props.history.push('/profile/' + data.id)
-                    // window.location.reload();
-                    // return <Redirect to={`/profile/${data.id}`}/>
-                } else {
-                    setIsLoading(false);
+        const auth = `${login}:${password}`;
 
-                    console.log('ничего не меняем');
-                    setIsAuthError(true);
+        axios.get('/api/login/', {
+            headers: {
+                'Authorization': auth
+            }
+        })
+            .then(response => {
+                setIsLoading(false);
+                console.log(response);
+                if (response.status === 200) {
+                    localStorage.setItem("user", JSON.stringify({"user": true})); //??
+                    props.history.push('/profile/2')
                 }
             })
-            .catch(error => console.log('/api/login/ error', error))
+            .catch(error => {
+                console.log(error);
+                setIsAuthError(true);
+                setIsLoading(false);
+            })
+
     }
 
     return (
         <form className='form' onSubmit={onSubmit}>
-            {isLoading ? <Loader /> : null}
+            {isLoading ? <Preloader /> : null}
             { isAuthError ? <div className='error'>Некорректный логин и/или пароль</div> : null }
             <input
                 name='login'

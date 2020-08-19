@@ -1,7 +1,7 @@
 import React from "react";
-import './loader.css'
+import './preloader.css'
 
-const Loader = () => {
+const Preloader = () => {
     return (
         <div className="lds-ellipsis">
             <div></div>
@@ -12,4 +12,4 @@ const Loader = () => {
     )
 }
 
-export default Loader;
+export default Preloader;
