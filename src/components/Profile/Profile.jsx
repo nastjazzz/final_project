@@ -7,7 +7,7 @@ import Sidebar from '../Sidebar/Sidebar'
 import Messages from "../Messages/Messages";
 import Recommendation from "../Recommendation/Recommendation";
 import Settings from "../Settings/Settings";
-import ProfileInfoTest from './ProfileInfoTest'
+import ProfileInfo from './ProfileInfo';
 import BigPreloader from "../Preloader/BigPreloader";
 import {Page404} from "../Pages/Page404";
 
@@ -32,21 +32,21 @@ const Profile = ({...props}) => {
 	}, [id]);
 
 	return (
-		<>
+		<div className="content_wrapper">
 			{
 				pathError ? <Page404 {...props} /> :
 					<div className="content">
 						{authUser !== null ? <Sidebar/> : null}
 						{
 							user.id !== undefined ?
-								<ProfileInfoTest user={user} {...props} /> : <BigPreloader/>
+								<ProfileInfo user={user} {...props} /> : <BigPreloader/>
 						}
 						{/*<Route path={`/profile/${id}/messages`} exact render={() => <Messages/>}/>*/}
 						{/*<Route path={`/profile/${id}/settings`} render={() => <Settings/>}/>*/}
 						<Route path='/search' exact render={() => <Recommendation/>}/>
 					</div>
 			}
-		</>
+		</div>
 	)
 }
 

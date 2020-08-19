@@ -334,7 +334,34 @@
                 "type": "средняя",
                 "photo": "https://avatars.mds.yandex.net/get-pdb/1976636/dc27e5c0-16a9-4ec2-8197-bd1d980e15b2/s1200?webp=false"
             }
+        },
+        {
+            "id": 15,
+            "firstName": "Иван",
+            "lastName": "Мандаринчик",
+            "login": "tttttt",
+            "password": "000000",
+            "telephone": "+7(955)600-00-00",
+            "location": {
+            "country": "Россия",
+            "city": "Москва",
+            "district": "ЗАО",
+            "coords": [
+                55.757919,
+                37.421279
+                ]
+            },
+            "pets": {
+                "name": "Ленни",
+                "age": "2",
+                "gender": "мальчик",
+                "breed": "такса",
+                "type": "мелкая",
+                "photo": "https://mirzhivotnye.ru/wp-content/uploads/2018/08/Sobaka-taksa-12-240x240.jpg",
+                "about": "Милый пес, немного стесняется сперва и боится, но быстро находит общий язык. Не агрессивен. На прогулку берем мячик. Часто увлекается погоней за голубями))"
+            }
+            
         }
     ],
-    "totalUsers": 14
+    "totalUsers": 15
 }

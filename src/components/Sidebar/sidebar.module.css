@@ -6,11 +6,10 @@
 }
 
 .wrapper {
-	width: 160px;
-	padding: 10px 20px;
-	border: 1px solid #ccc;
-	/*margin-right: 10px;*/
-	/*background-color: #fff;*/
+	max-width: 200px;
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
 }
 
 .list__title {

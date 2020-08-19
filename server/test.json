@@ -288,7 +288,18 @@
                 "name": "соба",
                 "age": "2"
             }
+        },
+        {
+            "id": 16,
+            "firstName": "Иван",
+            "lastName": "Иванов",
+            "login": "tttttt",
+            "password": "000000",
+            "pets": {
+                "name": "Рекс",
+                "age": "2"
+            }
         }
     ],
-    "totalUsers": 19
+    "totalUsers": 16
 }

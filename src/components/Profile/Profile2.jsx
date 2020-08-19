@@ -7,7 +7,7 @@ import Sidebar from '../Sidebar/Sidebar'
 import Messages from "../Messages/Messages";
 import Recommendation from "../Recommendation/Recommendation";
 import Settings from "../Settings/Settings";
-import ProfileInfoTest from './ProfileInfoTest'
+import ProfileInfo from './ProfileInfoTest'
 import Header from "../Header/Header";
 
 const Profile2 = ({...props}) => {
@@ -40,7 +40,7 @@ const Profile2 = ({...props}) => {
 			<div className="content">
 				{check !== null ? <Sidebar /> : null}
 				{/*<Sidebar />*/}
-				{ user.id !== undefined ?  <ProfileInfoTest user={user}/> : null}
+				{ user.id !== undefined ?  <ProfileInfo user={user}/> : null}
 
 				{/*<Route path={`/profile/${id}/messages`} exact render={() => <Messages/>}/>*/}
 				{/*<Route path={`/profile/${id}/settings`} render={() => <Settings/>}/>*/}
