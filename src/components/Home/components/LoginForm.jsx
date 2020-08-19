@@ -1,7 +1,6 @@
 import React, {useState} from "react";
-import '../welcome.css'
+import '../home.css'
 import axios from "axios";
-import {Redirect} from "react-router-dom";
 import Preloader from "../../Preloader/Preloader";
 
 const LoginForm = ({...props}) => {
