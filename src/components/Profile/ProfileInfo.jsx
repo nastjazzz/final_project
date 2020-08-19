@@ -23,13 +23,10 @@ const ProfileInfo = ({user, ...props}) => {
 		<div className="profile__component">
 			{
 				user ?
-					<div className="profile__component info"> 
+					<div className="info"> 
 						<div className="dog__desc">
 							<h1 className="dog__name">{user.pets.name}</h1>
-							<img src = {user.pets.photo} alt="pet photo" className="dog__photo"
-															
-															
-							/>
+							<img src={user.pets.photo || './../../media/dogPhoto.jpg'} alt="pet photo" className="dog__photo" />
 							<button className="send">Написать сообщение</button>
 						</div>
 						<div className="desc">
