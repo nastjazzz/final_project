@@ -32,7 +32,7 @@ const Profile = ({...props}) => {
 	}, [id]);
 
 	return (
-		<>
+		<div className="content_wrapper">
 			{
 				pathError ? <Page404 {...props} /> :
 					<div className="content">
@@ -46,7 +46,7 @@ const Profile = ({...props}) => {
 						<Route path='/search' exact render={() => <Recommendation/>}/>
 					</div>
 			}
-		</>
+		</div>
 	)
 }
 

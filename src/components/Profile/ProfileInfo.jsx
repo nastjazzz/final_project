@@ -48,9 +48,6 @@ const ProfileInfo = ({user, ...props}) => {
 								<div className ="item">Телефон: {user.telephone}</div>
 							</div>
 						</div>
-						
-
-						
 					</div>
 					: null
 			}
