@@ -6,13 +6,15 @@ import Title from "./components/Title";
 import AuthButtons from "./components/AuthButtons";
 import LoginForm from "./components/LoginForm";
 import RegistrationForm from "./components/RegistrationForm";
+import Homepage from "../Homepage/homepage";
 
 const Welcome = (props) => {
 
 	const authUser = JSON.parse(localStorage.getItem('user'));
+	//ошибка, потому что нет
 
 	return (
-		<>
+		<div>
 			{
 				!authUser ?
 					<div className='wrapper'>
@@ -27,7 +29,8 @@ const Welcome = (props) => {
 					</div>
 					: null
 			}
-		</>
+			<Homepage />
+		</div>
 	)
 }
 

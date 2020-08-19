@@ -18,8 +18,8 @@ function App() {
 				<Route exact path={['/', '/login', '/registration']} render={(props) => <Welcome {...props}/>}/>
 				<Route exact path='/profile/:id' render={(props) => <Profile {...props} />}/>
 				<Route exact path='/search' component={Recommendation} />
-				<Route exact path={['/', '/map']} component={Homepage} />
-				<Route path='*' component={Page404} />
+				{/*<Route exact path={'/'} component={Homepage} />*/}
+				<Route component={Page404} />
 			</Switch>
 			<Footer/>
 		</div>
