@@ -25,27 +25,38 @@ const ProfileInfo = ({user, ...props}) => {
 				user ?
 					<div className="info"> 
 						<div className="dog__desc">
-							<h1 className="dog__name">{user.pets.name}</h1>
-							<img src={user.pets.photo || './../../media/dogPhoto.jpg'} alt="pet photo" className="dog__photo" />
-							<button className="send">Написать сообщение</button>
+							<div className="dog__desc__content">
+								<div className="dog__name">{user.pets.name}</div>
+								<img src={user.pets.photo || './../../media/dogPhoto.jpg'} alt="pet photo" className="dog__photo" />
+								<button className="send">Написать сообщение</button>
+							</div>
 						</div>
 						<div className="desc">
-							<div className="dog__main">
-								<h3 className="profile__subtitle">О питомце:</h3>
-								<div className ="item">Возраст: {user.pets.age}</div>
-								<div className ="item">Пол: {user.pets.gender}</div>
-								<div className ="item">Порода: {user.pets.breed}</div>
-								<div className ="item">Чаще всего гуляют в {user.location.district}, {user.location.city}</div>
-								<div className="sep"></div>
-								<h3 className="profile__subtitle">Комментарий хозяина:</h3>
-								<div className="item_mini">{user.pets.about}</div>
-
-
+							<div className="desc__content">
+								<div className="info__wrapper">
+									<div className="profile__subtitle">О питомце:</div>
+									<div className="items__wrapper">
+										<div className="item">Возраст: {user.pets.age}</div>
+										<div className="item">Пол: {user.pets.gender}</div>
+										<div className="item">Порода: {user.pets.breed}</div>
+										<div className="item">Чаще всего гуляют в {user.location.district}, {user.location.city}</div>
+									</div>
+								</div>
+								<div className="info__wrapper">
+									<div className="profile__subtitle">Комментарий хозяина:</div>
+									<div className="items__wrapper">
+										<div className="item_mini">{user.pets.about}</div>
+									</div>
+								</div>
 							</div>
-							<div className="user">
-								<h3 className="profile__subtitle">О хозяине:</h3>
-								<div className ="item">{user.firstName} {user.lastName}</div>
-								<div className ="item">Телефон: {user.telephone}</div>
+							<div className="desc__content">
+								<div className="info__wrapper">
+									<div className="profile__subtitle">О хозяине:</div>
+									<div className="items__wrapper">
+										<div className="item">{user.firstName} {user.lastName}</div>
+										<div className="item">Телефон: {user.telephone}</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
