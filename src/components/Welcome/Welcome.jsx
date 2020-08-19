@@ -8,7 +8,9 @@ import LoginForm from "./components/LoginForm";
 import RegistrationForm from "./components/RegistrationForm";
 
 const Welcome = (props) => {
+
 	const authUser = JSON.parse(localStorage.getItem('user'));
+
 
 	return (
 		<>

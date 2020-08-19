@@ -12,7 +12,7 @@ import DistrictFilter from "./Filter/components/FilterComponents/DiscrictFilter"
 import UsersCards from "./UsersCards/UsersCards";
 import SorryFilter from "./Help/SorryFilter";
 import ParametersBlock from "./Filter/components/parametersBlock/parametersBlock";
-import BigLoader from "../Loader/BigLoader";
+import BigPreloader from "../Preloader/BigPreloader";
 
 const Recommendation = () => {
 	//all users from server
@@ -95,7 +95,7 @@ const Recommendation = () => {
 				{
 					users.length && filteredResults ?
 						<UsersCards users={filteredResults} />
-						: <BigLoader/>
+						: <BigPreloader/>
 				}
 			</div>
 		</div>

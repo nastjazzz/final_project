@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import '../welcome.css'
 import axios from "axios";
 import {Redirect} from "react-router-dom";
-import Loader from "../../Loader/Loader";
+import Preloader from "../../Preloader/Preloader";
 
 const LoginForm = ({...props}) => {
     const [login, setLogin] = useState('');
@@ -28,34 +28,66 @@ const LoginForm = ({...props}) => {
         const password = e.target.value;
         setPassword(password);
     }
+
+    const testLogin = () => {
+        let log = 'login';
+        let pass = 'password';
+        const auth = `${log}:${pass}`
+        // const auth = 'Basic ' + new Buffer(log + ':' + pass).toString('base64');
+        // console.log('clientHash', auth);
+        // const config = {
+        //     headers: {
+        //         'Authorization': auth
+        //     }
+        // }
+        //axios.post(url, data, { config })
+        axios.get('/api/auth/login/', {
+            headers: {
+                'Authorization': auth
+            }
+        }).then(response => {
+                console.log(response);
+            }).catch(error => {
+                console.log(error);
+        })
+
+    }
+
+
     const checkLoginData = () => {
+
         setIsAuthError(false);
         setIsLoading(true);
-        axios.post('/api/login/', {login, password})
-            .then(response => {
-                let data = response.data;
-                console.log('LOGIN-RESPONSE', data);
-                if (data) {
-                    setIsLoading(false);
-                    setIsAuthError(false)
-                    localStorage.setItem("user", JSON.stringify(data));
-                    console.log('проверь локалСторедж')
-                    props.history.push('/profile/' + data.id)
-                    // window.location.reload();
-                    // return <Redirect to={`/profile/${data.id}`}/>
-                } else {
-                    setIsLoading(false);
 
-                    console.log('ничего не меняем');
-                    setIsAuthError(true);
-                }
-            })
-            .catch(error => console.log('/api/login/ error', error))
+        // axios.post('/api/login/', {login, password}, {
+        //     headers: {
+        //         'Authorization': 'secretToken'
+        //     }
+        // }).then(response => {
+        //     let data = response.data;
+        //     console.log('LOGIN-RESPONSE', data);
+        //     if (data) {
+        //         setIsLoading(false);
+        //         setIsAuthError(false)
+        //         localStorage.setItem("user", JSON.stringify(data));
+        //         console.log('проверь локалСторедж')
+        //         props.history.push('/profile/' + data.id)
+        //         // window.location.reload();
+        //         // return <Redirect to={`/profile/${data.id}`}/>
+        //     } else {
+        //         setIsLoading(false);
+        //
+        //         console.log('ничего не меняем');
+        //         setIsAuthError(true);
+        //     }
+        // }).catch(error => console.log('/api/login/ error', error))
     }
 
     return (
         <form className='form' onSubmit={onSubmit}>
-            {isLoading ? <Loader /> : null}
+            <button onClick={testLogin}>testAuthHeaders</button>
+
+            {isLoading ? <Preloader /> : null}
             { isAuthError ? <div className='error'>Некорректный логин и/или пароль</div> : null }
             <input
                 name='login'

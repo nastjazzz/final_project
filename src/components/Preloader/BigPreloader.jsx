@@ -1,7 +1,7 @@
 import React from "react";
-import './loader.css'
+import './preloader.css'
 
-const BigLoader = () => {
+const BigPreloader = () => {
     return (
         <div className="lds-roller">
             <div></div>
@@ -16,4 +16,4 @@ const BigLoader = () => {
     )
 }
 
-export default BigLoader
+export default BigPreloader
