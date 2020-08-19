@@ -9,12 +9,13 @@ import Recommendation from "./components/Recommendation/Recommendation";
 import Homepage from './components/Homepage/homepage'
 import Footer from './components/Footer/Footer'
 import {Page404} from "./components/Pages/Page404";
+import AuthContainer from './components/AuthContainer/AuthContainer'
 
 import UserInfo from './UserContext';
 
 function App() {
 	return (
-		<UserInfo.Provider value={JSON.parse(localStorage.getItem('user'))}>
+		<AuthContainer>
 			<div className="App">
 				<Header />
 				<Switch>
@@ -26,7 +27,7 @@ function App() {
 				</Switch>
 				<Footer/>
 			</div>
-		</UserInfo.Provider>
+		</AuthContainer>
 	)
 }
 
