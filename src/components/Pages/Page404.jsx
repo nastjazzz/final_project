@@ -1,5 +1,5 @@
 import React from "react";
-import './styles.css'
+import './pages.css'
 import {NavLink} from "react-router-dom";
 
 export const Page404 = ({...props}) => {

@@ -16,15 +16,15 @@ const Sidebar = () => {
 							<li className={cl.list__item}>
 								<NavLink to={`/profile/${isAuthUser.id}`} activeClassName={cl.active}>Профиль</NavLink>
 							</li>
-							<li className={cl.list__item}>
-								<NavLink to="/profile/messages" activeClassName={cl.active}>Сообщения</NavLink>
-							</li>
+							{/*<li className={cl.list__item}>*/}
+							{/*	<NavLink to="/profile/messages" activeClassName={cl.active}>Сообщения</NavLink>*/}
+							{/*</li>*/}
 							<li className={cl.list__item}>
 								<NavLink to="/search" activeClassName={cl.active}>Рекомендации</NavLink>
 							</li>
-							<li className={cl.list__item}>
-								<NavLink to="/profile/settings" activeClassName={cl.active}>Настройки</NavLink>
-							</li>
+							{/*<li className={cl.list__item}>*/}
+							{/*	<NavLink to="/profile/settings" activeClassName={cl.active}>Настройки</NavLink>*/}
+							{/*</li>*/}
 						</ul>
 					</div>
 					: null
