@@ -175,6 +175,7 @@
 		--name-size: 25px;
 		--title-size: 15px;
 		--item-size: 13px;
+		--send_size: 15px;
 	}
 
 	.dog__desc {
@@ -201,7 +202,7 @@
 		--name-size: 32px;
 		--title-size: 18px;
 		--item-size: 14px;
-		--send-size: 16px;
+		--send-size: 18px;
 	}
 
 	.content {
@@ -217,7 +218,7 @@
 	}
 
 	.dog__desc__content {
-		width: 75%;
+		width: 100%;
 	}
 
 	.content_wrapper {
@@ -256,7 +257,7 @@
 		--name-size: 23px;
 		--title-size: 13px;
 		--item-size: 11px;
-		--send-size: 13px;
+		--send-size: 18px;
 	}
 
 	.profile__component {
@@ -266,6 +267,6 @@
 
 @media (max-width: 420px) {
 	:root {
-		--send-size: 11px
+		--send-size: 12px
 	}
 }
