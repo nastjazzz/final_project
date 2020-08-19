@@ -4,6 +4,7 @@
             "id": 1,
             "login": "testLogin",
             "password": "testPassword",
+            "telephone": "+7(927)700-00-00",
             "firstName": "Александра",
             "lastName": "Александрова",
             "location": {
@@ -21,13 +22,15 @@
                 "photo": "",
                 "gender": "девочка",
                 "breed": "овчарка",
-                "type": "крупная"
+                "type": "крупная",
+                "about": "Гуляем в парке, на площадке. Обычно в 7 утра и около 8 вечера."
             }
         },
         {
             "id": 2,
             "login": "test2",
             "password": "test2",
+            "telephone": "+7(911)666-00-09",
             "firstName": "Станислав",
             "lastName": "Тушников",
             "location": {
@@ -45,7 +48,8 @@
                 "age": 10,
                 "gender": "девочка",
                 "breed": "такса",
-                "type": "мелкая"
+                "type": "мелкая",
+                "about":"Нас можно найти каждый день после 9-ти утра у водонапорной башни. Жуля - скромный хвостик)"
             }
         },
         {
@@ -54,6 +58,7 @@
             "lastName": "Иванов",
             "login": "testLogin3",
             "password": "testPassword3",
+            "telephone": "+7(985)290-67-99",
             "location": {
                 "country": "Россия",
                 "city": "Москва",
@@ -69,7 +74,8 @@
                 "age": 3,
                 "gender": "мальчик",
                 "breed": "ретривер",
-                "type": "крупная"
+                "type": "крупная",
+                "about": "Хорошо воспитанный и дрессированый пес. Гуляем очень долго и без поводка."
             }
         },
         {
@@ -78,6 +84,7 @@
             "lastName": "Никитин",
             "login": "testLogin4",
             "password": "testPassword4",
+            "telephone": "+7(915)744-28-91",
             "location": {
                 "country": "Россия",
                 "city": "Москва",
@@ -94,6 +101,7 @@
                 "gender": "мальчик",
                 "breed": "хаски",
                 "type": "крупная"
+                
             }
         },
         {
@@ -102,6 +110,7 @@
             "lastName": "Васильев",
             "login": "testLogin5",
             "password": "testPassword5",
+            "telephone": "+7(903)104-10-22",
             "location": {
                 "country": "Россия",
                 "city": "Москва",
@@ -141,7 +150,8 @@
                 "gender": "девочка",
                 "breed": "лабрадор",
                 "photo": "https://prokamen.com/wp-content/uploads/labrador-664.jpg",
-                "type": "крупная"
+                "type": "крупная",
+                "about": "Вальяжная и игривая, обожает ловить фрисби. Но быстро утомляемся("
             }
         },
         {
@@ -150,6 +160,7 @@
             "lastName": "Иванова",
             "login": "testLogin7",
             "password": "testPassword7",
+            "telephone": "+7(911)701-98-97",
             "location": {
                 "country": "Россия",
                 "city": "Москва",
@@ -165,7 +176,8 @@
                 "gender": "мальчик",
                 "breed": "хаски",
                 "photo": "https://funik.ru/wp-content/uploads/2018/10/a2158910befacbdd595c-700x933.jpg",
-                "type": "крупная"
+                "type": "крупная",
+                "about": "good booooy"
             }
         },
         {
@@ -189,7 +201,8 @@
                 "gender": "мальчик",
                 "breed": "овчарка",
                 "photo": "https://avatars.mds.yandex.net/get-pdb/1939042/668fe5e5-1549-414f-9b05-2460fcbdcca7/s600",
-                "type": "крупная"
+                "type": "крупная",
+                "about": "Очень активный) Возможно, захочет играть с вами, а не c питомцем."
             }
         },
         {
@@ -198,6 +211,7 @@
             "lastName": "Прус",
             "login": "testLogin9",
             "password": "testPassword9",
+            "telephone": "+7(912)099-12-55",
             "location": {
                 "country": "Россия",
                 "city": "Москва",
@@ -213,7 +227,8 @@
                 "gender": "девочка",
                 "breed": "ретривер",
                 "photo": "https://i.pinimg.com/236x/4c/29/03/4c29039a481d1a383ba0443f192f319b--retriever-puppies-psy.jpg",
-                "type": "крупная"
+                "type": "крупная",
+                "about": "Ищем только привитую компанию"
             }
         },
         {
@@ -222,6 +237,7 @@
             "lastName": "Великая",
             "login": "10testLogin",
             "password": "10testPassword",
+            "telephone": "+7(903)100-84-69",
             "location": {
                 "country": "Россия",
                 "city": "Москва",
@@ -236,7 +252,8 @@
                 "age": 3,
                 "gender": "девочка",
                 "breed": "ретривер",
-                "type": "крупная"
+                "type": "крупная",
+                "about": "Собака-ураган)))"
             }
         },
         {
@@ -245,6 +262,7 @@
             "lastName": "Андреев",
             "login": "11testLogin",
             "password": "11testPassword",
+            "telephone": "+7(903)334-20-11",
             "location": {
                 "country": "Россия",
                 "city": "Москва",
@@ -260,7 +278,8 @@
                 "gender": "мальчик",
                 "breed": "питбуль",
                 "photo": "https://i.pinimg.com/236x/44/7a/05/447a05e4f1b3a85cfdbc1204959fa86e.jpg",
-                "type": "средняя"
+                "type": "средняя",
+                "about": "Нужен компаньон! Дружелюбный и без агрессии (как мы)!"
             }
         },
         {
@@ -269,6 +288,7 @@
             "lastName": "Максимов",
             "login": "12testLogin",
             "password": "12testPassword",
+            "telephone": "+7(903)099-43-65",
             "location": {
                 "country": "Россия",
                 "city": "Москва",
@@ -284,7 +304,8 @@
                 "gender": "мальчик",
                 "breed": "питбуль",
                 "photo": "https://avatars.mds.yandex.net/get-zen_doc/16074/pub_5d90efd82beb4900b3037f93_5d90f643fbe6e700adaa4856/scale_1200",
-                "type": "средняя"
+                "type": "средняя",
+                "about": "Кадый день дрессировка. Могу и вашего поднатаскать."
             }
         },
         {
@@ -293,6 +314,7 @@
             "lastName": "Александров",
             "login": "13testLogin",
             "password": "13testPassword",
+            "telephone": "+7(903)744-92-91",
             "location": {
                 "country": "Россия",
                 "city": "Москва",
@@ -308,7 +330,8 @@
                 "gender": "девочка",
                 "breed": "такса",
                 "photo": "https://yandex.ru/images/_crpd/fQ8l7hv49/50bf89VOKl/dHOZJCzO9IcgKR65z-gd-EI5hl-s-34eMSPH3YNsW5Df7HBvyp39A04YyXyif-nf-4iq2eRU7kcb9MZnQgi76WIzkiZmnrHVbCkNrti1Gu1DM9YD-K45Rzokw8-CaEPOytdNAbnqk3wqYL4ajzC9h_uOscK7RNQr",
-                "type": "мелкая"
+                "type": "мелкая",
+                "about": "Возьмем в компаньоны девочу и тоже таксу, желательно"
             }
         },
         {
@@ -317,6 +340,7 @@
             "lastName": "Пенюгалова",
             "login": "14testLogin",
             "password": "14testPassword",
+            "telephone": "+7(903)333-09-12",
             "location": {
                 "country": "Россия",
                 "city": "Москва",
@@ -332,8 +356,10 @@
                 "gender": "мальчик",
                 "breed": "лабрадор",
                 "type": "средняя",
-                "photo": "https://avatars.mds.yandex.net/get-pdb/1976636/dc27e5c0-16a9-4ec2-8197-bd1d980e15b2/s1200?webp=false"
+                "photo": "https://avatars.mds.yandex.net/get-pdb/1976636/dc27e5c0-16a9-4ec2-8197-bd1d980e15b2/s1200?webp=false",
+                "about": "woof woof!"
             }
+
         },
         {
             "id": 15,
