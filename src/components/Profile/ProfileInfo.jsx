@@ -7,7 +7,6 @@ import defaultDogPhoto from '../../media/defaultDogPhoto.png';
 // import UserInfo from "./components/UserInfo";
 // import DogInfo from "./components/DogInfo";
 
-
 const ProfileInfo = ({user, ...props}) => {
 	// debugger;
 	const currentUser = JSON.parse(localStorage.getItem('user')); //auth user
@@ -26,9 +25,14 @@ const ProfileInfo = ({user, ...props}) => {
 					<div className="info"> 
 						<div className="dog__desc">
 							<div className="dog__desc__content">
-								<div className="dog__name">{user.pets.name}</div>
-								<img src={user.pets.photo || './../../media/dogPhoto.jpg'} alt="pet photo" className="dog__photo" />
-								<button className="send">Написать сообщение</button>
+								<div className="dog__main__info">
+									<div className="dog__name">{user.pets.name}</div>
+									<img src={user.pets.photo || defaultDogPhoto} alt="pet photo" className="dog__photo" />
+								</div>
+
+								<div className="send__wrapper">
+									<button className="send">Написать сообщение</button>
+								</div>
 							</div>
 						</div>
 						<div className="desc">
