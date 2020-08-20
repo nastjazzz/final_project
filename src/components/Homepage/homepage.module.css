@@ -138,6 +138,8 @@
 
         padding: 10px;
         background: rgb(37, 57, 175);
+
+        z-index: 0;
     }
 
     .map_main_info {

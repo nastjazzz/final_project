@@ -20,7 +20,7 @@ function Header() {
 					isUserAuth ?
 						<div className={`${styles.profile__wrapper} ${styles.flex__row}`}>
 							<Avatar source={`${profileImg}`}/>
-							<Dropdown nickname={isUserAuth.firstName}/>
+							<Dropdown nickname={isUserAuth.firstName || 'Станислав'}/>
 						</div>
 						: null
 				}
