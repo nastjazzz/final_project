@@ -1,7 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import '../home.css'
 import axios from "axios";
 import Preloader from "../../Preloader/Preloader";
+import {Redirect} from "react-router-dom";
+// import Loader from "../../Loader/Loader";
+import UserInfo from "../../../UserContext";
 
 const LoginForm = ({...props}) => {
     const [login, setLogin] = useState('');
@@ -9,6 +12,7 @@ const LoginForm = ({...props}) => {
 
     const [isAuthError, setIsAuthError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [, setAuthHash] = useContext(UserInfo);
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -31,7 +35,26 @@ const LoginForm = ({...props}) => {
 
         setIsAuthError(false);
         setIsLoading(true);
+
         const auth = `${login}:${password}`;
+
+        axios.post('/api/login/', {login, password})
+            .then(response => {
+                let data = response.data;
+                console.log('LOGIN-RESPONSE', data);
+                if (data) {
+                    setIsLoading(false);
+                    setIsAuthError(false)
+                    // localStorage.setItem("user", JSON.stringify(data));
+                    setAuthHash(data);
+                    // console.log('проверь локалСторедж')
+                    props.history.push('/profile/' + data.id)
+                    // window.location.reload();
+                    // return <Redirect to={`/profile/${data.id}`}/>
+                } else {
+                    setIsLoading(false);
+                }
+            })
 
         axios.get('/api/login/', {
             headers: {

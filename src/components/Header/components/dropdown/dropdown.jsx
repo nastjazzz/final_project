@@ -74,7 +74,7 @@ function DropdownMenu(props) {
         <div className={styles.dropdown} style={{height: menuHeight}} ref={dropdownRef}>
             <CSSTransition in={activeMenu === 'main'} unmountOnExit timeout={500} classNames='menu-primary' onEnter={calcHeight}>
                 <div className={styles.menu}>
-                    <DropdownItem leftIcon={<User />} onClick={() => { window.location.href = '/profile/' + JSON.parse(window.localStorage['user']).id; }}>Мой профиль</DropdownItem>
+                    <DropdownItem leftIcon={<User />} onClick={() => { window.location.href = '/profile/' + (JSON.parse(window.localStorage['user']).id || 2); }}>Мой профиль</DropdownItem>
                     {/* <DropdownItem leftIcon={<CogIcon />} rightIcon={<ChevronIcon />} goToMenu='settings'>Settings</DropdownItem> */}
                     <DropdownItem leftIcon={<LogOut />} onClick={() => { window.localStorage.clear(); window.location.href = '/'; }}>Выйти</DropdownItem>
                     {/* localStorage.removeItem("user") - вот это надо как-то прикрепить к клику */}
