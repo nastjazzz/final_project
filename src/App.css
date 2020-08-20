@@ -1,0 +1,26 @@
+.App {
+	/*height: 100vh;*/
+
+	display: flex;
+	flex-direction: column;
+
+	height: 100%;
+
+	background-color: whitesmoke;
+}
+
+.content_wrapper {
+	min-height: calc(100vh - 99px);
+	flex: 1 0 auto;
+}
+
+button {
+	outline: none;
+	cursor: pointer;
+}
+
+@media (max-width: 660px) {
+	.content_wrapper {
+		min-height: calc(100vh - 39px - 97px);
+	}
+}

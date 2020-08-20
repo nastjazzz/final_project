@@ -1,0 +1,103 @@
+.results__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 30px 20px;
+}
+
+.card__wrapper {
+    width: 300px;
+    max-height: 332px;
+    padding: 15px 10px;
+    margin-bottom: 25px;
+    margin-right: 10px;
+    background: white;
+    border-radius: 20px;
+}
+
+.pets-info__name {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.pets-info__photo {
+    text-align: center;
+}
+
+.pets-info__photo img {
+    width: 200px;
+    height: 250px;
+    /*height: auto;*/
+    border-radius: 20px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.user-info {
+    font-size: 16px;
+    /*font-weight: 400;*/
+    color: dimgray;
+
+}
+
+.sorry {
+    margin: auto;
+    color: dimgray;
+}
+
+@media (max-width: 1000px) {
+    .card__wrapper {
+        width: 150px;
+        max-height: 250px;
+
+        margin-bottom: 15px;
+        /* margin-right: 0; */
+    }
+
+    .pets-info__photo img {
+        width: 120px;
+        height: 150px;
+    }
+
+    .pets-info__name {
+        font-size: 16px;
+    }
+
+    .user-info {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .results__wrapper {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .card__wrapper {
+        width: 100px;
+        max-height: 192px;
+
+        margin-bottom: 10px;
+        /* margin-right: 0; */
+    }
+
+    .pets-info__photo img {
+        width: 80px;
+        height: 100px;
+    }
+
+    .pets-info__name {
+        font-size: 13px;
+    }
+
+    .user-info {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 400px) {
+    .card__wrapper {
+        margin-right: 0;
+    }
+}
