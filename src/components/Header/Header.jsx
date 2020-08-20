@@ -11,17 +11,17 @@ import UserInfo from './../../UserContext';
 
 function Header (props) {
 	return (
-		<UserInfo.Consumer>{(isUserAuth) => { return (
+		<UserInfo.Consumer>{([authHash, setAuthHash]) => { return (
 			<nav className={styles.nav}>
 				<div className={`${styles.nav__wrapper} ${styles.flex__row}`}>
 					<div className={styles.left__header}>
 						<Logo />
 					</div>
 					{
-						isUserAuth ?
+						authHash ?
 							<div className={`${styles.profile__wrapper} ${styles.flex__row}`}>
 								<Avatar source={`${profileImg}`}/>
-								<Dropdown nickname={isUserAuth.firstName}/>
+								<Dropdown nickname={authHash.firstName}/>
 							</div>
 							: null
 					}
