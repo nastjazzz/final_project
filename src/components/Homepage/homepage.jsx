@@ -34,8 +34,8 @@ function Homepage() {
     };
     
     const getAgeString = (age) => {
-        if (age == 0) return `${age} лет`;
-        else if (age == 1) return `${age} год`;
+        if (age === 0) return `${age} лет`;
+        else if (age === 1) return `${age} год`;
         else if (age >= 2 && age <= 4) return `${age} года`;
         else return `${age} лет`;
     };
