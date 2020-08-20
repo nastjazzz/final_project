@@ -9,13 +9,9 @@ import Dropdown from './components/dropdown/dropdown';
 
 import UserInfo from './../../UserContext';
 
-class Header extends React.Component {
-	static contextType = UserInfo;
-
-	render() {
-		const isUserAuth = this.context;
-
-		return (
+function Header (props) {
+	return (
+		<UserInfo.Consumer>{(isUserAuth) => { return (
 			<nav className={styles.nav}>
 				<div className={`${styles.nav__wrapper} ${styles.flex__row}`}>
 					<div className={styles.left__header}>
@@ -31,8 +27,8 @@ class Header extends React.Component {
 					}
 				</div>
 			</nav>
-		)
-	}
+		)}}</UserInfo.Consumer>
+	)
 }
 
 export default Header

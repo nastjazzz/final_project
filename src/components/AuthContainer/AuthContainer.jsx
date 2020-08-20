@@ -6,7 +6,7 @@ function AuthContainer(props) {
     const [authHash, setAuthHash] = useState(JSON.parse(window.localStorage.getItem('user')));
 
     useEffect(() => {
-        const updateAuthHash = () => setAuthHash(JSON.parse(window.localStorage.getItem('authHash')));
+        const updateAuthHash = () => setAuthHash(JSON.parse(window.localStorage.getItem('user')));
         console.log('произошло', authHash);
         window.addEventListener('storage', updateAuthHash);
         return () => window.removeEventListener('storage', updateAuthHash);
