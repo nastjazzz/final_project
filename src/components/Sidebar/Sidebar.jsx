@@ -14,7 +14,7 @@ const Sidebar = () => {
 						<div className={cl.list__title}>Меню</div>
 						<ul className={cl.list}>
 							<li className={cl.list__item}>
-								<NavLink to={`/profile/${isAuthUser.id}`} activeClassName={cl.active}>Профиль</NavLink>
+								<NavLink to={`/profile/${isAuthUser.id || 2}`} activeClassName={cl.active}>Профиль</NavLink>
 							</li>
 							{/*<li className={cl.list__item}>*/}
 							{/*	<NavLink to="/profile/messages" activeClassName={cl.active}>Сообщения</NavLink>*/}
