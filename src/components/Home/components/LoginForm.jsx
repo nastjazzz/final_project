@@ -1,7 +1,8 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import '../home.css'
 import axios from "axios";
 import Preloader from "../../Preloader/Preloader";
+import UserInfo from "../../../UserContext";
 
 const LoginForm = ({...props}) => {
     const [login, setLogin] = useState('');
@@ -9,6 +10,7 @@ const LoginForm = ({...props}) => {
 
     const [isAuthError, setIsAuthError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [, setAuthHash] = useContext(UserInfo);
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -31,6 +33,7 @@ const LoginForm = ({...props}) => {
 
         setIsAuthError(false);
         setIsLoading(true);
+
         const auth = `${login}:${password}`;
 
         axios.get('/api/login/', {
@@ -40,11 +43,9 @@ const LoginForm = ({...props}) => {
         })
             .then(response => {
                 setIsLoading(false);
-                console.log(response);
                 if (response.status === 200) {
-                    localStorage.setItem("user", JSON.stringify({"user": true})); //??
-                    // props.history.push('/profile/2');
-                    window.location.href = '/profile/2';
+                    setAuthHash({'user': true});
+                    props.history.push('/profile/2');
                 }
             })
             .catch(error => {
@@ -52,7 +53,6 @@ const LoginForm = ({...props}) => {
                 setIsAuthError(true);
                 setIsLoading(false);
             })
-
     }
 
     return (
