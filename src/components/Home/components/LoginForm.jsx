@@ -63,11 +63,11 @@ const LoginForm = ({...props}) => {
         })
             .then(response => {
                 setIsLoading(false);
-                console.log(response);
+                // console.log(response);
                 if (response.status === 200) {
                     localStorage.setItem("user", JSON.stringify({"user": true})); //??
-                    // props.history.push('/profile/2');
-                    window.location.href = '/profile/2';
+                    props.history.push('/profile/2');
+                    // window.location.href = '/profile/2';
                 }
             })
             .catch(error => {
